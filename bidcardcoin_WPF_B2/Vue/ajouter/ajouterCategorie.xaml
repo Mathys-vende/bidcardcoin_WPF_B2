@@ -11,15 +11,21 @@
             <StackPanel>
                 <Label Content="Ajouter Categorie" HorizontalAlignment="Center"></Label>
                 <Label Content="nom"></Label>
-                <TextBox Name="nomTextBox" Text="{Binding NomProperty, Mode=TwoWay}"  Height="20" />
-                <Label Content="prenom"></Label>
-                <TextBox Name="prenomTextBox" Text="{Binding PrenomProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
-                <Button x:Name="nomPrenomButton2" Content="{Binding ConcatProperty, Mode=OneWay}"  BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
+                <TextBox Name="nomCategorie" Text="{Binding nomCategorieProperty, Mode=TwoWay}"  Height="20" />
+                <Button Name="nomCategorieButton" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31" Click="nomCategorieButton_Click" ></Button>
+                <Button x:Name="Ajouter"  Click="returnListCategorie" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Retourner à la liste" Width="30" Height="30" Padding="0" >
                 </Button>
-                <Label Content="Age : "></Label>
-                <TextBox Name ="txtAge" Text="{Binding AgeProperty, Mode=OneWay}" />
-                <Button x:Name="Ajouter"  Click="returnListCategorie" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Ajouter" Width="30" Height="30" Padding="0">
-                </Button>
+
+                <DataGrid Name="listeCategories" Visibility="Collapsed" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center"  Grid.ColumnSpan="2" BorderBrush="Black" Background="#FFA4A4A4" 
+                          Height="150"
+                          ScrollViewer.CanContentScroll="True" 
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="id" Binding="{Binding idProperty, Mode=OneWay}" />
+                        <DataGridTextColumn Header="nom" Binding="{Binding nomCategorieProperty, Mode=OneWay}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </StackPanel>
         </Grid>
     </Grid>

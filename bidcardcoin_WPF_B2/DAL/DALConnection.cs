@@ -3,7 +3,7 @@ using System;
 
 namespace Solution
 {
-    class ConnectionDAL
+    class DALConnection
     {
         private static string server;
         private static string database;
