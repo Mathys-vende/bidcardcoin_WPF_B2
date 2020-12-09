@@ -6,11 +6,17 @@ namespace bidcardcoin_WPF_B2.Vue
 {
     public partial class listeProduits : UserControl
     {
+        //ProduitViewModel myDataObjectProduit;
         public listeProduits()
         {
             InitializeComponent();
 
+           // DALConnection.OpenConnection();
+
+           // loadProduits();
+
         }
+
 
         private void ajouterProduit(object sender, RoutedEventArgs e)
         {
