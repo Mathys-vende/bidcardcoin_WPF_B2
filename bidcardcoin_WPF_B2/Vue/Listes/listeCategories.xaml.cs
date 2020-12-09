@@ -41,14 +41,15 @@ namespace bidcardcoin_WPF_B2.Vue
                 selectedCategorieId = (lp.ElementAt<CategorieViewModel>(listeCategorie.SelectedIndex)).idCategorieProperty;
             }
         }
-        private void supprimerButton_MouseDoubleClick(object sender, RoutedEventArgs routedEventArgs)
+        private void SupprButton(object sender, RoutedEventArgs routedEventArgs)
         {
             if (listeCategorie.SelectedItem is CategorieViewModel)
             {
                 CategorieViewModel toRemove = (CategorieViewModel)listeCategorie.SelectedItem;
                 lp.Remove(toRemove);
                 listeCategorie.Items.Refresh();
-                CategorieORM.supprimerPersonne(selectedCategorieId);
+                CategorieORM.supprimerCategorie(selectedCategorieId);
+                
             }
         }
   

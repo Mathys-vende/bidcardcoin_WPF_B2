@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2"
              StartupUri="Vue/adminBaseWindow.xaml">
+    
     <Application.Resources>
          
     </Application.Resources>
+    
 </Application>
+

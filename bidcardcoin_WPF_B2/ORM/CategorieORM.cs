@@ -42,10 +42,6 @@ namespace bidcardcoin_WPF_B2.ORM
         {
             CategorieDAO.insertCategorie(new CategorieDAO(p.idCategorieProperty, p.nomCategorieProperty));
         }
-
-        public static void supprimerPersonne(int selectedCategorieId)
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }

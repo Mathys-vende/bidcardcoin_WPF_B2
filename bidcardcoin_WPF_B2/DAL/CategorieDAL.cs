@@ -50,7 +50,7 @@ namespace Solution
         }
         public static void updateCategorie(CategorieDAO p)
         {
-            string query = "UPDATE Categorie set nom=\"" + p.nomCategorieDAO + ";";
+            string query = "UPDATE categorie set nom=\"" + p.nomCategorieDAO + "\" where id=" + p.idCategorieDAO + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();

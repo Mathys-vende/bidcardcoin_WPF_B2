@@ -1,14 +1,15 @@
 using System;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using bidcardcoin_WPF_B2.ORM;
 
 namespace bidcardcoin_WPF_B2.CTRL
 {
-    public class CategorieViewModel 
+    public class CategorieViewModel: INotifyPropertyChanged
     {
         private int idCategorie;
         private string nomCategorie;
-        
+        private string concat = "Ajouter ";
         public CategorieViewModel() { }
 
         public CategorieViewModel(int id, string nomCategorie)
@@ -31,12 +32,13 @@ namespace bidcardcoin_WPF_B2.CTRL
             set
             {
                 nomCategorie = value;
+                
+                OnPropertyChanged("nomCategorieProperty");
                
             }
         }
         
-
-        /*public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string info)
         {
@@ -45,11 +47,8 @@ namespace bidcardcoin_WPF_B2.CTRL
             {
                 handler(this, new PropertyChangedEventArgs(info));
                 this.PropertyChanged(this, new PropertyChangedEventArgs(info));
-                if ((info != "AgeProperty")&&(MainWindow.onglet != "ajouter"))
-                {
-                    CategorieORM.updatePersonne(this);
-                }
+                CategorieORM.updateCategorie(this);
             }
-        }*/
+        }
     }
 }
