@@ -116,10 +116,14 @@
             <SubType>Code</SubType>
         </Compile>
         <Compile Include="CTRL\CategorieViewModel.cs" />
+        <Compile Include="CTRL\LieuViewModel.cs" />
         <Compile Include="DAL\CategorieDAL.cs" />
         <Compile Include="DAL\DALConnection.cs" />
+        <Compile Include="DAL\LieuDAL.cs" />
         <Compile Include="DAO\CategorieDAO.cs" />
+        <Compile Include="DAO\LieuDAO.cs" />
         <Compile Include="ORM\CategorieORM.cs" />
+        <Compile Include="ORM\LieuORM.cs" />
         <Compile Include="Vue\adminBaseWindow.xaml.cs">
           <DependentUpon>adminBaseWindow.xaml</DependentUpon>
         </Compile>

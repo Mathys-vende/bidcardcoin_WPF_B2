@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using bidcardcoin_WPF_B2.CTRL;
 using bidcardcoin_WPF_B2.ORM;
 using bidcardcoin_WPF_B2.DAO;
-using Solution;
+
 using System.ComponentModel;
 using System.Data;
 using System.Windows;
@@ -13,6 +13,7 @@ using System.Windows.Data;
 using System.Linq;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
+using bidcardcoin_WPF_B2.DAL;
 
 
 namespace bidcardcoin_WPF_B2.Vue

@@ -4,8 +4,8 @@ using System.Windows;
 using System.Windows.Controls;
 using bidcardcoin_WPF_B2.CTRL;
 using bidcardcoin_WPF_B2.ORM;
-using Solution;
 using System.Linq;
+using bidcardcoin_WPF_B2.DAL;
 
 namespace bidcardcoin_WPF_B2.Vue
 {
