@@ -26,7 +26,7 @@
                           SelectedValue="{Binding idLieuEnchereProperty}" 
                 />
                 <Label Content="id Admin"></Label>
-                <ComboBox Name ="idAdminTextBox" ItemsSource="{Binding  }"
+                <ComboBox Name ="idAdmincomboBox" ItemsSource="{Binding  }"
                           DisplayMemberPath="nomAdminProperty"
                           SelectedValuePath="idAdminProperty"
                           SelectedValue="{Binding idAdminEnchereProperty}" 

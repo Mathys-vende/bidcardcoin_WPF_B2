@@ -119,19 +119,23 @@
         <Compile Include="CTRL\CategorieViewModel.cs" />
         <Compile Include="CTRL\EnchereViewModel.cs" />
         <Compile Include="CTRL\LieuViewModel.cs" />
+        <Compile Include="CTRL\LotViewModel.cs" />
         <Compile Include="DAL\AdminDAL.cs" />
         <Compile Include="DAL\CategorieDAL.cs" />
         <Compile Include="DAL\DALConnection.cs" />
         <Compile Include="DAL\EnchereDAL.cs" />
         <Compile Include="DAL\LieuDAL.cs" />
+        <Compile Include="DAL\LotDAL.cs" />
         <Compile Include="DAO\AdminDAO.cs" />
         <Compile Include="DAO\CategorieDAO.cs" />
         <Compile Include="DAO\EnchereDAO.cs" />
         <Compile Include="DAO\LieuDAO.cs" />
+        <Compile Include="DAO\LotDAO.cs" />
         <Compile Include="ORM\AdminORM.cs" />
         <Compile Include="ORM\CategorieORM.cs" />
         <Compile Include="ORM\EnchereORM.cs" />
         <Compile Include="ORM\LieuORM.cs" />
+        <Compile Include="ORM\LotORM.cs" />
         <Compile Include="Vue\adminBaseWindow.xaml.cs">
           <DependentUpon>adminBaseWindow.xaml</DependentUpon>
         </Compile>

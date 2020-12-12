@@ -55,7 +55,7 @@ namespace bidcardcoin_WPF_B2.Vue
             nomAdmin = AdminORM.listeAdmin();
             myDataObjectAdmin = new AdminViewModel();
             //LIEN AVEC la VIEW
-            idAdminTextBox.ItemsSource = nomAdmin; // bind de la liste avec la source, permettant le binding.*/
+            idAdmincomboBox.ItemsSource = nomAdmin; // bind de la liste avec la source, permettant le binding.*/
             
         }
         
@@ -86,7 +86,7 @@ namespace bidcardcoin_WPF_B2.Vue
                 dateVenteTextBox.DataContext = myDataObjectEnchere;
                 /*idLieuTextBox.DataContext = myDataObjectEnchere;*/
                 comboxBoxLieu.DataContext = myDataObjectEnchere;
-                idAdminTextBox.DataContext = myDataObjectEnchere;
+                idAdmincomboBox.DataContext = myDataObjectEnchere;
             
                 EnchereButton.DataContext = myDataObjectEnchere;
             }
@@ -104,7 +104,7 @@ namespace bidcardcoin_WPF_B2.Vue
             dateVenteTextBox.DataContext = myDataObjectEnchere;
             /*idLieuTextBox.DataContext = myDataObjectEnchere;*/
             comboxBoxLieu.DataContext = myDataObjectEnchere;
-            idAdminTextBox.DataContext = myDataObjectEnchere;
+            idAdmincomboBox.DataContext = myDataObjectEnchere;
 
         }
         
