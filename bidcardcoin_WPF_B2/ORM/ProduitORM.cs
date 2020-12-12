@@ -15,7 +15,8 @@ namespace bidcardcoin_WPF_B2.ORM
         {
             //todo finir l'ORM pour produit
             ProduitDAO pDAO = ProduitDAO.getProduit(idProduit);
-            ProduitViewModel p = new ProduitViewModel(pDAO.idProduitDAO, pDAO.nomProduitDAO);
+            ProduitViewModel p = new ProduitViewModel(pDAO.idProduitDAO, pDAO.estimationProduitDAO, pDAO.prixVenteProduitDAO, pDAO.nomProduitDAO, pDAO.descriptionProduitDAO,
+            pDAO.artisteProduitDAO, pDAO.styleProduitDAO, pDAO.isVenduProduitDAO, pDAO.idCategorieProduitDAO, pDAO.idLotProduitDAO, pDAO.idPhotoProduitDAO);
             return p;
         }
 
@@ -26,7 +27,8 @@ namespace bidcardcoin_WPF_B2.ORM
             foreach (ProduitDAO element in lDAO)
             {
 
-                ProduitViewModel p = new ProduitViewModel(element.idProduitDAO, element.nomProduitDAO);
+                ProduitViewModel p = new ProduitViewModel(element.idProduitDAO, element.estimationProduitDAO, element.prixVenteProduitDAO, element.nomProduitDAO, element.descriptionProduitDAO,
+                element.artisteProduitDAO, element.styleProduitDAO, element.isVenduProduitDAO, element.idCategorieProduitDAO, element.idLotProduitDAO, element.idPhotoProduitDAO);
                 l.Add(p);
             }
             return l;
