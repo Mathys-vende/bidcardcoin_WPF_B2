@@ -5,29 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="300">
     <Grid>
-        <Grid Name ="listelots" Height="300" Margin="0,0,0.300,0" VerticalAlignment="Top">
+        <Grid Name="listelots" Height="600" Margin="0,0,0.300,0" VerticalAlignment="Top">
             <StackPanel>
-                <Label Content="Ajouter Lot" HorizontalAlignment="Center"></Label>
-                <Label Content="nom"></Label>
-                <TextBox Name="nomTextBox" Text="{Binding nomLotProperty, Mode=TwoWay}"  Height="20" />
-                <Label Content="Description"></Label>
-                <TextBox Name="descriptionTextBox" Text="{Binding descriptionLotProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
-                <Label Content="Id Enchere"></Label>
-                <ComboBox Name ="idEnchereComboBox" ItemsSource="{Binding  }"
+                <Label Content="Ajouter Lot" HorizontalAlignment="Center" />
+                <Label Content="nom" />
+                <TextBox Name="nomTextBox" Text="{Binding nomLotProperty, Mode=TwoWay}" Height="20" />
+                <Label Content="Description" />
+                <TextBox Name="descriptionTextBox" Text="{Binding descriptionLotProperty, Mode=TwoWay}" Height="20"
+                         Margin="0,0,0.300,0" />
+                <Label Content="Id Enchere" />
+                <ComboBox Name="idEnchereComboBox" ItemsSource="{Binding  }"
                           DisplayMemberPath="nomEnchereProperty"
                           SelectedValuePath="idEnchereProperty"
-                          SelectedValue="{Binding idEnchereLotProperty}" 
-                />
-                
-                <Button Name="LotButton" Click="LotButton_Click" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
-                </Button>
-                <Button x:Name="Ajouter"  Click="returnListLot" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Ajouter" Width="30" Height="30" Padding="0">
-                </Button>
+                          SelectedValue="{Binding idEnchereLotProperty}" />
+                <Button Name="LotButton" Click="LotButton_Click" Content="Retourner à la liste des Lots"
+                        BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0"
+                        HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31" />
+                <Button x:Name="Ajouter" Click="returnListLot" HorizontalAlignment="Left" VerticalAlignment="Top"
+                        Content="Ajouter" Width="30" Height="30" Padding="0" />
             </StackPanel>
         </Grid>
-        <DataGrid Name="listeLot" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2" Visibility="Collapsed"
+        <DataGrid Name="listeLot" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
+                  Visibility="Collapsed"
                   BorderBrush="Black" Background="#FFA4A4A4"
                   Height="600" ColumnWidth="100"
                   ScrollViewer.CanContentScroll="True"
