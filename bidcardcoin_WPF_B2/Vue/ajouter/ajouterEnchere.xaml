@@ -21,9 +21,8 @@
                 
                 <ComboBox Name ="comboxBoxLieu" ItemsSource="{Binding  }"
                           DisplayMemberPath="adresseLieuProperty"
-                          SelectedValue="{Binding idLieuEnchereProperty}" 
                           SelectedValuePath="idLieuProperty"
-                          
+                          SelectedValue="{Binding idLieuEnchereProperty}" 
                 />
                 
                 
