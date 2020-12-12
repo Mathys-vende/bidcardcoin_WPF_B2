@@ -4,7 +4,7 @@ using bidcardcoin_WPF_B2.ORM;
 
 namespace bidcardcoin_WPF_B2.CTRL
 {
-    public class LieuViewModel
+    public class LieuViewModel :INotifyPropertyChanged
     {
         private int idLieu;
         private string villeLieu;
@@ -13,14 +13,15 @@ namespace bidcardcoin_WPF_B2.CTRL
         private string departementLieu;
         
         
+        
         private string concat = "Ajouter ";
         public LieuViewModel() { }
 
-        public LieuViewModel(int id, string villeLieu, string adressLieu, int codePostalLieu, string departementLieu  )
+        public LieuViewModel(int id, string villeLieu, string adresseLieu, int codePostalLieu, string departementLieu  )
         {
             this.idLieu = id;
             this.villeLieuProperty = villeLieu;
-            this.adresseLieuProperty = adressLieu;
+            this.adresseLieuProperty = adresseLieu;
             this.codePostalLieuProperty = codePostalLieu;
             this.departementLieuProperty = departementLieu;
 

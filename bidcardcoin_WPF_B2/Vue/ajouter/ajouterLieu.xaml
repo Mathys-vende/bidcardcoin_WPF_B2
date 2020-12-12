@@ -11,13 +11,13 @@
             <StackPanel>
                 <Label Content="Ajouter Lieu" HorizontalAlignment="Center"></Label>
                 <Label Content="Ville"></Label>
-                <TextBox Name="villeTextBox" Text="{Binding VilleProperty, Mode=TwoWay}"  Height="20" />
+                <TextBox Name="villeTextBox" Text="{Binding villeLieuProperty, Mode=TwoWay}"  Height="20" />
                 <Label Content="Adresse"></Label>
-                <TextBox Name="adresseTextBox" Text="{Binding AdresseProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
+                <TextBox Name="adresseTextBox" Text="{Binding adresseLieuProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
                 <Label Content="Code Postal"></Label>
-                <TextBox Name ="codePostalTextBox" Text="{Binding CodePostalProperty, Mode=TwoWay}" />
+                <TextBox Name ="codePostalTextBox" Text="{Binding codePostalLieuProperty, Mode=TwoWay}" />
                 <Label Content="Departement"></Label>
-                <TextBox Name ="departementTextBox" Text="{Binding DepartementProperty, Mode=TwoWay}" />
+                <TextBox Name ="departementTextBox" Text="{Binding departementLieuProperty, Mode=TwoWay}" />
                 <Button Name="LieuButton" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31" Click="LieuButton_Click" ></Button>
                 <Button x:Name="Return"  Click="returnListLieu" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Retourner liste lieu" Width="100" Height="30" Padding="0">
                 </Button>

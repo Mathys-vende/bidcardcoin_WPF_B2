@@ -11,13 +11,13 @@ namespace bidcardcoin_WPF_B2.DAO
         public int codePostalLieuDAO;
         public string departementLieuDAO;
         
-        public LieuDAO(int idDAO, string villeLieuDAO, string adresseLieuDAO, int codePostalDao, string departementDao)
+        public LieuDAO(int idDAO, string villeLieuDAO, string adresseLieuDAO, int codePostalDAO, string departementDAO)
         {
             this.idLieuDAO = idDAO;
             this.villeLieuDAO = villeLieuDAO;
             this.adresseLieuDAO = adresseLieuDAO;
-            this.codePostalLieuDAO = codePostalDao;
-            this.departementLieuDAO = departementDao;
+            this.codePostalLieuDAO = codePostalDAO;
+            this.departementLieuDAO = departementDAO;
         }
 
         public static ObservableCollection<LieuDAO> listeLieu()
@@ -38,7 +38,7 @@ namespace bidcardcoin_WPF_B2.DAO
 
         public static void supprimerLieu(int id)
         {
-            LieuDAL.supprimerCategorie(id);
+            LieuDAL.supprimerLieu(id);
         }
 
         public static void insertLieu(LieuDAO p)
