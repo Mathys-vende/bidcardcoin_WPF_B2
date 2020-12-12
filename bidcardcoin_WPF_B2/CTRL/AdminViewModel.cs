@@ -10,7 +10,7 @@ namespace bidcardcoin_WPF_B2.CTRL
         private string nomAdmin;
         private string prenomAdmin;
         private string mailAdmin;
-        private int numeroTelAdmin;
+        private string numeroTelAdmin;
         private string motDePasseAdmin;
         private int ageAdmin;
         private int idLieuAdmin;
@@ -20,7 +20,7 @@ namespace bidcardcoin_WPF_B2.CTRL
         private string concat = "Ajouter ";
         public AdminViewModel() { }
 
-        public AdminViewModel(int idAdmin, string nomAdmin, string prenomAdmin, string mailAdmin, int numeroTelAdmin ,string  motDePasseAdmin, int ageAdmin, int idLieuAdmin)
+        public AdminViewModel(int idAdmin, string nomAdmin, string prenomAdmin, string mailAdmin, string numeroTelAdmin ,string  motDePasseAdmin, int ageAdmin, int idLieuAdmin)
         {
             this.idAdmin = idAdmin;
             this.nomAdmin = nomAdmin;
@@ -73,7 +73,7 @@ namespace bidcardcoin_WPF_B2.CTRL
                 OnPropertyChanged("mailAdminProperty");
             }
         }
-        public int numeroTelAdminProperty
+        public String numeroTelAdminProperty
         {
             get { return numeroTelAdmin; }
             set

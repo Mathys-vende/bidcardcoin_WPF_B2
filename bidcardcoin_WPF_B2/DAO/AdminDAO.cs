@@ -9,13 +9,13 @@ namespace bidcardcoin_WPF_B2.DAO
         public string nomAdminDAO;
         public string prenomAdminDAO;
         public string mailAdminDAO;
-        public int numeroTelAdminDAO;
+        public string numeroTelAdminDAO;
         public string motDePasseAdminDAO;
         public int ageAdminDAO;
         public int idLieuAdminDAO;
         
         
-        public AdminDAO(int idAdminDAO, string nomAdminDAO,string prenomAdminDAO, string mailAdminDAO, int numeroTelAdminDAO,string motDePasseAdminDAO, int ageAdminDAO, int idLieuAdminDAO)
+        public AdminDAO(int idAdminDAO, string nomAdminDAO,string prenomAdminDAO, string mailAdminDAO, string numeroTelAdminDAO,string motDePasseAdminDAO, int ageAdminDAO, int idLieuAdminDAO)
         {
             this.idAdminDAO = idAdminDAO;
             this.nomAdminDAO = nomAdminDAO;

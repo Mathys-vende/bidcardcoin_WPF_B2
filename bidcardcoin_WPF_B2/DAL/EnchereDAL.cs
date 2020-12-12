@@ -22,7 +22,7 @@ namespace bidcardcoin_WPF_B2.DAL
 
                 while (reader.Read())
                 {
-                    EnchereDAO p = new EnchereDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4)/*, reader.GetInt32(5)*/);
+                    EnchereDAO p = new EnchereDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4), reader.GetInt32(5));
                     l.Add(p);
                 }
             }
@@ -40,13 +40,13 @@ namespace bidcardcoin_WPF_B2.DAL
             cmd.ExecuteNonQuery();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            EnchereDAO cat = new EnchereDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4)/*, reader.GetInt32(5)*/);
+            EnchereDAO cat = new EnchereDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetInt32(4), reader.GetInt32(5));
             reader.Close();
             return cat;
         }
         public static void updateEnchere(EnchereDAO p)
         {
-            string query = "UPDATE enchere set nom=\"" + p.nomEnchereDAO + "\", heure=\"" + p.heureEnchereDAO + "\", dateVente=\"" + p.dateVenteEnchereDAO + "\", idLieu=\"" + p.idLieuEnchereDAO /*+ "\", idAdmin=\"" + p.idAdminEnchereDAO*/ +"\" where id=" + p.idEnchereDAO + ";";
+            string query = "UPDATE enchere set nom=\"" + p.nomEnchereDAO + "\", heure=\"" + p.heureEnchereDAO + "\", dateVente=\"" + p.dateVenteEnchereDAO + "\", idLieu=\"" + p.idLieuEnchereDAO + "\", idAdmin=\"" + p.idAdminEnchereDAO +"\" where id=" + p.idEnchereDAO + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
@@ -54,7 +54,7 @@ namespace bidcardcoin_WPF_B2.DAL
         public static void insertEnchere(EnchereDAO p)
         {
             int id = getMaxIdEnchere() + 1;
-            string query = "INSERT INTO enchere VALUES (\"" + id + "\",\"" + p.nomEnchereDAO + "\",\"" + p.heureEnchereDAO + "\",\"" + p.dateVenteEnchereDAO + "\",\"" + p.idLieuEnchereDAO /*+ "\",\"" + p.idAdminEnchereDAO*/ + "\");";
+            string query = "INSERT INTO enchere VALUES (\"" + id + "\",\"" + p.nomEnchereDAO + "\",\"" + p.heureEnchereDAO + "\",\"" + p.dateVenteEnchereDAO + "\",\"" + p.idLieuEnchereDAO + "\",\"" + p.idAdminEnchereDAO + "\");";
             MySqlCommand cmd2 = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();

@@ -17,12 +17,19 @@
                 <Label Content="Date Vente"></Label>
                 <TextBox Name ="dateVenteTextBox" Text="{Binding dateVenteEnchereProperty, Mode=TwoWay}" />
                 <Label Content="id Lieu"></Label>
+                
                 <!--<TextBox Name ="idLieuTextBox" Text="{Binding idLieuEnchereProperty, Mode=TwoWay}" />-->
                 
                 <ComboBox Name ="comboxBoxLieu" ItemsSource="{Binding  }"
                           DisplayMemberPath="adresseLieuProperty"
                           SelectedValuePath="idLieuProperty"
                           SelectedValue="{Binding idLieuEnchereProperty}" 
+                />
+                <Label Content="id Admin"></Label>
+                <ComboBox Name ="idAdminTextBox" ItemsSource="{Binding  }"
+                          DisplayMemberPath="nomAdminProperty"
+                          SelectedValuePath="idAdminProperty"
+                          SelectedValue="{Binding idAdminEnchereProperty}" 
                 />
                 
                 

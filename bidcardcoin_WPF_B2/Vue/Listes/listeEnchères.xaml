@@ -26,6 +26,8 @@
                                             Binding="{Binding dateVenteEnchereProperty, Mode=OneWay}" />
                         <DataGridTextColumn Header="id Lieu"
                                             Binding="{Binding idLieuEnchereProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="id Admin"
+                                            Binding="{Binding idAdminEnchereProperty, Mode=twoWay}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>

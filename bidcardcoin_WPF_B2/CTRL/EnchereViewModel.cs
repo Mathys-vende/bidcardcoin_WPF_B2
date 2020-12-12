@@ -11,19 +11,19 @@ namespace bidcardcoin_WPF_B2.CTRL
         private string heureEnchere;
         private string dateVenteEnchere;
         private int idLieuEnchere;
-        /*private int idAdminEnchere;*/
+        private int idAdminEnchere;
         
         private string concat = "Ajouter ";
         public EnchereViewModel() { }
 
-        public EnchereViewModel(int id, string nomEnchere, string heureEnchere, string dateVenteEnchere, int idLieuEnchere /*, int idAdminEnchere*/ )
+        public EnchereViewModel(int id, string nomEnchere, string heureEnchere, string dateVenteEnchere, int idLieuEnchere , int idAdminEnchere )
         {
             this.idEnchere = id;
             this.nomEnchereProperty = nomEnchere;
             this.heureEnchereProperty = heureEnchere;
             this.dateVenteEnchereProperty = dateVenteEnchere;
             this.idLieuEnchereProperty = idLieuEnchere;
-            /*this.idAdminEnchereProperty = idAdminEnchere;*/
+            this.idAdminEnchereProperty = idAdminEnchere;
 
         }
 
@@ -77,7 +77,7 @@ namespace bidcardcoin_WPF_B2.CTRL
                 OnPropertyChanged("idLieuEnchereProperty");
             }
         }
-        /*public int idAdminEnchereProperty
+        public int idAdminEnchereProperty
         {
             get { return idAdminEnchere; }
             set
@@ -86,7 +86,7 @@ namespace bidcardcoin_WPF_B2.CTRL
                 
                 OnPropertyChanged("idAdminEnchereProperty");
             }
-        }*/
+        }
         
         public event PropertyChangedEventHandler PropertyChanged;
 

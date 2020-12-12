@@ -5,22 +5,52 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="300">
     <Grid>
-        <Grid Name ="grigrid" Height="300" Margin="0,0,0.300,0" VerticalAlignment="Top">
+        <Grid Name ="grigrid" Height="600" Margin="0,0,0.300,0" VerticalAlignment="Top">
             <StackPanel>
                 <Label Content="Ajouter Admin" HorizontalAlignment="Center"></Label>
                 <Label Content="nom"></Label>
-                <TextBox Name="nomTextBox" Text="{Binding NomProperty, Mode=TwoWay}"  Height="20" />
+                <TextBox Name="nomTextBox" Text="{Binding nomAdminProperty, Mode=TwoWay}"  Height="20" />
                 <Label Content="prenom"></Label>
-                <TextBox Name="prenomTextBox" Text="{Binding PrenomProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
-                <Button x:Name="nomPrenomButton2" Content="{Binding ConcatProperty, Mode=OneWay}"  BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
+                <TextBox Name="prenomTextBox" Text="{Binding prenomAdminProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
+                <Label Content="mail"></Label>
+                <TextBox Name="mailTextBox" Text="{Binding mailAdminProperty, Mode=TwoWay}"  Height="20" />
+                <Label Content="numéro de téléphone"></Label>
+                <TextBox Name="numeroTelTextBox" Text="{Binding numeroTelAdminProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
+                <Label Content="Date Vente"></Label>
+                <TextBox Name ="dateVenteTextBox" Text="{Binding motDePasseAdminProperty, Mode=TwoWay}" />
+                <Label Content="Age"></Label>
+                <TextBox Name ="ageTextBox" Text="{Binding ageAdminProperty, Mode=TwoWay}" />
+                <Label Content="id Lieu"></Label>
+                <ComboBox Name ="comboxBoxLieu" ItemsSource="{Binding  }"
+                          DisplayMemberPath="adresseLieuProperty"
+                          SelectedValuePath="idLieuProperty"
+                          SelectedValue="{Binding idLieuAdminProperty}" 
+                />
+                
+                <Button Name="AdminButton" Click="AdminButton_Click" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
                 </Button>
-                <Label Content="Age : "></Label>
-                <TextBox Name ="txtAge" Text="{Binding AgeProperty, Mode=OneWay}" />
-                <Button x:Name="Ajouter"  Click="returnListAdmin" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Ajouter" Width="30" Height="30" Padding="0">
+                <Button x:Name="Ajouter"  Click="returnListAdmin" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Retourner à liste" Width="30" Height="30" Padding="0">
                 </Button>
             </StackPanel>
         </Grid>
+        <DataGrid Name="listeAdmin" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2" Visibility="Hidden"
+                  BorderBrush="Black" Background="#FFA4A4A4"
+                  Height="600" ColumnWidth="100"
+                  ScrollViewer.CanContentScroll="True"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding idAdminProperty, Mode=OneWay}" />
+                <DataGridTextColumn Header="nom" Binding="{Binding nomAdminProperty, Mode=OneWay}"/>
+                <DataGridTextColumn Header="prénom" Binding="{Binding prenomAdminProperty, Mode=TwoWay}" />
+                <DataGridTextColumn Header="metier" Binding="{Binding mailAdminProperty, Mode=OneWay}" />
+                <DataGridTextColumn Header="numéro de téléphone" Binding="{Binding numeroTelAdminProperty, Mode=twoWay}" />
+                <DataGridTextColumn Header="mot de passe" Binding="{Binding motDePasseAdminProperty, Mode=twoWay}" />
+                <DataGridTextColumn Header="Age" Binding="{Binding ageAdminProperty, Mode=twoWay}" />
+                <DataGridTextColumn Header="Id lieu" Binding="{Binding idLieuAdminProperty, Mode=twoWay}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

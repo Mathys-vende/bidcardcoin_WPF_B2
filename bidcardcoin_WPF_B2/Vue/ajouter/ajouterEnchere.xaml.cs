@@ -18,19 +18,23 @@ namespace bidcardcoin_WPF_B2.Vue
         int compteur = 0;
         
         private LieuViewModel myDataObjectLieu;
-
         public ObservableCollection<LieuViewModel> nomLieu;
+        
+        private AdminViewModel myDataObjectAdmin;
+        public ObservableCollection<AdminViewModel> nomAdmin;
         public ajouterEnchere()
         {
             InitializeComponent();
             
-            nomTextBox.Text = "test" ;
+            
             
             DALConnection.OpenConnection();
             
             loadEnchere();
             
             loadLieu();
+
+            loadAdmin();
 
             appliquerContexte();
             
@@ -43,6 +47,15 @@ namespace bidcardcoin_WPF_B2.Vue
             myDataObjectLieu = new LieuViewModel();
             //LIEN AVEC la VIEW
             comboxBoxLieu.ItemsSource = nomLieu; // bind de la liste avec la source, permettant le binding.*/
+            
+        }
+        
+        void loadAdmin()
+        {
+            nomAdmin = AdminORM.listeAdmin();
+            myDataObjectAdmin = new AdminViewModel();
+            //LIEN AVEC la VIEW
+            idAdminTextBox.ItemsSource = nomAdmin; // bind de la liste avec la source, permettant le binding.*/
             
         }
         
@@ -73,6 +86,7 @@ namespace bidcardcoin_WPF_B2.Vue
                 dateVenteTextBox.DataContext = myDataObjectEnchere;
                 /*idLieuTextBox.DataContext = myDataObjectEnchere;*/
                 comboxBoxLieu.DataContext = myDataObjectEnchere;
+                idAdminTextBox.DataContext = myDataObjectEnchere;
             
                 EnchereButton.DataContext = myDataObjectEnchere;
             }
@@ -90,7 +104,8 @@ namespace bidcardcoin_WPF_B2.Vue
             dateVenteTextBox.DataContext = myDataObjectEnchere;
             /*idLieuTextBox.DataContext = myDataObjectEnchere;*/
             comboxBoxLieu.DataContext = myDataObjectEnchere;
-            
+            idAdminTextBox.DataContext = myDataObjectEnchere;
+
         }
         
         private void returnListEnchere(object sender, RoutedEventArgs e)

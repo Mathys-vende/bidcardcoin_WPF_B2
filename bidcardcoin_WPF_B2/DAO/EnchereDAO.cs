@@ -10,16 +10,16 @@ namespace bidcardcoin_WPF_B2.DAO
         public string heureEnchereDAO;
         public string dateVenteEnchereDAO;
         public int idLieuEnchereDAO;
-        /*public int idAdminEnchereDAO;*/
+        public int idAdminEnchereDAO;
         
-        public EnchereDAO(int idDAO, string nomEnchere, string heureEnchere, string dateVenteDAO, int idLieuEnchere/*, int idAdminEnchere*/)
+        public EnchereDAO(int idDAO, string nomEnchere, string heureEnchere, string dateVenteDAO, int idLieuEnchere, int idAdminEnchere)
         {
             this.idEnchereDAO = idDAO;
             this.nomEnchereDAO = nomEnchere;
             this.heureEnchereDAO = heureEnchere;
             this.dateVenteEnchereDAO = dateVenteDAO;
             this.idLieuEnchereDAO = idLieuEnchere;
-            /*this.idAdminEnchereDAO = idAdminEnchere;*/
+            this.idAdminEnchereDAO = idAdminEnchere;
         }
 
         public static ObservableCollection<EnchereDAO> listeEnchere()
