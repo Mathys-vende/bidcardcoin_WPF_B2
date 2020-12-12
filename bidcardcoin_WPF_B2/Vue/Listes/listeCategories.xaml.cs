@@ -15,7 +15,8 @@ namespace bidcardcoin_WPF_B2.Vue
         CategorieViewModel myDataObject;
         ObservableCollection<CategorieViewModel> lp;
         int compteur = 0;
-  
+        
+
 
         public listeCategories()
         {

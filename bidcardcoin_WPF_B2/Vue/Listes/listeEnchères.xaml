@@ -17,7 +17,7 @@
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
-                    
+                   
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="id" Binding="{Binding idEnchereProperty, Mode=OneWay}" />
                         <DataGridTextColumn Header="Nom" Binding="{Binding nomEnchereProperty}" />
@@ -26,10 +26,10 @@
                                             Binding="{Binding dateVenteEnchereProperty, Mode=OneWay}" />
                         <DataGridTextColumn Header="id Lieu"
                                             Binding="{Binding idLieuEnchereProperty, Mode=twoWay}" />
-                        
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
+            
             <Button x:Name="supprimerButton" Click="supprEnchere" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
             <Button x:Name="Ajouter" Click="ajouterEnchere" HorizontalAlignment="Left" VerticalAlignment="Top"
                     Content="Ajouter" Width="30" Height="30" Padding="0" />

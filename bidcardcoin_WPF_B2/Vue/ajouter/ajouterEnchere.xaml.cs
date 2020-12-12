@@ -1,3 +1,4 @@
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
@@ -15,6 +16,10 @@ namespace bidcardcoin_WPF_B2.Vue
         EnchereViewModel myDataObjectEnchere;
         ObservableCollection<EnchereViewModel> c;
         int compteur = 0;
+        
+        private LieuViewModel myDataObjectLieu;
+
+        public ObservableCollection<LieuViewModel> nomLieu;
         public ajouterEnchere()
         {
             InitializeComponent();
@@ -24,8 +29,20 @@ namespace bidcardcoin_WPF_B2.Vue
             DALConnection.OpenConnection();
             
             loadEnchere();
+            
+            loadLieu();
 
             appliquerContexte();
+            
+            
+        }
+        
+        void loadLieu()
+        {
+            nomLieu = LieuORM.listeLieu();
+            myDataObjectLieu = new LieuViewModel();
+            //LIEN AVEC la VIEW
+            comboxBoxLieu.ItemsSource = nomLieu; // bind de la liste avec la source, permettant le binding.*/
             
         }
         
@@ -39,22 +56,30 @@ namespace bidcardcoin_WPF_B2.Vue
         
         private void EnchereButton_Click(object sender, RoutedEventArgs e)
         {
-            myDataObjectEnchere.idEnchereProperty = EnchereDAL.getMaxIdEnchere() + 1;
+            try
+            {
+                myDataObjectEnchere.idEnchereProperty = EnchereDAL.getMaxIdEnchere() + 1;
 
-            c.Add(myDataObjectEnchere);
-            EnchereORM.insertEnchere(myDataObjectEnchere);
-            compteur = c.Count();
+                c.Add(myDataObjectEnchere);
+                EnchereORM.insertEnchere(myDataObjectEnchere);
+                compteur = c.Count();
 
-            listeEncheres.Items.Refresh();
-            myDataObjectEnchere = new EnchereViewModel();
+                listeEncheres.Items.Refresh();
+                myDataObjectEnchere = new EnchereViewModel();
 
             
-            nomTextBox.DataContext = myDataObjectEnchere;
-            heureTextBox.DataContext = myDataObjectEnchere;
-            dateVenteTextBox.DataContext = myDataObjectEnchere;
-            idLieuTextBox.DataContext = myDataObjectEnchere;
-            idAdminTextBox.DataContext = myDataObjectEnchere;
-            EnchereButton.DataContext = myDataObjectEnchere;
+                nomTextBox.DataContext = myDataObjectEnchere;
+                heureTextBox.DataContext = myDataObjectEnchere;
+                dateVenteTextBox.DataContext = myDataObjectEnchere;
+                /*idLieuTextBox.DataContext = myDataObjectEnchere;*/
+                comboxBoxLieu.DataContext = myDataObjectEnchere;
+            
+                EnchereButton.DataContext = myDataObjectEnchere;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
         
         void appliquerContexte()
@@ -63,8 +88,9 @@ namespace bidcardcoin_WPF_B2.Vue
             nomTextBox.DataContext = myDataObjectEnchere;
             heureTextBox.DataContext = myDataObjectEnchere;
             dateVenteTextBox.DataContext = myDataObjectEnchere;
-            idLieuTextBox.DataContext = myDataObjectEnchere;
-            idAdminTextBox.DataContext = myDataObjectEnchere;
+            /*idLieuTextBox.DataContext = myDataObjectEnchere;*/
+            comboxBoxLieu.DataContext = myDataObjectEnchere;
+            
         }
         
         private void returnListEnchere(object sender, RoutedEventArgs e)

@@ -118,6 +118,7 @@
         <Compile Include="CTRL\CategorieViewModel.cs" />
         <Compile Include="CTRL\EnchereViewModel.cs" />
         <Compile Include="CTRL\LieuViewModel.cs" />
+        <Compile Include="DAL\AdminDAL.cs" />
         <Compile Include="DAL\CategorieDAL.cs" />
         <Compile Include="DAL\DALConnection.cs" />
         <Compile Include="DAL\EnchereDAL.cs" />

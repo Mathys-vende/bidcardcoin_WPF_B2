@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
@@ -14,9 +15,11 @@ namespace bidcardcoin_WPF_B2.Vue
         EnchereViewModel myDataObject;
         ObservableCollection<EnchereViewModel> lp;
 
-        private CategorieViewModel myDataObjectCategorie;
-        ObservableCollection<CategorieViewModel> ct;
-        
+        private LieuViewModel myDataObjectLieu;
+
+        public ObservableCollection<LieuViewModel> nomLieu;
+   
+
         int compteur = 0;
         public listeEnchères()
         {
@@ -24,10 +27,14 @@ namespace bidcardcoin_WPF_B2.Vue
             
             DALConnection.OpenConnection();
             
-            loadCategories();
+            loadEnchere();
+
+   
         }
         
-        void loadCategories()
+   
+        
+        void loadEnchere()
         {
             lp = EnchereORM.listeEnchere();
             myDataObject = new EnchereViewModel();

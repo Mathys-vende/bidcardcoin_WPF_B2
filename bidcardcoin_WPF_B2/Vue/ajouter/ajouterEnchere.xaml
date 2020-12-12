@@ -17,9 +17,16 @@
                 <Label Content="Date Vente"></Label>
                 <TextBox Name ="dateVenteTextBox" Text="{Binding dateVenteEnchereProperty, Mode=TwoWay}" />
                 <Label Content="id Lieu"></Label>
-                <TextBox Name ="idLieuTextBox" Text="{Binding idLieuEnchereProperty, Mode=TwoWay}" />
-                <Label Content="id Admin"></Label>
-                <TextBox Name ="idAdminTextBox" Text="{Binding idAdminEnchereProperty, Mode=TwoWay}" />
+                <!--<TextBox Name ="idLieuTextBox" Text="{Binding idLieuEnchereProperty, Mode=TwoWay}" />-->
+                
+                <ComboBox Name ="comboxBoxLieu" ItemsSource="{Binding  }"
+                          DisplayMemberPath="adresseLieuProperty"
+                          SelectedValue="{Binding idLieuEnchereProperty}" 
+                          SelectedValuePath="idLieuProperty"
+                          
+                />
+                
+                
                 <Button Name="EnchereButton" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31" Click="EnchereButton_Click" >
                 </Button>
                 
