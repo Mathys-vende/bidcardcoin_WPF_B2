@@ -20,12 +20,16 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding idProduitProperty, Mode=OneWay}" Width="30" />
                         <DataGridTextColumn Header="Estimation" Binding="{Binding estimationProduitProperty}" Width="75"/>
-                        <DataGridTextColumn Header="Prix" Binding="{Binding prixProduitProperty, Mode=TwoWay}" Width="50" />
+                        <DataGridTextColumn Header="PrixVente" Binding="{Binding prixVenteProduitProperty, Mode=TwoWay}" Width="50" />
                         <DataGridTextColumn Header="Nom" Binding="{Binding nomProduitProperty, Mode=TwoWay}" Width="150"/>
                         <DataGridTextColumn Header="Description" Binding="{Binding descriptionProduitProperty, Mode=TwoWay}" Width="250"/>
                         <DataGridTextColumn Header="Artiste" Binding="{Binding artisteProduitProperty, Mode=TwoWay}" Width="100"/>
                         <DataGridTextColumn Header="Style" Binding="{Binding styleProduitProperty, Mode=TwoWay}" Width="100"/>
-                        <DataGridTextColumn Header="Vendu" Binding="{Binding venduProduitProperty, Mode=TwoWay}" Width="50"/>
+                        <DataGridTextColumn Header="IDPhoto" Binding="{Binding idLotProduitProperty, Mode=TwoWay}" Width="50"/>
+                        <DataGridTextColumn Header="IDCategorie" Binding="{Binding idPhotoProduitProperty, Mode=TwoWay}" Width="50"/>
+                        <DataGridTextColumn Header="IDAcheteur" Binding="{Binding idAcheteurProduitProperty, Mode=TwoWay}" Width="50"/>
+                        <DataGridTextColumn Header="IDVendeur" Binding="{Binding idVendeurProduitProperty, Mode=TwoWay}" Width="50"/>
+
                         <!--<DataGridTextColumn Header="ID-Categorie" Binding="{Binding prenomPersonneProperty, Mode=TwoWay}" />
                         <DataGridTextColumn Header="ID-Lot" Binding="{Binding prenomPersonneProperty, Mode=TwoWay}" />
                         <DataGridTextColumn Header="ID-Photo" Binding="{Binding prenomPersonneProperty, Mode=TwoWay}" />-->

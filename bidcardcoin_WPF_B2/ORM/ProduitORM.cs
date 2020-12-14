@@ -16,7 +16,7 @@ namespace bidcardcoin_WPF_B2.ORM
             //todo finir l'ORM pour produit
             ProduitDAO pDAO = ProduitDAO.getProduit(idProduit);
             ProduitViewModel p = new ProduitViewModel(pDAO.idProduitDAO, pDAO.estimationProduitDAO, pDAO.prixVenteProduitDAO, pDAO.nomProduitDAO, pDAO.descriptionProduitDAO,
-            pDAO.artisteProduitDAO, pDAO.styleProduitDAO, pDAO.idPhotoProduitDAO, pDAO.idCategorieProduitDAO, pDAO.idLotProduitDAO, pDAO.idAcheteurProduitDAO, pDAO.idVendeurProduitDAO);
+            pDAO.artisteProduitDAO, pDAO.styleProduitDAO, pDAO.idLotProduitDAO, pDAO.idPhotoProduitDAO, pDAO.idAcheteurProduitDAO, pDAO.idVendeurProduitDAO);
             return p;
         }
 
@@ -28,7 +28,7 @@ namespace bidcardcoin_WPF_B2.ORM
             {
 
                 ProduitViewModel p = new ProduitViewModel(element.idProduitDAO, element.estimationProduitDAO, element.prixVenteProduitDAO, element.nomProduitDAO, element.descriptionProduitDAO,
-                element.artisteProduitDAO, element.styleProduitDAO, element.idPhotoProduitDAO, element.idCategorieProduitDAO, element.idLotProduitDAO, element.idAcheteurProduitDAO, element.idVendeurProduitDAO);
+                element.artisteProduitDAO, element.styleProduitDAO, element.idLotProduitDAO, element.idPhotoProduitDAO, element.idAcheteurProduitDAO, element.idVendeurProduitDAO);
                 l.Add(p);
             }
             return l;
@@ -38,7 +38,7 @@ namespace bidcardcoin_WPF_B2.ORM
         public static void updateProduit(ProduitViewModel p)
         {
             ProduitDAO.updateProduit(new ProduitDAO(p.idProduitProperty, p.estimationProduitProperty, p.prixVenteProduitProperty, p.nomProduitProperty, p.descriptionProduitProperty,
-                p.artisteProduitProperty, p.styleProduitProperty, p.idPhotoProduitProperty, p.idCategorieProduitProperty, p.idLotProduitProperty, p.idAcheteurProduitProperty, p.idVendeurProduitProperty));
+                p.artisteProduitProperty, p.styleProduitProperty, p.idLotProduitProperty, p.idPhotoProduitProperty, p.idAcheteurProduitProperty, p.idVendeurProduitProperty));
         }
 
         public static void supprimerProduit(int id)
@@ -49,7 +49,7 @@ namespace bidcardcoin_WPF_B2.ORM
         public static void insertProduit(ProduitViewModel p)
         {
             ProduitDAO.insertProduit(new ProduitDAO(p.idProduitProperty, p.estimationProduitProperty, p.prixVenteProduitProperty, p.nomProduitProperty, p.descriptionProduitProperty,
-                p.artisteProduitProperty, p.styleProduitProperty, p.idPhotoProduitProperty, p.idCategorieProduitProperty, p.idLotProduitProperty, p.idAcheteurProduitProperty, p.idVendeurProduitProperty));
+                p.artisteProduitProperty, p.styleProduitProperty, p.idLotProduitProperty, p.idPhotoProduitProperty, p.idAcheteurProduitProperty, p.idVendeurProduitProperty));
         }
 
     }

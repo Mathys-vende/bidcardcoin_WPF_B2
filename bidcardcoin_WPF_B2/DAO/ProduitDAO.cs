@@ -11,8 +11,8 @@ namespace bidcardcoin_WPF_B2.DAO
     class ProduitDAO
     {
         public int idProduitDAO;
-        public int estimationProduitDAO;
-        public int prixVenteProduitDAO;
+        public float estimationProduitDAO;
+        public float prixVenteProduitDAO;
 
         public string nomProduitDAO;
         public string descriptionProduitDAO;
@@ -21,14 +21,15 @@ namespace bidcardcoin_WPF_B2.DAO
 
 
         public int idPhotoProduitDAO;
-        public int idCategorieProduitDAO;
+        //public int idCategorieProduitDAO;
         public int idLotProduitDAO;
         public int idAcheteurProduitDAO;
         public int idVendeurProduitDAO;
 
+        public ProduitDAO() { }
 
-        public ProduitDAO(int idDAO, int estimationProduitDAO, int prixVenteProduitDAO, string nomProduitDAO, string descriptionProduitDAO,
-            string artisteProduitDAO, string styleProduitDAO, int idPhotoProduitDAO, int idCategorieProduitDAO, int idLotProduitDAO, int idAcheteurProduitDAO, int idVendeurProduitDAO)
+        public ProduitDAO(int idDAO, float estimationProduitDAO, float prixVenteProduitDAO, string nomProduitDAO, string descriptionProduitDAO,
+            string artisteProduitDAO, string styleProduitDAO, int idLotProduitDAO, int idPhotoProduitDAO, int idAcheteurProduitDAO, int idVendeurProduitDAO)
         {
             this.idProduitDAO = idDAO;
             this.estimationProduitDAO = estimationProduitDAO;
@@ -37,9 +38,9 @@ namespace bidcardcoin_WPF_B2.DAO
             this.descriptionProduitDAO = descriptionProduitDAO;
             this.styleProduitDAO = styleProduitDAO;
             this.artisteProduitDAO = artisteProduitDAO;
-            this.idPhotoProduitDAO = idPhotoProduitDAO;
-            this.idCategorieProduitDAO = idCategorieProduitDAO;
+            //this.idCategorieProduitDAO = idCategorieProduitDAO;
             this.idLotProduitDAO = idLotProduitDAO;
+            this.idPhotoProduitDAO = idPhotoProduitDAO;
             this.idAcheteurProduitDAO = idAcheteurProduitDAO;
             this.idVendeurProduitDAO = idVendeurProduitDAO;
         }

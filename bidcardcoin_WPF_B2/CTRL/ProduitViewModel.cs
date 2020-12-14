@@ -11,19 +11,20 @@ namespace bidcardcoin_WPF_B2.CTRL
     class ProduitViewModel
     {
         private int idProduit;
-        private int estimationProduit;
-        private int prixVenteProduit;
+        private float estimationProduit;
+        private float prixVenteProduit;
         private string nomProduit;
         private string descriptionProduit;
         private string artisteProduit;
         private string styleProduit;
         private int idPhotoProduit;
-        private int idCategorieProduit;
+        //private int idCategorieProduit;
         private int idLotProduit;
         private int idAcheteurProduit;
         private int idVendeurProduit;
 
-        public ProduitViewModel(int idProduitDAO, int estimationProduitDAO, int prixVenteProduitDAO, string nomProduitDAO, string descriptionProduitDAO, string artisteProduitDAO, string styleProduitDAO, int idPhotoProduitDAO, int idCategorieProduitDAO, int idLotProduitDAO, int idAcheteurProduitDAO, int idVendeurProduitDAO)
+        public ProduitViewModel() { }
+        public ProduitViewModel(int idProduitDAO, float estimationProduitDAO, float prixVenteProduitDAO, string nomProduitDAO, string descriptionProduitDAO, string artisteProduitDAO, string styleProduitDAO, int idLotProduitDAO, int idPhotoProduitDAO, int idAcheteurProduitDAO, int idVendeurProduitDAO)
         {
             this.idProduit = idProduitDAO;
             this.estimationProduit = estimationProduitDAO;
@@ -33,7 +34,7 @@ namespace bidcardcoin_WPF_B2.CTRL
             this.artisteProduit = artisteProduitDAO;
             this.styleProduit = styleProduitDAO;
             this.idPhotoProduit = idPhotoProduitDAO;
-            this.idCategorieProduit = idCategorieProduitDAO;
+            //this.idCategorieProduit = idCategorieProduitDAO;
             this.idLotProduit = idLotProduitDAO;
             this.idAcheteurProduit = idAcheteurProduitDAO;
             this.idVendeurProduit = idVendeurProduitDAO;
@@ -46,7 +47,7 @@ namespace bidcardcoin_WPF_B2.CTRL
                 idProduit = value;
             }
         }
-        public int estimationProduitProperty
+        public float estimationProduitProperty
         {
             get { return estimationProduit; }
             set
@@ -57,7 +58,7 @@ namespace bidcardcoin_WPF_B2.CTRL
 
             }
         }
-        public int prixVenteProduitProperty
+        public float prixVenteProduitProperty
         {
             get { return prixVenteProduit; }
             set
@@ -112,28 +113,6 @@ namespace bidcardcoin_WPF_B2.CTRL
 
             }
         }
-        public int idPhotoProduitProperty
-        {
-            get { return idPhotoProduit; }
-            set
-            {
-                idPhotoProduit = value;
-
-                OnPropertyChanged("idPhotoProduitProperty");
-
-            }
-        }
-        public int idCategorieProduitProperty
-        {
-            get { return idCategorieProduit; }
-            set
-            {
-                idCategorieProduit = value;
-
-                OnPropertyChanged("idCategoryProduitProperty");
-
-            }
-        }
         public int idLotProduitProperty
         {
             get { return idLotProduit; }
@@ -145,6 +124,28 @@ namespace bidcardcoin_WPF_B2.CTRL
 
             }
         }
+        public int idPhotoProduitProperty
+        {
+            get { return idPhotoProduit; }
+            set
+            {
+                idPhotoProduit = value;
+
+                OnPropertyChanged("idPhotoProduitProperty");
+
+            }
+        }
+       /* public int idCategorieProduitProperty
+        {
+            get { return idCategorieProduit; }
+            set
+            {
+                idCategorieProduit = value;
+
+                OnPropertyChanged("idCategoryProduitProperty");
+
+            }
+        }*/
         public int idAcheteurProduitProperty
         {
             get { return idAcheteurProduit; }
