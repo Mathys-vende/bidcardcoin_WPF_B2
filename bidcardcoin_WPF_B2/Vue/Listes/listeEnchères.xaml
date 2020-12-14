@@ -10,24 +10,29 @@
         <StackPanel>
             <Label Content="Liste Enchère" HorizontalAlignment="Center"></Label>
             <Grid Margin="10">
-                <DataGrid Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
+                <DataGrid Name="listeEncheres" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
+                          SelectionChanged="listeEnchere_SelectionChanged"
                           BorderBrush="Black" Background="#FFA4A4A4"
                           Height="600" ColumnWidth="100"
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                   
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id" Binding="{Binding idPersonneProperty, Mode=OneWay}" />
-                        <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty}" />
-                        <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty, Mode=TwoWay}" />
-                        <DataGridTextColumn Header="metier"
-                                            Binding="{Binding MetierPersonneProperty.LibMetier, Mode=OneWay}" />
-                        <DataGridTextColumn Header="date Naissance"
-                                            Binding="{Binding DateNaisPersonneProperty, StringFormat={}{0:dd/MM/yyyy}, Mode=twoWay}" />
+                        <DataGridTextColumn Header="id" Binding="{Binding idEnchereProperty, Mode=OneWay}" />
+                        <DataGridTextColumn Header="Nom" Binding="{Binding nomEnchereProperty}" />
+                        <DataGridTextColumn Header="Heure" Binding="{Binding heureEnchereProperty, Mode=TwoWay}" />
+                        <DataGridTextColumn Header="Date Vente"
+                                            Binding="{Binding dateVenteEnchereProperty, Mode=OneWay}" />
+                        <DataGridTextColumn Header="id Lieu"
+                                            Binding="{Binding idLieuEnchereProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="id Admin"
+                                            Binding="{Binding idAdminEnchereProperty, Mode=twoWay}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
-            <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
+            
+            <Button x:Name="supprimerButton" Click="supprEnchere" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
             <Button x:Name="Ajouter" Click="ajouterEnchere" HorizontalAlignment="Left" VerticalAlignment="Top"
                     Content="Ajouter" Width="30" Height="30" Padding="0" />
         </StackPanel>

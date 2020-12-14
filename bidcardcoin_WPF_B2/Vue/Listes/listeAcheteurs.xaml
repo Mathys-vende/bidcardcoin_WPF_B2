@@ -10,24 +10,29 @@
         <StackPanel>
             <Label Content="Liste Acheteurs" HorizontalAlignment="Center"></Label>
             <Grid Margin="10">
-                <DataGrid Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
+                <DataGrid Name="listeAcheteur" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
+                          SelectionChanged="listeAcheteur_SelectionChanged"
                           BorderBrush="Black" Background="#FFA4A4A4"
                           Height="600" ColumnWidth="100"
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id" Binding="{Binding idPersonneProperty, Mode=OneWay}" />
-                        <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty}" />
-                        <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty, Mode=TwoWay}" />
-                        <DataGridTextColumn Header="metier"
-                                            Binding="{Binding MetierPersonneProperty.LibMetier, Mode=OneWay}" />
-                        <DataGridTextColumn Header="date Naissance"
-                                            Binding="{Binding DateNaisPersonneProperty, StringFormat={}{0:dd/MM/yyyy}, Mode=twoWay}" />
+                        <DataGridTextColumn Header="id acheteur" Binding="{Binding idAcheteurProperty }" />
+                        <DataGridTextColumn Header="solde acheteur" Binding="{Binding soldeAcheteurProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="Solvabilité (true/false)" Binding="{Binding isSolvableAcheteurProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="identité vérifier" Binding="{Binding identiteAcheteurProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="moyen de paiment" Binding="{Binding moyenPaiementAcheteurProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="nom de l'acheteur" Binding="{Binding nomAcheteurProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="prénom de l'acheteur" Binding="{Binding prenomAcheteurProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="mail " Binding="{Binding mailAcheteurProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="numéro de téléphone" Binding="{Binding numeroTelAcheteurProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="motDePasse " Binding="{Binding motDePasseAcheteurProperty, Mode=twoWay}" />
+                    <!-- Add Column -->
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
-            <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
+            <Button x:Name="supprimerButton" Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
             <Button x:Name="Ajouter" Click="ajouterAcheteur" HorizontalAlignment="Left" VerticalAlignment="Top"
                     Content="Ajouter" Width="30" Height="30" Padding="0" />
         </StackPanel>

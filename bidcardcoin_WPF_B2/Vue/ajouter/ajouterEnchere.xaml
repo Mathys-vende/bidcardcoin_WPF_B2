@@ -9,18 +9,53 @@
     <Grid>
         <Grid Name ="grigrid" Height="300" Margin="0,0,0.300,0" VerticalAlignment="Top">
             <StackPanel>
-                <Label Content="Ajouter Enchère" HorizontalAlignment="Center"></Label>
+                <Label Content="Ajouter Enchere" HorizontalAlignment="Center"></Label>
                 <Label Content="nom"></Label>
-                <TextBox Name="nomTextBox" Text="{Binding NomProperty, Mode=TwoWay}"  Height="20" />
-                <Label Content="prenom"></Label>
-                <TextBox Name="prenomTextBox" Text="{Binding PrenomProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
-                <Button x:Name="nomPrenomButton2" Content="{Binding ConcatProperty, Mode=OneWay}"  BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
+                <TextBox Name="nomTextBox" Text="{Binding nomEnchereProperty, Mode=TwoWay}"  Height="20" />
+                <Label Content="heure"></Label>
+                <TextBox Name="heureTextBox" Text="{Binding heureEnchereProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
+                <Label Content="Date Vente"></Label>
+                <TextBox Name ="dateVenteTextBox" Text="{Binding dateVenteEnchereProperty, Mode=TwoWay}" />
+                <Label Content="id Lieu"></Label>
+                
+                <!--<TextBox Name ="idLieuTextBox" Text="{Binding idLieuEnchereProperty, Mode=TwoWay}" />-->
+                
+                <ComboBox Name ="comboxBoxLieu" ItemsSource="{Binding  }"
+                          DisplayMemberPath="adresseLieuProperty"
+                          SelectedValuePath="idLieuProperty"
+                          SelectedValue="{Binding idLieuEnchereProperty}" 
+                />
+                <Label Content="id Admin"></Label>
+                <ComboBox Name ="idAdmincomboBox" ItemsSource="{Binding  }"
+                          DisplayMemberPath="nomAdminProperty"
+                          SelectedValuePath="idAdminProperty"
+                          SelectedValue="{Binding idAdminEnchereProperty}" 
+                />
+                
+                
+                <Button Name="EnchereButton" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31" Click="EnchereButton_Click" >
                 </Button>
-                <Label Content="Age : "></Label>
-                <TextBox Name ="txtAge" Text="{Binding AgeProperty, Mode=OneWay}" />
-                <Button x:Name="Ajouter"  Click="returnListEnchere" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Ajouter" Width="30" Height="30" Padding="0">
-                </Button>
+                
             </StackPanel>
         </Grid>
+        <DataGrid Name="listeEncheres" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2" Visibility="Hidden"
+                  
+                  BorderBrush="Black" Background="#FFA4A4A4"
+                  Height="600" ColumnWidth="100"
+                  ScrollViewer.CanContentScroll="True"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding idEnchereProperty, Mode=OneWay}" />
+                <DataGridTextColumn Header="Nom" Binding="{Binding nomEnchereProperty}" />
+                <DataGridTextColumn Header="Heure" Binding="{Binding heureEnchereProperty, Mode=TwoWay}" />
+                <DataGridTextColumn Header="Date Vente"
+                                    Binding="{Binding dateVenteEnchereProperty, Mode=OneWay}" />
+                <DataGridTextColumn Header="id Lieu"
+                                    Binding="{Binding idLieuEnchereProperty, Mode=twoWay}" />
+                <DataGridTextColumn Header="id Admin"
+                                    Binding="{Binding idAdminEnchereProperty, Mode=twoWay}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

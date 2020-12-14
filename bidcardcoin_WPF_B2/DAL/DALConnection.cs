@@ -1,9 +1,9 @@
 using MySql.Data.MySqlClient;
 using System;
 
-namespace Solution
+namespace bidcardcoin_WPF_B2.DAL
 {
-    class ConnectionDAL
+    class DALConnection
     {
         private static string server;
         private static string database;

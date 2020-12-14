@@ -8,6 +8,8 @@ namespace bidcardcoin_WPF_B2
   /// </summary>
   public partial class MainWindow
   {
+
+
     public MainWindow()
     {
       InitializeComponent();

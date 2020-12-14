@@ -10,24 +10,26 @@
         <StackPanel>
             <Label Content="Liste Admins" HorizontalAlignment="Center"></Label>
             <Grid Margin="10">
-                <DataGrid Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
+                <DataGrid Name="listeAdmin" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
+                          SelectionChanged="listeAdmins_SelectionChanged"
                           BorderBrush="Black" Background="#FFA4A4A4"
                           Height="600" ColumnWidth="100"
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id" Binding="{Binding idPersonneProperty, Mode=OneWay}" />
-                        <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty}" />
-                        <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty, Mode=TwoWay}" />
-                        <DataGridTextColumn Header="metier"
-                                            Binding="{Binding MetierPersonneProperty.LibMetier, Mode=OneWay}" />
-                        <DataGridTextColumn Header="date Naissance"
-                                            Binding="{Binding DateNaisPersonneProperty, StringFormat={}{0:dd/MM/yyyy}, Mode=twoWay}" />
+                        <DataGridTextColumn Header="id" Binding="{Binding idAdminProperty, Mode=OneWay}" />
+                        <DataGridTextColumn Header="nom" Binding="{Binding nomAdminProperty}" />
+                        <DataGridTextColumn Header="prénom" Binding="{Binding prenomAdminProperty, Mode=TwoWay}" />
+                        <DataGridTextColumn Header="metier" Binding="{Binding mailAdminProperty, Mode=OneWay}" />
+                        <DataGridTextColumn Header="numéro de téléphone" Binding="{Binding numeroTelAdminProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="mot de passe" Binding="{Binding motDePasseAdminProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="Age" Binding="{Binding ageAdminProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="Id lieu" Binding="{Binding idLieuAdminProperty, Mode=twoWay}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
-            <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
+            <Button x:Name="supprimerButton" Click="SupprButton"  Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
             <Button x:Name="Ajouter" Click="ajouterAdmin" HorizontalAlignment="Left" VerticalAlignment="Top"
                     Content="Ajouter" Width="30" Height="30" Padding="0" />
         </StackPanel>
