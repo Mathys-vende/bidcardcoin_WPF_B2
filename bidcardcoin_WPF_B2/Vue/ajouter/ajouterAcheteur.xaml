@@ -5,21 +5,40 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="300">
     <Grid>
-        <Grid Name ="grigrid" Height="300" Margin="0,0,0.300,0" VerticalAlignment="Top">
+        <Grid Name="grigrid" Height="600" Margin="0,0,0.300,0" VerticalAlignment="Top">
             <StackPanel>
-                <Label Content="Ajouter Acheteur" HorizontalAlignment="Center"></Label>
-                <Label Content="nom"></Label>
-                <TextBox Name="nomTextBox" Text="{Binding NomProperty, Mode=TwoWay}"  Height="20" />
-                <Label Content="prenom"></Label>
-                <TextBox Name="prenomTextBox" Text="{Binding PrenomProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
-                <Button x:Name="nomPrenomButton2" Content="{Binding ConcatProperty, Mode=OneWay}"  BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
-                </Button>
-                <Label Content="Age : "></Label>
-                <TextBox Name ="txtAge" Text="{Binding AgeProperty, Mode=OneWay}" />
-                <Button x:Name="Ajouter"  Click="returnListAcheteur" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Ajouter" Width="30" Height="30" Padding="0">
-                </Button>
+                <Label Content="Ajouter Vendeur" HorizontalAlignment="Center" />
+                <Label Content="Solde" />
+                <TextBox Name="soldeTextBox" Text="{Binding soldeAcheteurProperty, Mode=TwoWay}" Height="20" />
+                <Label Content="Solvabilité" />
+                <TextBox Name="isSolvableTextBox" Text="{Binding isSolvableAcheteurProperty, Mode=TwoWay}" Height="20" />
+                <!--<ComboBox Name="idEnchereComboBox" ItemsSource="{Binding  }"
+                          SelectedValue="{Binding isSolvableAcheteurProperty}" >
+                    <ComboBoxItem>1</ComboBoxItem>
+                    <ComboBoxItem>0</ComboBoxItem>
+                </ComboBox>-->
+                <Label Content="identité vérifié" />
+                <TextBox Name="vérifIdentitéTextBox" Text="{Binding identiteAcheteurProperty, Mode=TwoWay}" Height="20" />
+                <Label Content="moyen de paiment" />
+                <TextBox Name="moyenDePaiementTextBox" Text="{Binding moyenPaiementAcheteurProperty, Mode=TwoWay}" Height="20" Margin="0,0,0.300,0" />
+ 
+                <Label Content="Personne" />
+                
+                <ComboBox Name ="comboxBoxPersonne" ItemsSource="{Binding  }"
+                          DisplayMemberPath="nomPersonneProperty"
+                          SelectedValuePath="idPersonneProperty"
+                          SelectedValue="{Binding idPersonneAcheteurProperty}" 
+                />
+                
+                
+                
+                <Button Name="AdminButton" Click="AcheteurButton_Click" Content="Ajouter" BorderBrush="#FF545454"
+                        BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right"
+                        Width="427" RenderTransformOrigin="0.5,2.31" />
+                <Button x:Name="Ajouter" Click="returnListAcheteur" HorizontalAlignment="Left" VerticalAlignment="Top"
+                        Content="Retourner à liste" Width="30" Height="30" Padding="0" />
             </StackPanel>
         </Grid>
     </Grid>

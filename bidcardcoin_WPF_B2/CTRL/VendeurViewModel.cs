@@ -23,7 +23,7 @@ namespace bidcardcoin_WPF_B2.CTRL
 
         public VendeurViewModel(int id, int idPersonne,int iDPeronneDAO,string nomVendeurDAO, string prenomVendeurDAO,string mailVendeurDAO, string numeroTelVendeurDAO,string motDePasseVendeurDAO, string adresseVendeurDAO,int codePostalVendeurDAO, int ageVendeurDAO )
         {
-            this.idVendeur = id;
+            this.idVendeurProperty = id;
             this.idPersonneProperty = idPersonne;
             this.idPeronneProperty = iDPeronneDAO;
             this.nomVendeurProperty = nomVendeurDAO;
@@ -53,7 +53,7 @@ namespace bidcardcoin_WPF_B2.CTRL
             {
                 idPersonne = value;
                 
-                OnPropertyChanged("nomVendeurProperty");
+                OnPropertyChanged("idPersonneProperty");
                
             }
         }
@@ -63,6 +63,7 @@ namespace bidcardcoin_WPF_B2.CTRL
             set
             {
                 iDPeronne = value;
+                OnPropertyChanged("idPeronneProperty");
             }
         }
         public String nomVendeurProperty
@@ -71,6 +72,7 @@ namespace bidcardcoin_WPF_B2.CTRL
             set
             {
                 nomVendeur = value;
+                OnPropertyChanged("nomVendeurProperty");
             }
         }
         public String  prenomVendeurProperty
@@ -79,6 +81,7 @@ namespace bidcardcoin_WPF_B2.CTRL
             set
             {
                 prenomVendeur = value;
+                OnPropertyChanged("prenomVendeurProperty");
             }
         }
         public String  mailVendeurProperty
@@ -87,6 +90,7 @@ namespace bidcardcoin_WPF_B2.CTRL
             set
             {
                 mailVendeur = value;
+                OnPropertyChanged("mailVendeurProperty");
             }
         }
         public String  numeroTelVendeurProperty
@@ -95,6 +99,7 @@ namespace bidcardcoin_WPF_B2.CTRL
             set
             {
                 numeroTelVendeur = value;
+                OnPropertyChanged("numeroTelVendeurProperty");
             }
         }
         public String  motDePasseVendeurProperty
@@ -103,6 +108,7 @@ namespace bidcardcoin_WPF_B2.CTRL
             set
             {
                 motDePasseVendeur = value;
+                OnPropertyChanged("motDePasseVendeurProperty");
             }
         }
         public String  adresseVendeurProperty
@@ -111,6 +117,7 @@ namespace bidcardcoin_WPF_B2.CTRL
             set
             {
                 adresseVendeur = value;
+                OnPropertyChanged("adresseVendeurProperty");
             }
         }
         public int  codePostalVendeurProperty
@@ -119,6 +126,7 @@ namespace bidcardcoin_WPF_B2.CTRL
             set
             {
                 codePostalVendeur = value;
+                OnPropertyChanged("codePostalVendeurProperty");
             }
         }
         public int  ageVendeurProperty
@@ -127,6 +135,7 @@ namespace bidcardcoin_WPF_B2.CTRL
             set
             {
                 ageVendeur = value;
+                OnPropertyChanged("ageVendeurProperty");
             }
         }
        

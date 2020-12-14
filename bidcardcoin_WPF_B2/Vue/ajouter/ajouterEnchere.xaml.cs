@@ -69,8 +69,7 @@ namespace bidcardcoin_WPF_B2.Vue
         
         private void EnchereButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+            
                 myDataObjectEnchere.idEnchereProperty = EnchereDAL.getMaxIdEnchere() + 1;
 
                 c.Add(myDataObjectEnchere);
@@ -84,17 +83,13 @@ namespace bidcardcoin_WPF_B2.Vue
                 nomTextBox.DataContext = myDataObjectEnchere;
                 heureTextBox.DataContext = myDataObjectEnchere;
                 dateVenteTextBox.DataContext = myDataObjectEnchere;
-                /*idLieuTextBox.DataContext = myDataObjectEnchere;*/
                 comboxBoxLieu.DataContext = myDataObjectEnchere;
                 idAdmincomboBox.DataContext = myDataObjectEnchere;
             
                 EnchereButton.DataContext = myDataObjectEnchere;
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-        }
+            
+        
         
         void appliquerContexte()
         {

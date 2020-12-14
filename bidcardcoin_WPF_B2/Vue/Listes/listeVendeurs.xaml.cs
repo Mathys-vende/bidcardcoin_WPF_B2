@@ -25,7 +25,6 @@ namespace bidcardcoin_WPF_B2.Vue
             
             loadVendeur();
             
-            /*loadPersonne();*/
         }
         
         void loadVendeur()
