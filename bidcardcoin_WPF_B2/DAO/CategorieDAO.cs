@@ -5,7 +5,7 @@ namespace bidcardcoin_WPF_B2.DAO
 {
     public class CategorieDAO
     {
-        public int idCategorieDAO;
+            public int idCategorieDAO;
             public string nomCategorieDAO;
         
             public CategorieDAO(int idDAO, string nomCategorieDAO)

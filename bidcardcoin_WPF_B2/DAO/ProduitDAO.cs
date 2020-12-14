@@ -20,14 +20,15 @@ namespace bidcardcoin_WPF_B2.DAO
         public string styleProduitDAO;
 
 
-        public int isVenduProduitDAO;
+        public int idPhotoProduitDAO;
         public int idCategorieProduitDAO;
         public int idLotProduitDAO;
-        public int idPhotoProduitDAO;
+        public int idAcheteurProduitDAO;
+        public int idVendeurProduitDAO;
 
 
         public ProduitDAO(int idDAO, int estimationProduitDAO, int prixVenteProduitDAO, string nomProduitDAO, string descriptionProduitDAO,
-            string artisteProduitDAO, string styleProduitDAO, int isVenduProduitDAO, int idCategorieProduitDAO, int idLotProduitDAO, int idPhotoProduitDAO)
+            string artisteProduitDAO, string styleProduitDAO, int idPhotoProduitDAO, int idCategorieProduitDAO, int idLotProduitDAO, int idAcheteurProduitDAO, int idVendeurProduitDAO)
         {
             this.idProduitDAO = idDAO;
             this.estimationProduitDAO = estimationProduitDAO;
@@ -36,11 +37,11 @@ namespace bidcardcoin_WPF_B2.DAO
             this.descriptionProduitDAO = descriptionProduitDAO;
             this.styleProduitDAO = styleProduitDAO;
             this.artisteProduitDAO = artisteProduitDAO;
-            this.isVenduProduitDAO = isVenduProduitDAO;
+            this.idPhotoProduitDAO = idPhotoProduitDAO;
             this.idCategorieProduitDAO = idCategorieProduitDAO;
             this.idLotProduitDAO = idLotProduitDAO;
-            this.idPhotoProduitDAO = idPhotoProduitDAO;
-
+            this.idAcheteurProduitDAO = idAcheteurProduitDAO;
+            this.idVendeurProduitDAO = idVendeurProduitDAO;
         }
 
         public static ObservableCollection<ProduitDAO> listeProduit()
@@ -70,4 +71,4 @@ namespace bidcardcoin_WPF_B2.DAO
         }
     }
 }
-}
+

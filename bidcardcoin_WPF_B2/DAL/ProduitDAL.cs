@@ -31,7 +31,7 @@ namespace bidcardcoin_WPF_B2.DAL
 
                 while (reader.Read())
                 {
-                    ProduitDAO p = new ProduitDAO(reader.GetInt32(0), reader.GetInt32(0), reader.GetInt32(0), reader.GetString(1), reader.GetString(1), reader.GetString(1), reader.GetString(1), reader.GetInt32(0), reader.GetInt32(0), reader.GetInt32(0), reader.GetInt32(0));
+                    ProduitDAO p = new ProduitDAO(reader.GetInt32(0), reader.GetInt32(0), reader.GetInt32(0), reader.GetString(1), reader.GetString(1), reader.GetString(1), reader.GetString(1), reader.GetInt32(0), reader.GetInt32(0), reader.GetInt32(0), reader.GetInt32(0), reader.GetInt32(0));
                     l.Add(p);
                 }
             }
@@ -49,15 +49,15 @@ namespace bidcardcoin_WPF_B2.DAL
             cmd.ExecuteNonQuery();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            ProduitDAO cat = new ProduitDAO(reader.GetInt32(0), reader.GetInt32(0), reader.GetInt32(0), reader.GetString(1), reader.GetString(1), reader.GetString(1), reader.GetString(1), reader.GetInt32(0), reader.GetInt32(0), reader.GetInt32(0), reader.GetInt32(0));
+            ProduitDAO cat = new ProduitDAO(reader.GetInt32(0), reader.GetInt32(0), reader.GetInt32(0), reader.GetString(1), reader.GetString(1), reader.GetString(1), reader.GetString(1), reader.GetInt32(0), reader.GetInt32(0), reader.GetInt32(0), reader.GetInt32(0), reader.GetInt32(0));
             reader.Close();
             return cat;
         }
         public static void updateProduit(ProduitDAO p)
         {
             string query = "UPDATE produit set estimationActuelle=\"" + p.estimationProduitDAO + "\", prixVente=\"" + p.prixVenteProduitDAO + "\", nom=\"" + p.nomProduitDAO
-                + "\", description=\"" + p.descriptionProduitDAO + "\", artiste=\"" + p.artisteProduitDAO + "\", style=\"" + p.styleProduitDAO + "\", isVendu=\"" + p.isVenduProduitDAO
-                + "\", idCategorie=\"" + p.idCategorieProduitDAO + "\", idLot=\"" + p.idLotProduitDAO + "\", idPhoto=\"" + p.idPhotoProduitDAO + "\" where id=" + p.idProduitDAO + ";";
+                + "\", description=\"" + p.descriptionProduitDAO + "\", artiste=\"" + p.artisteProduitDAO + "\", style=\"" + p.styleProduitDAO + "\", isVendu=\"" + p.idPhotoProduitDAO
+                + "\", idCategorie=\"" + p.idCategorieProduitDAO + "\", idLot=\"" + p.idLotProduitDAO + "\", idAcheteur=\"" + p.idAcheteurProduitDAO + "\", idVendeurProduit=\"" + p.idVendeurProduitDAO + "\" where id=" + p.idProduitDAO + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
@@ -66,8 +66,8 @@ namespace bidcardcoin_WPF_B2.DAL
         {
             int id = getMaxIdProduit() + 1;
             string query = "INSERT INTO produit VALUES (\"" + id + "\",\"" + p.estimationProduitDAO + "\"),\"" + p.prixVenteProduitDAO + "\"),\"" + p.nomProduitDAO + "\")" +
-                ",\"" + p.descriptionProduitDAO + "\"),\"" + p.artisteProduitDAO + "\"),\"" + p.styleProduitDAO + "\"),\"" + p.isVenduProduitDAO + "\"),\"" + p.idCategorieProduitDAO + "\")" +
-                ",\"" + p.idLotProduitDAO + "\"),\"" + p.idPhotoProduitDAO + "\"),\"" + p.idProduitDAO + "\");";
+                ",\"" + p.descriptionProduitDAO + "\"),\"" + p.artisteProduitDAO + "\"),\"" + p.styleProduitDAO + "\"),\"" + p.idPhotoProduitDAO + "\"),\"" + p.idCategorieProduitDAO + "\")" +
+                ",\"" + p.idLotProduitDAO + "\"),\"" + p.idAcheteurProduitDAO + "\"),\"" + p.idVendeurProduitDAO + "\"),\"" + p.idProduitDAO + "\");";
             MySqlCommand cmd2 = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();
