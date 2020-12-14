@@ -4,7 +4,7 @@ using bidcardcoin_WPF_B2.ORM;
 
 namespace bidcardcoin_WPF_B2.CTRL
 {
-    public class LotViewModel
+    public class LotViewModel : INotifyPropertyChanged
     {
         private int idLot;
         private string nomLot;

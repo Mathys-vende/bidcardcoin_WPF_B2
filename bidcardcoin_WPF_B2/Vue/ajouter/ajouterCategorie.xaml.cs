@@ -68,7 +68,7 @@ namespace bidcardcoin_WPF_B2.Vue
         void appliquerContexte()
         
         {
-            ((MainWindow)Application.Current.MainWindow).Close();
+            /*((MainWindow)Application.Current.MainWindow).Close();*/
                 // Lien avec les textbox
             nomCategorie.DataContext = myDataObjectCategorie;
         }

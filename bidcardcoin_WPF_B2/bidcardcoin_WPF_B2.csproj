@@ -115,6 +115,7 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Include="CTRL\AcheteurViewModel.cs" />
         <Compile Include="CTRL\AdminViewModel.cs" />
         <Compile Include="CTRL\CategorieViewModel.cs" />
         <Compile Include="CTRL\EnchereViewModel.cs" />
@@ -122,6 +123,7 @@
         <Compile Include="CTRL\LotViewModel.cs" />
         <Compile Include="CTRL\PersonneViewModel.cs" />
         <Compile Include="CTRL\VendeurViewModel.cs" />
+        <Compile Include="DAL\AcheteurDAL.cs" />
         <Compile Include="DAL\AdminDAL.cs" />
         <Compile Include="DAL\CategorieDAL.cs" />
         <Compile Include="DAL\DALConnection.cs" />
@@ -130,6 +132,7 @@
         <Compile Include="DAL\LotDAL.cs" />
         <Compile Include="DAL\PersonneDAL.cs" />
         <Compile Include="DAL\VendeurDAL.cs" />
+        <Compile Include="DAO\AcheteurDAO.cs" />
         <Compile Include="DAO\AdminDAO.cs" />
         <Compile Include="DAO\CategorieDAO.cs" />
         <Compile Include="DAO\EnchereDAO.cs" />
@@ -137,6 +140,7 @@
         <Compile Include="DAO\LotDAO.cs" />
         <Compile Include="DAO\PersonneDAO.cs" />
         <Compile Include="DAO\VendeurDAO.cs" />
+        <Compile Include="ORM\AcheteurORM.cs" />
         <Compile Include="ORM\AdminORM.cs" />
         <Compile Include="ORM\CategorieORM.cs" />
         <Compile Include="ORM\EnchereORM.cs" />
@@ -165,6 +169,9 @@
         <Compile Include="Vue\ajouter\ajouterLot.xaml.cs">
           <DependentUpon>ajouterLot.xaml</DependentUpon>
         </Compile>
+        <Compile Include="Vue\ajouter\ajouterPersonne.xaml.cs">
+          <DependentUpon>ajouterPersonne.xaml</DependentUpon>
+        </Compile>
         <Compile Include="Vue\ajouter\ajouterProduit.xaml.cs">
           <DependentUpon>ajouterProduit.xaml</DependentUpon>
         </Compile>
@@ -191,6 +198,9 @@
         </Compile>
         <Compile Include="Vue\Listes\listeLots.xaml.cs">
           <DependentUpon>listeLots.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Vue\Listes\listePersonnes.xaml.cs">
+          <DependentUpon>listePersonnes.xaml</DependentUpon>
         </Compile>
         <Compile Include="Vue\Listes\listeProduits.xaml.cs">
           <DependentUpon>listeProduits.xaml</DependentUpon>
@@ -229,6 +239,7 @@
       <Page Include="Vue\ajouter\ajouterEnchere.xaml" />
       <Page Include="Vue\ajouter\ajouterLieu.xaml" />
       <Page Include="Vue\ajouter\ajouterLot.xaml" />
+      <Page Include="Vue\ajouter\ajouterPersonne.xaml" />
       <Page Include="Vue\ajouter\ajouterProduit.xaml" />
       <Page Include="Vue\ajouter\ajouterVendeur.xaml" />
       <Page Include="Vue\ajouter\ordreAchat.xaml" />
@@ -238,6 +249,7 @@
       <Page Include="Vue\Listes\listeEnchères.xaml" />
       <Page Include="Vue\Listes\listeLieux.xaml" />
       <Page Include="Vue\Listes\listeLots.xaml" />
+      <Page Include="Vue\Listes\listePersonnes.xaml" />
       <Page Include="Vue\Listes\listeProduits.xaml" />
       <Page Include="Vue\Listes\listeVendeurs.xaml" />
       <Page Include="Vue\MainWindow.xaml">

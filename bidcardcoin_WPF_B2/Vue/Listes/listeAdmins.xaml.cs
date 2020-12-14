@@ -53,7 +53,6 @@ namespace bidcardcoin_WPF_B2.Vue
             }
         }
         
-        
         private void ajouterAdmin(object sender, RoutedEventArgs e)
         {
             ajouterAdmin ajouterAdmins = new ajouterAdmin();

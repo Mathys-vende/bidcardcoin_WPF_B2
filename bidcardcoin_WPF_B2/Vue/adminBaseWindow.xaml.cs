@@ -1,4 +1,5 @@
 using System.Windows;
+using bidcardcoin_WPF_B2.Vue.Listes;
 
 namespace bidcardcoin_WPF_B2.Vue
 {
@@ -61,6 +62,12 @@ namespace bidcardcoin_WPF_B2.Vue
             Child.Children.Clear();
             listeAcheteurs listeAcheteur = new listeAcheteurs();
             Child.Children.Add(listeAcheteur);
+        }
+        private void listePersonne(object sender, RoutedEventArgs e)
+        {
+            Child.Children.Clear();
+            listePersonnes listePersonnes = new listePersonnes();
+            Child.Children.Add(listePersonnes);
         }
         
         

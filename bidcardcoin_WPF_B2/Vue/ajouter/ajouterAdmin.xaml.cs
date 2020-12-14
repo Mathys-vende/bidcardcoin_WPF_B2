@@ -55,7 +55,7 @@ namespace bidcardcoin_WPF_B2.Vue
                 AdminORM.insertAdmin(myDataObjectAdmin);
                 compteur = Admin.Count();
 
-                listeAdmin.Items.Refresh();
+               
                 myDataObjectAdmin = new AdminViewModel();
 
             
@@ -94,7 +94,7 @@ namespace bidcardcoin_WPF_B2.Vue
         {
             Admin = AdminORM.listeAdmin();
             myDataObjectAdmin = new AdminViewModel();
-            listeAdmin.ItemsSource = Admin;
+           
         }
         
         private void returnListAdmin(object sender, RoutedEventArgs e)

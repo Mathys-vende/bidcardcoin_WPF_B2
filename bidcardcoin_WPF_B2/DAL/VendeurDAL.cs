@@ -12,7 +12,7 @@ namespace bidcardcoin_WPF_B2.DAL
       public static ObservableCollection<VendeurDAO> selectVendeur()
         {    
             ObservableCollection<VendeurDAO> l = new ObservableCollection<VendeurDAO>();
-            string query = "SELECT * FROM vendeur;";
+             string query = "SELECT * FROM vendeur LEFT JOIN personne ON vendeur.idPersonne = personne.id;";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataReader reader = null;
             try
@@ -22,7 +22,7 @@ namespace bidcardcoin_WPF_B2.DAL
 
                 while (reader.Read())
                 {
-                    VendeurDAO p = new VendeurDAO(reader.GetInt32(0), reader.GetInt32(1));
+                    VendeurDAO p = new VendeurDAO(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetInt32(9), reader.GetInt32(10));
                     l.Add(p);
                 }
             }
@@ -34,19 +34,19 @@ namespace bidcardcoin_WPF_B2.DAL
             return l;
         }
         public static VendeurDAO getVendeur(int id)
-        {
-            string query = "SELECT * FROM vendeur WHERE id=" + id + ";";
+        { 
+            string query = "SELECT * FROM vendeur LEFT JOIN personne ON vendeur.idPersonne = personne.id WHERE vendeur.idPersonne = " + id + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             cmd.ExecuteNonQuery();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            VendeurDAO cat = new VendeurDAO(reader.GetInt32(0), reader.GetInt32(1));
+            VendeurDAO cat = new VendeurDAO(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetInt32(9), reader.GetInt32(10));
             reader.Close();
             return cat;
         }
         public static void updateVendeur(VendeurDAO p)
         {
-            string query = "UPDATE vendeur set idPersonne=\"" + p.idPersonneDAO + "\" where id=" + p.idVendeurDAO + ";";
+            string query = "UPDATE vendeur LEFT JOIN personne ON vendeur.idPersonne = personne.id set idPersonne=\"" + p.idPersonneDAO + "\", nom=\"" + p.nomVendeurDAO + "\", prenom=\"" + p.prenomVendeurDAO +  "\", mail=\"" + p.mailVendeurDAO + "\", numeroTel=\"" + p.numeroTelVendeurDAO +"\", motDePasse=\"" + p.motDePasseVendeurDAO + "\", adresse=\"" + p.adresseVendeurDAO + "\", codePostal=\"" + p.codePostalVendeurDAO + "\", age=\"" + p.ageVendeurDAO +  "\" where vendeur.id=" + p.idVendeurDAO + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
