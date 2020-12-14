@@ -3,9 +3,6 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
-/.vs/bidcardcoin_WPF_B2/v16
-packages.config
-
 /bidcardcoin_WPF_B2/packages.config
 .vs
 App.config

@@ -12,8 +12,8 @@
                 <Label Content="Ajouter Produits" HorizontalAlignment="Center"></Label>
                 <Label Content="nom"></Label>
                 <TextBox Name="nomTextBox" Text="{Binding NomProperty, Mode=TwoWay}"  Height="20" />
-                <Label Content="estimation"></Label>
-                <TextBox Name="estimationTextBox" Text="{Binding estimationProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
+                <Label Content="prenom"></Label>
+                <TextBox Name="prenomTextBox" Text="{Binding PrenomProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
                 <Button x:Name="nomPrenomButton2" Content="{Binding ConcatProperty, Mode=OneWay}"  BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
                 </Button>
                 <Label Content="Age : "></Label>
