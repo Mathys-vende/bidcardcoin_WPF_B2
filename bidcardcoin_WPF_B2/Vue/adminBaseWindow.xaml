@@ -106,6 +106,12 @@
                             
                         </StackPanel>
                     </ListViewItem>
+                    <ListViewItem Height="45" Padding="0" >
+                        <StackPanel Orientation="Horizontal">
+                            <Button Name="listePersonnes" Click="listePersonne" Content="Personnes" Height="45" Width="240"></Button>
+                            
+                        </StackPanel>
+                    </ListViewItem>
                 </ListView>
             </StackPanel>
             <Button x:Name="ButtonClose" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Padding="0">

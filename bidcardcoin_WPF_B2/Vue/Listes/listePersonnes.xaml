@@ -1,0 +1,40 @@
+<UserControl x:Class="bidcardcoin_WPF_B2.Vue.Listes.listePersonnes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue.Listes"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <Grid>
+        <StackPanel>
+            <Label Content="Liste Vendeurs" HorizontalAlignment="Center" />
+            <Grid Margin="10">
+                <DataGrid Name="listePersonne" ItemsSource="{Binding }" AutoGenerateColumns="false" Grid.ColumnSpan="2"
+                          SelectionChanged="listePersonne_SelectionChanged"
+                          BorderBrush="Black" Background="#FFA4A4A4"
+                          Height="600" ColumnWidth="100"
+                          ScrollViewer.CanContentScroll="True"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="id Personne" Binding="{Binding idPersonneProperty }" />
+                        <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="mail" Binding="{Binding mailPersonneProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="numero de téléphone" Binding="{Binding numeroTelPersonneProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="mot de passe" Binding="{Binding motDePassePersonneProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="Adresse" Binding="{Binding adressePersonneProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="code Postal" Binding="{Binding codePostalPersonneProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="Age" Binding="{Binding agePersonneProperty, Mode=twoWay}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Button x:Name="supprimerButton" Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454"
+                    Height="35" Width="200" />
+            <Button x:Name="Ajouter" Click="ajouterPersonne" HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Content="Ajouter" Width="30" Height="30" Padding="0" />
+        </StackPanel>
+    </Grid>
+</UserControl>

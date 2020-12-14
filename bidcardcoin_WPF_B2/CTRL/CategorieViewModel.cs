@@ -17,6 +17,8 @@ namespace bidcardcoin_WPF_B2.CTRL
             this.idCategorie = id;
             this.nomCategorieProperty = nomCategorie;
         }
+        
+        
 
         public int idCategorieProperty
         {

@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
-using Solution;
+using bidcardcoin_WPF_B2.DAL;
+
 
 namespace bidcardcoin_WPF_B2.DAO
 {

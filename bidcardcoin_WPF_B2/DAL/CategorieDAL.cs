@@ -5,7 +5,9 @@ using System.Windows;
 using bidcardcoin_WPF_B2.DAO;
 using MySql.Data.MySqlClient;
 using System.Linq;
-namespace Solution
+
+
+namespace bidcardcoin_WPF_B2.DAL
 {
     public class CategorieDAL
     {

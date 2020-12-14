@@ -11,14 +11,14 @@
             <StackPanel>
                 <Label Content="Ajouter Vendeur" HorizontalAlignment="Center"></Label>
                 <Label Content="nom"></Label>
-                <TextBox Name="nomTextBox" Text="{Binding NomProperty, Mode=TwoWay}"  Height="20" />
-                <Label Content="prenom"></Label>
-                <TextBox Name="prenomTextBox" Text="{Binding PrenomProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
-                <Button x:Name="nomPrenomButton2" Content="{Binding ConcatProperty, Mode=OneWay}"  BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
+                <ComboBox Name ="comboxBoxPersonne" ItemsSource="{Binding  }"
+                          DisplayMemberPath="nomPersonneProperty"
+                          SelectedValuePath="idPersonneProperty"
+                          SelectedValue="{Binding idPersonneProperty}" 
+                />
+                <Button Name="AdminButton" Click="VendeurButton_Click" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
                 </Button>
-                <Label Content="Age : "></Label>
-                <TextBox Name ="txtAge" Text="{Binding AgeProperty, Mode=OneWay}" />
-                <Button x:Name="Ajouter"  Click="returnListVendeur" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Ajouter" Width="30" Height="30" Padding="0">
+                <Button x:Name="Ajouter"  Click="returnListVendeur" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Retourner à liste" Width="30" Height="30" Padding="0">
                 </Button>
             </StackPanel>
         </Grid>
