@@ -122,6 +122,7 @@
         <Compile Include="CTRL\LieuViewModel.cs" />
         <Compile Include="CTRL\LotViewModel.cs" />
         <Compile Include="CTRL\PersonneViewModel.cs" />
+        <Compile Include="CTRL\ProduitViewModel.cs" />
         <Compile Include="CTRL\VendeurViewModel.cs" />
         <Compile Include="DAL\AcheteurDAL.cs" />
         <Compile Include="DAL\AdminDAL.cs" />
@@ -131,6 +132,7 @@
         <Compile Include="DAL\LieuDAL.cs" />
         <Compile Include="DAL\LotDAL.cs" />
         <Compile Include="DAL\PersonneDAL.cs" />
+        <Compile Include="DAL\ProduitDAL.cs" />
         <Compile Include="DAL\VendeurDAL.cs" />
         <Compile Include="DAO\AcheteurDAO.cs" />
         <Compile Include="DAO\AdminDAO.cs" />
@@ -139,6 +141,7 @@
         <Compile Include="DAO\LieuDAO.cs" />
         <Compile Include="DAO\LotDAO.cs" />
         <Compile Include="DAO\PersonneDAO.cs" />
+        <Compile Include="DAO\ProduitDAO.cs" />
         <Compile Include="DAO\VendeurDAO.cs" />
         <Compile Include="ORM\AcheteurORM.cs" />
         <Compile Include="ORM\AdminORM.cs" />
@@ -147,6 +150,7 @@
         <Compile Include="ORM\LieuORM.cs" />
         <Compile Include="ORM\LotORM.cs" />
         <Compile Include="ORM\PersonneORM.cs" />
+        <Compile Include="ORM\ProduitORM.cs" />
         <Compile Include="ORM\VendeurORM.cs" />
         <Compile Include="Vue\adminBaseWindow.xaml.cs">
           <DependentUpon>adminBaseWindow.xaml</DependentUpon>
