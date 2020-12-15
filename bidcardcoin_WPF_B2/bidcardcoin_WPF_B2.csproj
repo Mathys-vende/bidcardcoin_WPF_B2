@@ -119,9 +119,12 @@
         <Compile Include="CTRL\AdminViewModel.cs" />
         <Compile Include="CTRL\CategorieViewModel.cs" />
         <Compile Include="CTRL\EnchereViewModel.cs" />
+        <Compile Include="CTRL\EstimationViewModel.cs" />
         <Compile Include="CTRL\LieuViewModel.cs" />
         <Compile Include="CTRL\LotViewModel.cs" />
+        <Compile Include="CTRL\OrdreachatViewModel.cs" />
         <Compile Include="CTRL\PersonneViewModel.cs" />
+        <Compile Include="CTRL\ProduitCategorieViewModel.cs" />
         <Compile Include="CTRL\ProduitViewModel.cs" />
         <Compile Include="CTRL\VendeurViewModel.cs" />
         <Compile Include="DAL\AcheteurDAL.cs" />
@@ -129,27 +132,36 @@
         <Compile Include="DAL\CategorieDAL.cs" />
         <Compile Include="DAL\DALConnection.cs" />
         <Compile Include="DAL\EnchereDAL.cs" />
+        <Compile Include="DAL\EstimationDAL.cs" />
         <Compile Include="DAL\LieuDAL.cs" />
         <Compile Include="DAL\LotDAL.cs" />
+        <Compile Include="DAL\OrdreachatDAL.cs" />
         <Compile Include="DAL\PersonneDAL.cs" />
+        <Compile Include="DAL\ProduitCategorieDAL.cs" />
         <Compile Include="DAL\ProduitDAL.cs" />
         <Compile Include="DAL\VendeurDAL.cs" />
         <Compile Include="DAO\AcheteurDAO.cs" />
         <Compile Include="DAO\AdminDAO.cs" />
         <Compile Include="DAO\CategorieDAO.cs" />
         <Compile Include="DAO\EnchereDAO.cs" />
+        <Compile Include="DAO\EstimationDAO.cs" />
         <Compile Include="DAO\LieuDAO.cs" />
         <Compile Include="DAO\LotDAO.cs" />
+        <Compile Include="DAO\OrdreachatDAO.cs" />
         <Compile Include="DAO\PersonneDAO.cs" />
+        <Compile Include="DAO\ProduitCategorieDAO.cs" />
         <Compile Include="DAO\ProduitDAO.cs" />
         <Compile Include="DAO\VendeurDAO.cs" />
         <Compile Include="ORM\AcheteurORM.cs" />
         <Compile Include="ORM\AdminORM.cs" />
         <Compile Include="ORM\CategorieORM.cs" />
         <Compile Include="ORM\EnchereORM.cs" />
+        <Compile Include="ORM\EstimationORM.cs" />
         <Compile Include="ORM\LieuORM.cs" />
         <Compile Include="ORM\LotORM.cs" />
+        <Compile Include="ORM\OrdreachatORM.cs" />
         <Compile Include="ORM\PersonneORM.cs" />
+        <Compile Include="ORM\ProduitCategorieORM.cs" />
         <Compile Include="ORM\ProduitORM.cs" />
         <Compile Include="ORM\VendeurORM.cs" />
         <Compile Include="Vue\adminBaseWindow.xaml.cs">
@@ -181,6 +193,12 @@
         </Compile>
         <Compile Include="Vue\ajouter\ajouterVendeur.xaml.cs">
           <DependentUpon>ajouterVendeur.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Vue\ajouter\ajoutEstimation.xaml.cs">
+          <DependentUpon>ajoutEstimation.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="Vue\ajouter\ajoutProduitCategorie.xaml.cs">
+          <DependentUpon>ajoutProduitCategorie.xaml</DependentUpon>
         </Compile>
         <Compile Include="Vue\ajouter\ordreAchat.xaml.cs">
           <DependentUpon>ordreAchat.xaml</DependentUpon>
@@ -246,6 +264,8 @@
       <Page Include="Vue\ajouter\ajouterPersonne.xaml" />
       <Page Include="Vue\ajouter\ajouterProduit.xaml" />
       <Page Include="Vue\ajouter\ajouterVendeur.xaml" />
+      <Page Include="Vue\ajouter\ajoutEstimation.xaml" />
+      <Page Include="Vue\ajouter\ajoutProduitCategorie.xaml" />
       <Page Include="Vue\ajouter\ordreAchat.xaml" />
       <Page Include="Vue\Listes\listeAcheteurs.xaml" />
       <Page Include="Vue\Listes\listeAdmins.xaml" />

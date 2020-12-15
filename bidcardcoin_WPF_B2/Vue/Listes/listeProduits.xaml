@@ -25,8 +25,8 @@
                         <DataGridTextColumn Header="Description" Binding="{Binding descriptionProduitProperty, Mode=TwoWay}" Width="250"/>
                         <DataGridTextColumn Header="Artiste" Binding="{Binding artisteProduitProperty, Mode=TwoWay}" Width="100"/>
                         <DataGridTextColumn Header="Style" Binding="{Binding styleProduitProperty, Mode=TwoWay}" Width="100"/>
-                        <DataGridTextColumn Header="IDPhoto" Binding="{Binding idLotProduitProperty, Mode=TwoWay}" Width="50"/>
-                        <DataGridTextColumn Header="IDCategorie" Binding="{Binding idPhotoProduitProperty, Mode=TwoWay}" Width="50"/>
+                        <DataGridTextColumn Header="ID lot" Binding="{Binding idLotProduitProperty, Mode=TwoWay}" Width="50"/>
+                        <DataGridTextColumn Header="ID Photo" Binding="{Binding idPhotoProduitProperty, Mode=TwoWay}" Width="50"/>
                         <DataGridTextColumn Header="IDAcheteur" Binding="{Binding idAcheteurProduitProperty, Mode=TwoWay}" Width="50"/>
                         <DataGridTextColumn Header="IDVendeur" Binding="{Binding idVendeurProduitProperty, Mode=TwoWay}" Width="50"/>
 
@@ -36,11 +36,15 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
-            <Button x:Name="supprimerButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
+            <Button x:Name="supprimerButton" Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
             <Button x:Name="Ajouter" Click="ajouterProduit" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Content="Ajouter" Width="30" Height="30" Padding="0" />
+                    Content="Ajouter" Width="100" Height="30" Padding="0" />
             <Button x:Name="ordreAchat" Click="OrdreAchat" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Content="Ajouter" Width="30" Height="30" Padding="0" />
+                    Content="ordreAchat" Width="100" Height="30" Padding="0" />
+            <Button x:Name="Produitcategorie" Click="ProduitCategorie" HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Content="Produitcategorie" Width="100" Height="30" Padding="0" />
+            <Button x:Name="estimation" Click="Estimation" HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Content="Estimation" Width="100" Height="30" Padding="0" />
         </StackPanel>
     </Grid>
 </UserControl>

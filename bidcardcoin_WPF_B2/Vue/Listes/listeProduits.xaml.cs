@@ -7,6 +7,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using bidcardcoin_WPF_B2.DAL;
+using bidcardcoin_WPF_B2.Vue.ajouter;
 
 
 namespace bidcardcoin_WPF_B2.Vue
@@ -14,7 +15,7 @@ namespace bidcardcoin_WPF_B2.Vue
     public partial class listeProduits : UserControl
     {
         private int selectedProduitId;
-        ProduitViewModel myDataObject;
+        ProduitViewModel myDataObjectProduit;
         ObservableCollection<ProduitViewModel> lp;
         int compteur = 0;
         public listeProduits()
@@ -30,7 +31,7 @@ namespace bidcardcoin_WPF_B2.Vue
         private void loadProduits()
         {
             lp = ProduitORM.listeProduit();
-            myDataObject = new ProduitViewModel();
+            myDataObjectProduit = new ProduitViewModel();
             //LIEN AVEC la VIEW
             listeProduit.ItemsSource = lp; // bind de la liste avec la source, permettant le binding.
         }
@@ -40,6 +41,17 @@ namespace bidcardcoin_WPF_B2.Vue
             if ((listeProduit.SelectedIndex < lp.Count) && (listeProduit.SelectedIndex >= 0))
             {
                 selectedProduitId = (lp.ElementAt<ProduitViewModel>(listeProduit.SelectedIndex)).idProduitProperty;
+            }
+        }
+        private void SupprButton(object sender, RoutedEventArgs routedEventArgs)
+        {
+            if (listeProduit.SelectedItem is ProduitViewModel)
+            {
+                ProduitViewModel toRemove = (ProduitViewModel)listeProduit.SelectedItem;
+                lp.Remove(toRemove);
+                listeProduit.Items.Refresh();
+                ProduitORM.supprimerProduit(selectedProduitId);
+                
             }
         }
 
@@ -61,6 +73,22 @@ namespace bidcardcoin_WPF_B2.Vue
             test.Children.Add(ordre);
             
             
+        }
+        private void Estimation(object sender, RoutedEventArgs e)
+        {
+            ajoutEstimation estimation = new ajoutEstimation();
+            var test = ((StackPanel) this.Parent);
+            test.Children.Clear();
+            test.Children.Add(estimation);
+        }
+        
+        private void ProduitCategorie(object sender, RoutedEventArgs e)
+        {
+            ajoutProduitCategorie produitCategorie = new ajoutProduitCategorie();
+            var test = ((StackPanel) this.Parent);
+            test.Children.Clear();
+            test.Children.Add(produitCategorie);
+
         }
 
     }

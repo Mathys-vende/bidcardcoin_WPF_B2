@@ -9,15 +9,30 @@
     <Grid>
         <Grid Name ="grigrid" Height="300" Margin="0,0,0.300,0" VerticalAlignment="Top">
             <StackPanel>
-                <Label Content="Ajouter Ordre D'achat" HorizontalAlignment="Center"></Label>
-                <Label Content="nom"></Label>
-                <TextBox Name="nomTextBox" Text="{Binding NomProperty, Mode=TwoWay}"  Height="20" />
-                <Label Content="prenom"></Label>
-                <TextBox Name="prenomTextBox" Text="{Binding PrenomProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
-                <Button x:Name="nomPrenomButton2" Content="{Binding ConcatProperty, Mode=OneWay}"  BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
+                <Label Content="Acheteur"></Label>
+                <ComboBox Name="AcheteurCombobox" ItemsSource="{Binding  }"
+                          DisplayMemberPath="nomAcheteurProperty"
+                          SelectedValuePath="idAcheteurProperty"
+                          SelectedValue="{Binding idAcheteurProperty}" />
+                <Label Content="Produit"></Label>
+                <ComboBox Name="ProduitCombobox" ItemsSource="{Binding  }"
+                          DisplayMemberPath="nomProduitProperty"
+                          SelectedValuePath="idProduitProperty"
+                          SelectedValue="{Binding idProduitProperty}" />
+                <Label Content="Enchere"></Label>
+                <ComboBox Name="EnchereCombobox" ItemsSource="{Binding  }"
+                          DisplayMemberPath="nomEnchereProperty"
+                          SelectedValuePath="idEnchereProperty"
+                          SelectedValue="{Binding idEnchereProperty}" />
+                
+                <Label Content="Montant Maximum"></Label>
+                <TextBox Name="montantMaxTextBox" Text="{Binding montantMaxProperty, Mode=TwoWay}"  Height="20" />
+                <Label Content="adresse du dépot"></Label>
+                <TextBox Name="adresseDepotTextBox" Text="{Binding adresseDepotProperty, Mode=TwoWay}"  Height="20" />
+                
+                
+                <Button Name="OrdreAchatCategorieButton" Click="OrdreAchatButton_Click" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
                 </Button>
-                <Label Content="Age : "></Label>
-                <TextBox Name ="txtAge" Text="{Binding AgeProperty, Mode=OneWay}" />
                 <Button x:Name="Ajouter"  Click="returnListProduit" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Ajouter" Width="30" Height="30" Padding="0">
                 </Button>
             </StackPanel>

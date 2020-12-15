@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace bidcardcoin_WPF_B2.CTRL
 {
-    public class ProduitViewModel
+    public class ProduitViewModel : INotifyPropertyChanged
     {
         private int idProduit;
         private float estimationProduit;
