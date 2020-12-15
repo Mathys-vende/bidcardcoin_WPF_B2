@@ -7,12 +7,12 @@ using MySql.Data.MySqlClient;
 
 namespace bidcardcoin_WPF_B2.DAL
 {
-    public class EnchereDAL
+    public class ProduitCategorieDAL
     {
-         public static ObservableCollection<EnchereDAO> selectEnchere()
+         public static ObservableCollection<ProduitCategorieDAO> selectProduitCategorie()
         {    
-            ObservableCollection<EnchereDAO> l = new ObservableCollection<EnchereDAO>();
-            string query = "SELECT * FROM enchere;";
+            ObservableCollection<ProduitCategorieDAO> l = new ObservableCollection<ProduitCategorieDAO>();
+            string query = "SELECT * FROM produitcategorie;";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataReader reader = null;
             try
@@ -22,54 +22,54 @@ namespace bidcardcoin_WPF_B2.DAL
 
                 while (reader.Read())
                 {
-                    EnchereDAO p = new EnchereDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2),  reader.GetString(3), reader.GetInt32(4), reader.GetInt32(5));
+                    ProduitCategorieDAO p = new ProduitCategorieDAO(reader.GetInt32(0), reader.GetInt32(1));
                     l.Add(p);
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show("Il y a un problème dans la table Michelle : {0}",e.StackTrace);
+                MessageBox.Show("Il y a un problème dans la table produitcategorie : {0}",e.StackTrace);
             }
             reader.Close();
             return l;
         }
-        public static EnchereDAO getEnchere(int id)
+        public static ProduitCategorieDAO getProduitCategorie(int id)
         {
-            string query = "SELECT * FROM enchere WHERE id=" + id + ";";
+            string query = "SELECT * FROM produitcategorie WHERE id=" + id + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             cmd.ExecuteNonQuery();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            EnchereDAO cat = new EnchereDAO(reader.GetInt32(0), reader.GetString(1), reader.GetString(2),  reader.GetString(3), reader.GetInt32(4), reader.GetInt32(5));
+            ProduitCategorieDAO cat = new ProduitCategorieDAO(reader.GetInt32(0), reader.GetInt32(1));
             reader.Close();
             return cat;
         }
-        public static void updateEnchere(EnchereDAO p)
+        public static void updateProduitCategorie(ProduitCategorieDAO p)
         {
-            string query = "UPDATE enchere set nom=\"" + p.nomEnchereDAO + "\", heure=\"" + p.heureEnchereDAO + "\", dateVente=\"" + p.dateVenteEnchereDAO + "\", idLieu=\"" + p.idLieuEnchereDAO + "\", idAdmin=\"" + p.idAdminEnchereDAO +"\" where id=" + p.idEnchereDAO + ";";
+            string query = "UPDATE produitcategorie set idProduit=\"" + p.idProduitDAO + "\" idCategorie=\"" + p.idCategorieDAO + "\" where id=" + p.idProduitDAO + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
         }
-        public static void insertEnchere(EnchereDAO p)
+        public static void insertProduitCategorie(ProduitCategorieDAO p)
         {
-            int id = getMaxIdEnchere() + 1;
-            string query = "INSERT INTO enchere VALUES (\"" + id + "\",\"" + p.nomEnchereDAO + "\",\"" + p.heureEnchereDAO + "\",\"" + p.dateVenteEnchereDAO + "\",\"" + p.idLieuEnchereDAO + "\",\"" + p.idAdminEnchereDAO + "\");";
+            /*int id = getMaxIdproduitcategorie() + 1;*/
+            string query = "INSERT INTO produitcategorie VALUES (\"" + p.idProduitDAO + "\",\"" + p.idCategorieDAO + "\");";
             MySqlCommand cmd2 = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();
         }
-        public static void supprimerEnchere(int id)
+        public static void supprimerProduitCategorie(int id)
         {
-            string query = "DELETE FROM enchere WHERE id = \"" + id + "\";";
+            string query = "DELETE FROM produitcategorie WHERE id = \"" + id + "\";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
         }
-        public static int getMaxIdEnchere()
+        public static int getMaxIdproduitcategorie()
         {
-            int maxIdEnchere= 0;
-            string query = "SELECT MAX(id) FROM enchere;";
+            int maxIdproduitcategorie = 0;
+            string query = "SELECT MAX(id) FROM produitcategorie;";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
 
             int cnt = cmd.ExecuteNonQuery();
@@ -81,15 +81,15 @@ namespace bidcardcoin_WPF_B2.DAL
                 reader.Read();
                 if (!reader.IsDBNull(0))
                 {
-                    maxIdEnchere = reader.GetInt32(0);
+                    maxIdproduitcategorie = reader.GetInt32(0);
                 }
                 else
                 {
-                    maxIdEnchere = 0;
+                    maxIdproduitcategorie = 0;
                 }
             }
             reader.Close();
-            return maxIdEnchere;
+            return maxIdproduitcategorie;
         }
     }
 }

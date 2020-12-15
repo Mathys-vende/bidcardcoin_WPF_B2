@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
+             
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -15,7 +16,9 @@
                 <Label Content="heure"></Label>
                 <TextBox Name="heureTextBox" Text="{Binding heureEnchereProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
                 <Label Content="Date Vente"></Label>
-                <TextBox Name ="dateVenteTextBox" Text="{Binding dateVenteEnchereProperty, Mode=TwoWay}" />
+                
+                <DatePicker Name="dateVenteTextBox" Text="{Binding dateVenteEnchereProperty,Mode=TwoWay}"></DatePicker>
+                <!--<TextBox Name ="dateVenteTextBox" Text="{Binding dateVenteEnchereProperty, Mode=TwoWay}" />-->
                 <Label Content="id Lieu"></Label>
                 
                 <!--<TextBox Name ="idLieuTextBox" Text="{Binding idLieuEnchereProperty, Mode=TwoWay}" />-->

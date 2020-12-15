@@ -5,22 +5,37 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="300">
     <Grid>
-        <Grid Name ="grigrid" Height="300" Margin="0,0,0.300,0" VerticalAlignment="Top">
+        <Grid Name ="grigrid" Height="600" Margin="0,0,0.300,0" VerticalAlignment="Top">
             <StackPanel>
                 <Label Content="Ajouter Produits" HorizontalAlignment="Center"></Label>
-                <Label Content="nom"></Label>
-                <TextBox Name="nomTextBox" Text="{Binding NomProperty, Mode=TwoWay}"  Height="20" />
-                <Label Content="prenom"></Label>
-                <TextBox Name="prenomTextBox" Text="{Binding PrenomProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
-                <Button x:Name="nomPrenomButton2" Content="{Binding ConcatProperty, Mode=OneWay}"  BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
+                <Label Content="Estimation"></Label>
+                <TextBox Name="EstimationTextBox" Text="{Binding estimationProduitProperty, Mode=TwoWay}"  Height="20" />
+                <Label Content="Prix vente"></Label>
+                <TextBox Name="PrixVenteTextBox" Text="{Binding prixVenteProduitProperty, Mode=TwoWay}"  Height="20" />
+                <Label Content="Nom"></Label>
+                <TextBox Name="NomTextBox" Text="{Binding nomProduitProperty, Mode=TwoWay}"  Height="20" />
+                <Label Content="Description"></Label>
+                <TextBox Name="DescriptionTextBox" Text="{Binding descriptionProduitProperty, Mode=TwoWay}"  Height="20" />
+                <Label Content="Artiste"></Label>
+                <TextBox Name="ArtisteTextBox" Text="{Binding artisteProduitProperty, Mode=TwoWay}"  Height="20" />
+                <Label Content="Style"></Label>
+                <TextBox Name="StyleTextBox" Text="{Binding styleProduitProperty, Mode=TwoWay}"  Height="20" />
+                <Label Content="ID lot"></Label>
+                <TextBox Name="IDlotTextBox" Text="{Binding idLotProduitProperty, Mode=TwoWay}"  Height="20" />
+                <Label Content="ID Photo"></Label>
+                <TextBox Name="IDPhotoTextBox" Text="{Binding idPhotoProduitProperty, Mode=TwoWay}"  Height="20" />
+                <Label Content="IDAcheteur"></Label>
+                <TextBox Name="IDAcheteurTextBox" Text="{Binding idAcheteurProduitProperty, Mode=TwoWay}"  Height="20" />
+                <Label Content="IDVendeur"></Label>
+                <TextBox Name="IDVendeurTextBox" Text="{Binding idVendeurProduitProperty, Mode=TwoWay}"  Height="20" />
+                <Button Name="ProduitButton" Click="ProduitButton_Click" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
                 </Button>
-                <Label Content="Age : "></Label>
-                <TextBox Name ="txtAge" Text="{Binding AgeProperty, Mode=OneWay}" />
-                <Button x:Name="Ajouter"  Click="returnListProd" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Ajouter" Width="30" Height="30" Padding="0">
+                <Button x:Name="Ajouter"  Click="returnListProduit" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Retourner à liste" Width="30" Height="30" Padding="0">
                 </Button>
             </StackPanel>
+            
         </Grid>
     </Grid>
 </UserControl>

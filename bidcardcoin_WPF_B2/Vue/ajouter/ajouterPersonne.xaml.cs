@@ -23,9 +23,7 @@ namespace bidcardcoin_WPF_B2.Vue.ajouter
             
             loadPersonne();
             
-
             appliquerContexte();
-            
         }
         
         void loadPersonne()
@@ -49,7 +47,6 @@ namespace bidcardcoin_WPF_B2.Vue.ajouter
 
                
                 myDataObjectPersonne = new PersonneViewModel();
-                
                 nomTextBox.DataContext = myDataObjectPersonne;
                 prenomTextBox.DataContext = myDataObjectPersonne;
                 mailTextBox.DataContext = myDataObjectPersonne;

@@ -22,12 +22,25 @@
                         <DataGridTextColumn Header="id" Binding="{Binding idEnchereProperty, Mode=OneWay}" />
                         <DataGridTextColumn Header="Nom" Binding="{Binding nomEnchereProperty}" />
                         <DataGridTextColumn Header="Heure" Binding="{Binding heureEnchereProperty, Mode=TwoWay}" />
-                        <DataGridTextColumn Header="Date Vente"
-                                            Binding="{Binding dateVenteEnchereProperty, Mode=OneWay}" />
+                        <DataGridTemplateColumn Header="Date de vente" Width="120">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding dateVenteEnchereProperty}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <DatePicker  SelectedDate="{Binding dateVenteEnchereProperty }"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                        </DataGridTemplateColumn>
+                        <!--<DataGridTextColumn Header="Date Vente"
+                                            Binding="{Binding dateVenteEnchereProperty, Mode=TwoWay}" />-->
                         <DataGridTextColumn Header="id Lieu"
                                             Binding="{Binding idLieuEnchereProperty, Mode=twoWay}" />
                         <DataGridTextColumn Header="id Admin"
                                             Binding="{Binding idAdminEnchereProperty, Mode=twoWay}" />
+                        
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
