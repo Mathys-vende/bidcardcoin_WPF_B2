@@ -56,11 +56,9 @@
       <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MaterialDesignColors, Version=1.2.7.1979, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MaterialDesignColors.1.2.7\lib\net45\MaterialDesignColors.dll</HintPath>
-    </Reference>
-    <Reference Include="MaterialDesignThemes.Wpf, Version=3.2.0.1979, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+    <Reference Include="MaterialDesignThemes.Wpf, Version=3.2.0.1979, Culture=neutral, PublicKeyToken=df2a72020bd7962a">
       <HintPath>..\packages\MaterialDesignThemes.3.2.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="mscorlib" />
@@ -137,7 +135,6 @@
     <Compile Include="CTRL\VendeurViewModel.cs" />
     <Compile Include="DAL\AcheteurDAL.cs" />
     <Compile Include="DAL\AdminDAL.cs" />
-    <Compile Include="DAL\AuthDAL.cs" />
     <Compile Include="DAL\CategorieDAL.cs" />
     <Compile Include="DAL\DALConnection.cs" />
     <Compile Include="DAL\EnchereDAL.cs" />
@@ -151,7 +148,6 @@
     <Compile Include="DAL\VendeurDAL.cs" />
     <Compile Include="DAO\AcheteurDAO.cs" />
     <Compile Include="DAO\AdminDAO.cs" />
-    <Compile Include="DAO\AuthDAO.cs" />
     <Compile Include="DAO\CategorieDAO.cs" />
     <Compile Include="DAO\EnchereDAO.cs" />
     <Compile Include="DAO\EstimationDAO.cs" />
@@ -164,7 +160,6 @@
     <Compile Include="DAO\VendeurDAO.cs" />
     <Compile Include="ORM\AcheteurORM.cs" />
     <Compile Include="ORM\AdminORM.cs" />
-    <Compile Include="ORM\AuthORM.cs" />
     <Compile Include="ORM\CategorieORM.cs" />
     <Compile Include="ORM\EnchereORM.cs" />
     <Compile Include="ORM\EstimationORM.cs" />
@@ -245,6 +240,9 @@
     <Compile Include="Vue\MTM\afficherCategorieProduit.xaml.cs">
       <DependentUpon>afficherCategorieProduit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vue\MTM\afficherOrdreAchat.xaml.cs">
+      <DependentUpon>afficherOrdreAchat.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -295,6 +293,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Vue\MTM\afficherOrdreAchat.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ressources\img\bid.png" />
@@ -309,7 +308,7 @@
   <Import Project="..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets'))" />
   </Target>

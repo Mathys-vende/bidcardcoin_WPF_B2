@@ -1,16 +1,22 @@
 using System.Collections.ObjectModel;
 using bidcardcoin_WPF_B2.CTRL;
 using bidcardcoin_WPF_B2.DAO;
+using bidcardcoin_WPF_B2.Vue;
 
 namespace bidcardcoin_WPF_B2.ORM
 {
     public class OrdreachatORM
     {
-        public static OrdreachatViewModel getOrdreachat(int idOrdreachat)
+        public static ObservableCollection<OrdreachatViewModel> getOrdreachat(int idAcheteur)
         {
-            OrdreachatDAO pDAO = OrdreachatDAO.getOrdreachat(idOrdreachat);
-            OrdreachatViewModel p = new OrdreachatViewModel(pDAO.idProduitDAO, pDAO.idAcheteurDAO, pDAO.idEnchereDAO, pDAO.montantMaxDAO, pDAO.adresseDepotDAO);
-            return p;
+            ObservableCollection<OrdreachatDAO> lDAO = OrdreachatDAO.getOrdreachat(idAcheteur);
+            ObservableCollection<OrdreachatViewModel> liste = new ObservableCollection<OrdreachatViewModel>();
+            foreach (OrdreachatDAO element in lDAO)
+            {
+                OrdreachatViewModel l = new OrdreachatViewModel(element.IDProduitDAO, element.nomProduitDAO, element.IDEnchereDAO, element.nomEnchereDAO, element.MontantMaxDAO, element.AdresseDepotDAO);
+                liste.Add(l);
+            }
+            return liste;
         }
 
         public static ObservableCollection<OrdreachatViewModel> listeOrdreachat()
@@ -33,9 +39,9 @@ namespace bidcardcoin_WPF_B2.ORM
             OrdreachatDAO.updateOrdreachat(new OrdreachatDAO(p.idProduitProperty, p.idAcheteurProperty,p.idEnchereProperty, p.montantMaxProperty, p.adresseDepotProperty ));
         }
 
-        public static void supprimerOrdreachat(int id)
+        public static void supprimerOrdreachat(int idAcheteur, int idEnchere, int idProduit)
         {
-            OrdreachatDAO.supprimerOrdreachat(id);
+            OrdreachatDAO.supprimerOrdreachat(idAcheteur,idEnchere, idProduit);
         }
 
         public static void insertOrdreachat(OrdreachatViewModel p)

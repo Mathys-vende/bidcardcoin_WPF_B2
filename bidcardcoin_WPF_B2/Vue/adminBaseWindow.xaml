@@ -114,6 +114,12 @@
                             <TextBlock Text="Personne" Margin="10"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
+                    <ListViewItem Height="45" Padding="0" >
+                    <StackPanel Orientation="Horizontal" MouseDown="AffiordreAchat" Margin="10 0">
+                        <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
+                        <TextBlock Text="Ordre Achat" Margin="10"></TextBlock>
+                    </StackPanel>
+                    </ListViewItem>
                 </ListView>
             </StackPanel>
             <Button x:Name="ButtonClose" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="30" Height="30" Padding="0">
