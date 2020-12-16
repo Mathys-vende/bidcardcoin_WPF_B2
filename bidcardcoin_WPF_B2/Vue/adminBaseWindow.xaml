@@ -61,7 +61,7 @@
                 <Image Height="140" Source="../ressources/img/bid.png" Stretch="Fill"/>
                 <ListView Foreground="#FF313131"  FontSize="18" Padding="10">
                     <ListViewItem Height="45" Padding="0 ">
-                        <StackPanel Orientation="Horizontal" MouseDown="listeProduit" Margin="10 0" Background="Transparent" >
+                        <StackPanel Orientation="Horizontal" MouseDown="listeProduit" Margin="10 0">
                             <materialDesign:PackIcon Kind="Recycle" Width="20" Height="20" Foreground="Gray" Margin="5" VerticalAlignment="Center"/>
                             <TextBlock Text="Produits" Margin="10"></TextBlock>
                         </StackPanel>
@@ -110,12 +110,6 @@
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0" >
                         <StackPanel Orientation="Horizontal" MouseDown="listePersonne" Margin="10 0">
-                            <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
-                            <TextBlock Text="Personne" Margin="10"></TextBlock>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="45" Padding="0" >
-                        <StackPanel Orientation="Horizontal" MouseDown="ordreAchat" Margin="10 0">
                             <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
                             <TextBlock Text="Personne" Margin="10"></TextBlock>
                         </StackPanel>

@@ -33,32 +33,16 @@ namespace bidcardcoin_WPF_B2.DAL
             reader.Close();
             return l;
         }
-        public static ObservableCollection<OrdreachatDAO> getOrdreachat(int id)
+        public static OrdreachatDAO getOrdreachat(int id)
         {
-            ObservableCollection<OrdreachatDAO> l = new ObservableCollection<OrdreachatDAO>();
-            string query = "SELECT  produit.id , produit.nom , enchere.id , enchere.nom,  ordreachat.montantMax , ordreachat.adresseDepot FROM ordreachat JOIN produit ON produit.id = ordreachat.idProduit JOIN enchere ON enchere.id = ordreachat.idEnchere JOIN acheteur ON acheteur.id = ordreachat.idAcheteur WHERE acheteur.id =" + id + ";";
+            string query = "SELECT * FROM ordreachat WHERE id=" + id + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
-            MySqlDataReader reader = null;
-            try
-            {
-
-                cmd.ExecuteNonQuery();
-                reader = cmd.ExecuteReader();
-               
-                while (reader.Read())
-                {
-                    OrdreachatDAO cat = new OrdreachatDAO(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2),
-                        reader.GetString(3), reader.GetInt32(4), reader.GetString(5)); 
-                    l.Add(cat);
-                    
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Il y a un problème dans la table Ordreachat : {0}",e.StackTrace);
-            }
+            cmd.ExecuteNonQuery();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            OrdreachatDAO cat = new OrdreachatDAO(reader.GetInt32(0), reader.GetInt32(1),reader.GetInt32(2),reader.GetFloat(3), reader.GetString(4));
             reader.Close();
-            return l;
+            return cat;
         }
         public static void updateOrdreachat(OrdreachatDAO p)
         {
@@ -75,10 +59,9 @@ namespace bidcardcoin_WPF_B2.DAL
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();
         }
-        
-        public static void supprimerOrdreachat(int idAcheteur, int idEnchere, int idProduit)
+        public static void supprimerOrdreachat(int id)
         {
-            string query = "DELETE from ordreachat WHERE idEnchere = \"" + idEnchere + "\" and idAcheteur=\"" + idAcheteur + "\" and idProduit=" + idProduit + ";";
+            string query = "DELETE FROM Ordreachat WHERE id = \"" + id + "\";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();

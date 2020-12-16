@@ -13,20 +13,10 @@ namespace bidcardcoin_WPF_B2.CTRL
     private float montantMax;
     private string adresseDepot;
 
-    
-    public int IDProduit;
-    public string NomProduit;
-    public int IDEnchere;
-    public string NomEnchere;
-    public int MontantMax;
-    public string AdresseDepot;
-    
     private string concat = "Ajouter ";
 
     public OrdreachatViewModel()
     {
-        
-        
     }
 
     public OrdreachatViewModel(int idProduit, int idAcheteur,int idEnchere, float montantMax,string adresseDepot )
@@ -36,17 +26,6 @@ namespace bidcardcoin_WPF_B2.CTRL
         this.idEnchere = idEnchere;
         this.montantMax = montantMax;
         this.adresseDepot = adresseDepot;
-    }
-
-    public OrdreachatViewModel(int IdProduit, string NomProduit, int IDEnchere, string NomEnchere, int MontantMax, string AdresseDepot)
-    {
-        this.IDProduit = IdProduit;
-        this.NomProduit = NomProduit;
-        this.IDEnchere = IDEnchere;
-        this.NomEnchere = NomEnchere;
-        this.MontantMax = MontantMax;
-        this.AdresseDepot = AdresseDepot;
-
     }
 
     public int idProduitProperty
@@ -101,69 +80,6 @@ namespace bidcardcoin_WPF_B2.CTRL
             OnPropertyChanged("idCategorieProperty");
         }
     }
-    
-    
-    public int IDProduitProperty
-    {
-        get { return IDProduit; }
-        set
-        {
-            IDProduit = value;
-            OnPropertyChanged("IDProduitProperty");
-        }
-
-    }
-    public String NomProduitProperty
-    {
-        get { return NomProduit; }
-        set
-        {
-            NomProduit = value;
-            OnPropertyChanged("NomProduitProperty");
-        }
-
-    }
-    public int IDEnchereProperty
-    {
-        get { return IDEnchere; }
-        set
-        {
-            IDEnchere = value;
-            OnPropertyChanged("IDEnchereProperty");
-        }
-
-    }
-    public String NomEnchereProperty
-    {
-        get { return NomEnchere; }
-        set
-        {
-            NomEnchere = value;
-            OnPropertyChanged("NomEnchereProperty");
-        }
-
-    }
-    public int MontantMaxProperty
-    {
-        get { return MontantMax; }
-        set
-        {
-            MontantMax = value;
-            OnPropertyChanged("MontantMaxProperty");
-        }
-
-    }
-    public string AdresseDepotProperty
-    {
-        get { return AdresseDepot; }
-        set
-        {
-            AdresseDepot = value;
-            OnPropertyChanged("AdresseDepotProperty");
-        }
-
-    }
-    
 
 
     public event PropertyChangedEventHandler PropertyChanged;
