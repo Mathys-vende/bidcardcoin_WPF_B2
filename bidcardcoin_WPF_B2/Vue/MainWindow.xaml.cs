@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using bidcardcoin_WPF_B2.ORM;
 using bidcardcoin_WPF_B2.Vue;
 
 namespace bidcardcoin_WPF_B2
@@ -17,11 +18,24 @@ namespace bidcardcoin_WPF_B2
     }
     private void btnSubmit_Click(object sender, RoutedEventArgs e)
     {
-      adminBaseWindow admin = new adminBaseWindow();
-      this.Close();
-      admin.Show();
+            string email = txtUsername.Text;
+            string mdp = txtPassword.Password;
+
+            //email.Replace("@", ".");
+
+            if (PersonneORM.getAuth(email, mdp) == 1) 
+            { 
+            //todo: condition d'authentification
+                adminBaseWindow admin = new adminBaseWindow();
+                this.Close();
+                admin.Show(); 
+            }
+            else
+            {
+                MessageBox.Show("Email et/ou mot de passe incorrect", email);
+            }
     }
 
-    
-  }
+
+    }
 }
