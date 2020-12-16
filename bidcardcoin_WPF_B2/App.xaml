@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              StartupUri="Vue/adminBaseWindow.xaml">
+
     
 
     <Application.Resources>

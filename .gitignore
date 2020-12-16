@@ -7,3 +7,6 @@ riderModule.iml
 .vs
 App.config
 bidcardcoin_WPF_B2.csproj
+/bidcardcoin_WPF_B2/DAL/AuthDAL.cs
+/bidcardcoin_WPF_B2/DAO/AuthDAO.cs
+/bidcardcoin_WPF_B2/ORM/AuthORM.cs
