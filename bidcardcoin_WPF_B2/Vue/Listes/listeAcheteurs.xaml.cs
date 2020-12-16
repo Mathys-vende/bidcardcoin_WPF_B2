@@ -2,13 +2,14 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using System.Windows.Media;
 using bidcardcoin_WPF_B2.CTRL;
 using bidcardcoin_WPF_B2.DAL;
 using bidcardcoin_WPF_B2.ORM;
-using bidcardcoin_WPF_B2.Vue;
-using BorderStyle = System.Web.UI.WebControls.BorderStyle;
+
+//using BorderStyle = System.Web.UI.WebControls.BorderStyle;
+
 using UserControl = System.Windows.Controls.UserControl;
 
 namespace bidcardcoin_WPF_B2.Vue
