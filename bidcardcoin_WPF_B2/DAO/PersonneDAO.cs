@@ -34,6 +34,13 @@ namespace bidcardcoin_WPF_B2.DAO
             return l;
         }
 
+        public static int getAuth(string email, string mdp)
+        {
+           int x = PersonneDAL.getAuth(email, mdp);
+
+            return x;
+        }
+
         public static PersonneDAO getPersonne(int id)
         {
             PersonneDAO p = PersonneDAL.getPersonne(id);
