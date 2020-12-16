@@ -59,5 +59,7 @@
                 Content="Ajouter&#xa;Categorie" Width="103" Height="75"  Margin=" 255  0 0 90"/>
         <Button x:Name="estimation" Click="Estimation" HorizontalAlignment="Left" VerticalAlignment="Center"
                 Content="Ajouter&#xa;Estimation" Width="103" Height="75"  Margin=" 255  0 0 260"/>
+        <Button x:Name="Categorie" Click="CategorieProduit" HorizontalAlignment="Left" VerticalAlignment="Center"
+                Content="  Voir&#xa;Categorie" Width="103" Height="75"  Margin=" 255  0 0 430"/>
     </Grid>
 </UserControl>

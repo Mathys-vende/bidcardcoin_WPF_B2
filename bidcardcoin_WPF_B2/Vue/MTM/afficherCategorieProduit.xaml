@@ -1,0 +1,59 @@
+<UserControl x:Class="bidcardcoin_WPF_B2.Vue.afficherCategorieProduit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="300">
+    <Grid>
+        <Grid>
+        <StackPanel Margin="300 0 0 0 ">
+            <Label Content="nom produit" Height="40" />
+            
+                <ComboBox Name="produitCombobox" ItemsSource="{Binding  }"
+                          Height="40"
+                          DisplayMemberPath="nomProduitProperty"
+                          SelectedValue="{Binding idProduitProperty}"
+                          SelectedValuePath="idProduitProperty" />
+
+                <Button Name="ProduitCategorieButton" Click="ProduitCategorieButton_Click"
+                        Content="Rechercher les categories" HorizontalContentAlignment="Center" Margin="0  10"
+                        Height="35"
+                        Width="427" />
+
+                <DataGrid Name="listeCategorie" ItemsSource="{Binding}" AutoGenerateColumns="false"
+                          SelectionChanged="listeAcheteur_SelectionChanged"
+                          Grid.ColumnSpan="2"
+                          BorderBrush="Black" Background="#FFA4A4A4"
+                          Height="300" Width="1000"
+                          ScrollViewer.CanContentScroll="True"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="Crimson" />
+                            <Setter Property="BorderBrush" Value="Black" />
+                            <Setter Property="BorderThickness" Value="1 1 1 1" />
+                            <Setter Property="Margin" Value="-1,-1,0,0" />
+                            <!--<Setter Property="FontWeight"  Value="Bold" />-->
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                            <Setter Property="Height" Value="50" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="nom" Binding="{Binding nomCategorieProperty, Mode=OneWay}"
+                                            Width="*" />
+                        
+                    </DataGrid.Columns>
+                </DataGrid>
+            
+            <Button x:Name="supprimerButton" Click="SupprButton" Content="Supprimer"  BorderBrush="#FF545454" Height="35" Width="200"  Background="DarkRed"/>
+            <Button x:Name="Ajouter"  Click="CategorieProduit" HorizontalAlignment="Left" 
+                    Content="Ajouter&#xa;Categorie" Width="100" Height="75"  Margin=" 255  0 0 0"/>
+        </StackPanel>
+        </Grid>
+    </Grid>
+
+</UserControl>

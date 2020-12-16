@@ -27,6 +27,8 @@ namespace bidcardcoin_WPF_B2.DAO
         public int idVendeurProduitDAO;
 
         public ProduitDAO() { }
+        
+        
 
         public ProduitDAO(int idDAO, float estimationProduitDAO, float prixVenteProduitDAO, string nomProduitDAO, string descriptionProduitDAO,
             string artisteProduitDAO, string styleProduitDAO, int idLotProduitDAO, int idPhotoProduitDAO, int idAcheteurProduitDAO, int idVendeurProduitDAO)

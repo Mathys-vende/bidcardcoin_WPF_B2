@@ -7,11 +7,13 @@ namespace bidcardcoin_WPF_B2.DAO
     {
         public int idProduitDAO;
         public int idCategorieDAO;
+        public int IDCategorieDAO;
         public string nomCategorieDAO;
-        public ProduitCategorieDAO(string nomCategorieDAO)
+        public ProduitCategorieDAO(string nomCategorieDAO, int IDCategorieDAO)
         {
             this.nomCategorieDAO = nomCategorieDAO;
-            
+            this.IDCategorieDAO = IDCategorieDAO;
+
         }
         public ProduitCategorieDAO(int idDAO, int idCategorieDAO)
         {
@@ -25,9 +27,9 @@ namespace bidcardcoin_WPF_B2.DAO
             return l;
         }
 
-        public static ProduitCategorieDAO getProduitCategorie(int id)
+        public static ObservableCollection<ProduitCategorieDAO> getProduitCategorie(int id)
         {
-            ProduitCategorieDAO p = ProduitCategorieDAL.getProduitCategorie(id);
+            ObservableCollection<ProduitCategorieDAO> p = ProduitCategorieDAL.getProduitCategorie(id);
             return p;
         }
         public static void updateProduitCategorie(ProduitCategorieDAO p)
@@ -35,9 +37,9 @@ namespace bidcardcoin_WPF_B2.DAO
             ProduitCategorieDAL.updateProduitCategorie(p);
         }
 
-        public static void supprimerProduitCategorie(int id)
+        public static void supprimerProduitCategorie(int idProduit, int idCategorie)
         {
-            ProduitCategorieDAL.supprimerProduitCategorie(id);
+            ProduitCategorieDAL.supprimerProduitCategorie(idProduit, idCategorie);
         }
 
         public static void insertProduitCategorie(ProduitCategorieDAO p)

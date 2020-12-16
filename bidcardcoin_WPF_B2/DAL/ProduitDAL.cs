@@ -154,12 +154,6 @@ namespace bidcardcoin_WPF_B2.DAL
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
         }
-        public static object ToDBNull(object value)
-        {
-           
-                
-                return DBNull.Value;
-        }
         public static void insertProduit(ProduitDAO p)
         {
                 

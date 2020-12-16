@@ -33,16 +33,30 @@ namespace bidcardcoin_WPF_B2.DAL
             reader.Close();
             return l;
         }
-        public static ProduitCategorieDAO getProduitCategorie(int id)
+        public static ObservableCollection<ProduitCategorieDAO> getProduitCategorie(int id)
         {
-            string query = "SELECT categorie.nom FROM categorie JOIN produitcategorie ON categorie.id = produitcategorie.idCategorie JOIN produit on produitcategorie.idProduit = produit.id WHERE produit.id =" + id + ";";
+            ObservableCollection<ProduitCategorieDAO> liste = new ObservableCollection<ProduitCategorieDAO>();
+            string query = "SELECT DISTINCT categorie.nom, categorie.id FROM categorie JOIN produitcategorie ON categorie.id = produitcategorie.idCategorie JOIN produit on produitcategorie.idProduit = produit.id WHERE produit.id =" + id + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
-            cmd.ExecuteNonQuery();
-            MySqlDataReader reader = cmd.ExecuteReader();
-            reader.Read();
-            ProduitCategorieDAO cat = new ProduitCategorieDAO(reader.GetString(0));
+            MySqlDataReader reader = null;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                reader = cmd.ExecuteReader();
+                
+                while (reader.Read())
+                {
+                    ProduitCategorieDAO cat = new ProduitCategorieDAO(reader.GetString(0), reader.GetInt32(1));
+                    liste.Add(cat);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Il y a un problème dans la table produitcategorie : {0}",e.StackTrace);
+            }
+
             reader.Close();
-            return cat;
+            return liste;
         }
         public static void updateProduitCategorie(ProduitCategorieDAO p)
         {
@@ -59,9 +73,9 @@ namespace bidcardcoin_WPF_B2.DAL
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();
         }
-        public static void supprimerProduitCategorie(int id)
+        public static void supprimerProduitCategorie(int idProduit, int idCategorie)
         {
-            string query = "DELETE FROM produitcategorie WHERE id = \"" + id + "\";";
+            string query = "DELETE FROM produitcategorie WHERE idProduit = \"" + idProduit + "\" and idCategorie=" + idCategorie + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();

@@ -90,6 +90,14 @@ namespace bidcardcoin_WPF_B2.Vue
             test.Children.Add(produitCategorie);
 
         }
+        private void CategorieProduit(object sender, RoutedEventArgs e)
+        {
+            afficherCategorieProduit produitCategorie = new afficherCategorieProduit();
+            var test = ((StackPanel) this.Parent);
+            test.Children.Clear();
+            test.Children.Add(produitCategorie);
+
+        }
 
     }
 }

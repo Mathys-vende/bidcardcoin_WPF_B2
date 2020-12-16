@@ -20,9 +20,17 @@
                     <ComboBoxItem>0</ComboBoxItem>
                 </ComboBox>-->
                 <Label Content="identité vérifié" />
-                <TextBox Name="vérifIdentitéTextBox" Text="{Binding identiteAcheteurProperty, Mode=TwoWay}" Height="40" />
+                <ComboBox Name="vérifIdentitéTextBox" Text="{Binding identiteAcheteurProperty, Mode=TwoWay}" Height="40">
+                    <ComboBoxItem>Verfié</ComboBoxItem>
+                    <ComboBoxItem>Non Verifié</ComboBoxItem>
+                </ComboBox>
                 <Label Content="moyen de paiment" />
-                <TextBox Name="moyenDePaiementTextBox" Text="{Binding moyenPaiementAcheteurProperty, Mode=TwoWay}" Height="40" Margin="0,0,0.300,0" />
+                <ComboBox Name="moyenDePaiementTextBox" Text="{Binding moyenPaiementAcheteurProperty, Mode=TwoWay}" Height="40">
+                    <ComboBoxItem>Carte</ComboBoxItem>
+                    <ComboBoxItem>Cheque</ComboBoxItem>
+                    <ComboBoxItem>Virement</ComboBoxItem>
+                    <ComboBoxItem>Liquide</ComboBoxItem>
+                </ComboBox>
  
                 <Label Content="Personne" />
                 

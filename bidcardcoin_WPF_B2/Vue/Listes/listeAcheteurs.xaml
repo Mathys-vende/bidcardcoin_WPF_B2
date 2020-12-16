@@ -40,7 +40,21 @@
                         <!--<DataGridTextColumn  Header="id acheteur"  Binding="{Binding idAcheteurProperty }" />-->
                         <DataGridTextColumn Header="solde " Binding="{Binding soldeAcheteurProperty,  Mode=twoWay}" Width="*"/>
                         <DataGridTextColumn Header="Solvabilité" Binding="{Binding isSolvableAcheteurProperty, Mode=twoWay}" Width="*" />
-                        <DataGridTextColumn Header="identité vérifier" Binding="{Binding identiteAcheteurProperty, Mode=twoWay}" Width="*"/>
+                        
+                            <!--<DataGridComboBoxColumn Header="identité vérifier"  SelectedItemBinding="{Binding identiteAcheteurProperty}" ItemsSource="{Binding Source={StaticResource OrderStatus}}" />
+                        -->
+                        <DataGridTemplateColumn Header="Module" Width="*">
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <ComboBox DisplayMemberPath="{Binding identiteAcheteurProperty}"
+                                              
+                                        SelectedValue="{Binding identiteAcheteurProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                        <ComboBoxItem>Vérifier</ComboBoxItem>         
+                                        <ComboBoxItem>Pas Vérifié</ComboBoxItem>  
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>                    
+                        </DataGridTemplateColumn>
                         <DataGridTextColumn Header="moyen de paiement" Binding="{Binding moyenPaiementAcheteurProperty, Mode=twoWay}" Width="*" />
                         <DataGridTextColumn Header="nom" Binding="{Binding nomAcheteurProperty, Mode=twoWay}" Width="*"/>
                         <DataGridTextColumn Header="prénom " Binding="{Binding prenomAcheteurProperty, Mode=twoWay}" Width="*"/>

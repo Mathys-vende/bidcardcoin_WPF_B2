@@ -14,6 +14,7 @@ namespace bidcardcoin_WPF_B2.Vue
 {
     public partial class listeAcheteurs : UserControl
     {
+        public enum OrderStatus { None, New, Processing, Shipped, Received };
         
         private int selectedAcheteurId;
         AcheteurViewModel myDataObjectAcheteur;
