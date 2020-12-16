@@ -248,6 +248,9 @@
         <Compile Include="Vue\MTM\afficherCategorieProduit.xaml.cs">
           <DependentUpon>afficherCategorieProduit.xaml</DependentUpon>
         </Compile>
+        <Compile Include="Vue\MTM\afficherOrdreAchat.xaml.cs">
+          <DependentUpon>afficherOrdreAchat.xaml</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs">
@@ -295,6 +298,7 @@
         <SubType>Designer</SubType>
       </Page>
       <Page Include="Vue\MTM\afficherCategorieProduit.xaml" />
+      <Page Include="Vue\MTM\afficherOrdreAchat.xaml" />
     </ItemGroup>
     <ItemGroup>
       <Resource Include="ressources\img\bid.png" />
