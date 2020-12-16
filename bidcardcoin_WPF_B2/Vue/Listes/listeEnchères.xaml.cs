@@ -16,7 +16,6 @@ namespace bidcardcoin_WPF_B2.Vue
         ObservableCollection<EnchereViewModel> lp;
 
         private LieuViewModel myDataObjectLieu;
-
         public ObservableCollection<LieuViewModel> nomLieu;
    
 
@@ -29,6 +28,8 @@ namespace bidcardcoin_WPF_B2.Vue
             
             loadEnchere();
 
+            loadLieu();
+
         }
         
    
@@ -39,6 +40,13 @@ namespace bidcardcoin_WPF_B2.Vue
             myDataObject = new EnchereViewModel();
             //LIEN AVEC la VIEW
             listeEncheres.ItemsSource = lp; // bind de la liste avec la source, permettant le binding.
+        }
+        void loadLieu()
+        {
+            /*nomLieu = LieuORM.listeLieu();
+            myDataObjectLieu = new LieuViewModel();
+            //LIEN AVEC la VIEW
+            ComboBoxColumnLieu.ItemsSource = nomLieu; // bind de la liste avec la source, permettant le binding.*/
         }
         
         private void listeEnchere_SelectionChanged(object sender, SelectionChangedEventArgs e)

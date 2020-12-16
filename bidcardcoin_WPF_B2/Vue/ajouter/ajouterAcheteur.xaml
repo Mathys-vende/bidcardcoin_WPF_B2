@@ -11,18 +11,26 @@
             <StackPanel>
                 <Label Content="Ajouter Vendeur" HorizontalAlignment="Center" />
                 <Label Content="Solde" />
-                <TextBox Name="soldeTextBox" Text="{Binding soldeAcheteurProperty, Mode=TwoWay}" Height="20" />
+                <TextBox Name="soldeTextBox" Text="{Binding soldeAcheteurProperty, Mode=TwoWay}" Height="40" />
                 <Label Content="Solvabilité" />
-                <TextBox Name="isSolvableTextBox" Text="{Binding isSolvableAcheteurProperty, Mode=TwoWay}" Height="20" />
+                <TextBox Name="isSolvableTextBox" Text="{Binding isSolvableAcheteurProperty, Mode=TwoWay}" Height="40" />
                 <!--<ComboBox Name="idEnchereComboBox" ItemsSource="{Binding  }"
                           SelectedValue="{Binding isSolvableAcheteurProperty}" >
                     <ComboBoxItem>1</ComboBoxItem>
                     <ComboBoxItem>0</ComboBoxItem>
                 </ComboBox>-->
                 <Label Content="identité vérifié" />
-                <TextBox Name="vérifIdentitéTextBox" Text="{Binding identiteAcheteurProperty, Mode=TwoWay}" Height="20" />
+                <ComboBox Name="vérifIdentitéTextBox" Text="{Binding identiteAcheteurProperty, Mode=TwoWay}" Height="40">
+                    <ComboBoxItem>Verfié</ComboBoxItem>
+                    <ComboBoxItem>Non Verifié</ComboBoxItem>
+                </ComboBox>
                 <Label Content="moyen de paiment" />
-                <TextBox Name="moyenDePaiementTextBox" Text="{Binding moyenPaiementAcheteurProperty, Mode=TwoWay}" Height="20" Margin="0,0,0.300,0" />
+                <ComboBox Name="moyenDePaiementTextBox" Text="{Binding moyenPaiementAcheteurProperty, Mode=TwoWay}" Height="40">
+                    <ComboBoxItem>Carte</ComboBoxItem>
+                    <ComboBoxItem>Cheque</ComboBoxItem>
+                    <ComboBoxItem>Virement</ComboBoxItem>
+                    <ComboBoxItem>Liquide</ComboBoxItem>
+                </ComboBox>
  
                 <Label Content="Personne" />
                 
@@ -34,11 +42,11 @@
                 
                 
                 
-                <Button Name="AdminButton" Click="AcheteurButton_Click" Content="Ajouter" BorderBrush="#FF545454"
+                <Button Name="AdminButton" Click="AcheteurButton_Click" Content="Ajouter" BorderBrush="#FF545454" Background="ForestGreen"
                         BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right"
                         Width="427" RenderTransformOrigin="0.5,2.31" />
-                <Button x:Name="Ajouter" Click="returnListAcheteur" HorizontalAlignment="Left" VerticalAlignment="Top"
-                        Content="Retourner à liste" Width="30" Height="30" Padding="0" />
+                <Button x:Name="Ajouter" Click="returnListAcheteur" HorizontalAlignment="Left" VerticalAlignment="Center"
+                        Content="Retourner à liste" Width="200" Height="30" Padding="0" />
             </StackPanel>
         </Grid>
     </Grid>

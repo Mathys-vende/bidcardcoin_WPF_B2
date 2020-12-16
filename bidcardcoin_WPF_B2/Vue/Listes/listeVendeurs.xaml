@@ -6,33 +6,46 @@
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <StackPanel>
+    <Grid >
+        <StackPanel Margin =  "350 0 0 0">
             <Label Content="Liste Vendeurs" HorizontalAlignment="Center"></Label>
             <Grid Margin="10">
                 <DataGrid Name="listeVendeur" ItemsSource="{Binding }" AutoGenerateColumns="false" Grid.ColumnSpan="2"
                           SelectionChanged="listeVendeur_SelectionChanged"
                           BorderBrush="Black" Background="#FFA4A4A4"
+                          HorizontalAlignment="Center"
                           Height="600" ColumnWidth="100"
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <DataGrid.ColumnHeaderStyle >
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="Crimson"/>
+                            <Setter Property="BorderBrush" Value="Black"/>      
+                            <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                            <Setter Property="Margin" Value="-1,-1,0,0" />
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                            <Setter Property="Height" Value="50"></Setter>
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="idVendeur" Binding="{Binding idVendeurProperty }" />
-                        <DataGridTextColumn Header="nom" Binding="{Binding nomVendeurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="prénom" Binding="{Binding prenomVendeurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="mail" Binding="{Binding mailVendeurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="numero de téléphone" Binding="{Binding numeroTelVendeurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="mot de passe" Binding="{Binding motDePasseVendeurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="Adresse" Binding="{Binding adresseVendeurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="code Postal" Binding="{Binding codePostalVendeurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="Age" Binding="{Binding ageVendeurProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="idVendeur" Binding="{Binding idVendeurProperty }" Width="*"/>
+                        <DataGridTextColumn Header="nom" Binding="{Binding nomVendeurProperty, Mode=twoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="prénom" Binding="{Binding prenomVendeurProperty, Mode=twoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="mail" Binding="{Binding mailVendeurProperty, Mode=twoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="numero de téléphone" Binding="{Binding numeroTelVendeurProperty, Mode=twoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="mot de passe" Binding="{Binding motDePasseVendeurProperty, Mode=twoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="Adresse" Binding="{Binding adresseVendeurProperty, Mode=twoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="code Postal" Binding="{Binding codePostalVendeurProperty, Mode=twoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="Age" Binding="{Binding ageVendeurProperty, Mode=twoWay}"  Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
-            <Button x:Name="supprimerButton"  Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
-            <Button x:Name="Ajouter" Click="ajouterVendeur" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Content="Ajouter" Width="30" Height="30" Padding="0" />
+            <Button x:Name="supprimerButton"  Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" Background="DarkRed" />
+            
         </StackPanel>
+        <Button x:Name="Ajouter" Click="ajouterVendeur" HorizontalAlignment="Left" VerticalAlignment="Center"
+                Content="Ajouter&#xa;Vendeur" Width="100" Height="75"  Margin=" 255  0 0 0"/>
     </Grid>
 </UserControl>

@@ -39,7 +39,7 @@ namespace bidcardcoin_WPF_B2.Vue
         {
             c = CategorieORM.listeCategorie();
             myDataObjectCategorie = new CategorieViewModel();
-            listeCategories.ItemsSource = c;
+            /*listeCategories.ItemsSource = c;*/
         }
        
         private void nomCategorieButton_Click(object sender, RoutedEventArgs e)
@@ -50,7 +50,7 @@ namespace bidcardcoin_WPF_B2.Vue
             CategorieORM.insertCategorie(myDataObjectCategorie);
             compteur = c.Count();
 
-            listeCategories.Items.Refresh();
+            /*listeCategories.Items.Refresh();*/
             myDataObjectCategorie = new CategorieViewModel();
 
             nomCategorie.DataContext = myDataObjectCategorie;

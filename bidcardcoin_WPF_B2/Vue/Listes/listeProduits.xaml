@@ -6,29 +6,41 @@
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <StackPanel>
+    <Grid >
+        <StackPanel Margin="350 0 0 0 ">
             <Label Content="Liste Produits" HorizontalAlignment="Center"></Label>
             <Grid Margin="10">
                 <DataGrid Name="listeProduit" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
                           SelectionChanged="listeProduit_SelectionChanged"
                           BorderBrush="Black" Background="#FFA4A4A4"
-                          Height="550" Width="800" ColumnWidth="100"
+                          Height="550"  ColumnWidth="100"
+                          HorizontalAlignment="Center"
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <DataGrid.ColumnHeaderStyle >
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="Crimson"/>
+                            <Setter Property="BorderBrush" Value="Black"/>      
+                            <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                            <Setter Property="Margin" Value="-1,-1,0,0" />
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                            <Setter Property="Height" Value="50"></Setter>
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID" Binding="{Binding idProduitProperty, Mode=OneWay}" Width="30" />
-                        <DataGridTextColumn Header="Estimation" Binding="{Binding estimationProduitProperty}" Width="75"/>
-                        <DataGridTextColumn Header="PrixVente" Binding="{Binding prixVenteProduitProperty, Mode=TwoWay}" Width="50" />
-                        <DataGridTextColumn Header="Nom" Binding="{Binding nomProduitProperty, Mode=TwoWay}" Width="150"/>
-                        <DataGridTextColumn Header="Description" Binding="{Binding descriptionProduitProperty, Mode=TwoWay}" Width="250"/>
-                        <DataGridTextColumn Header="Artiste" Binding="{Binding artisteProduitProperty, Mode=TwoWay}" Width="100"/>
-                        <DataGridTextColumn Header="Style" Binding="{Binding styleProduitProperty, Mode=TwoWay}" Width="100"/>
-                        <DataGridTextColumn Header="ID lot" Binding="{Binding idLotProduitProperty, Mode=TwoWay}" Width="50"/>
-                        <DataGridTextColumn Header="ID Photo" Binding="{Binding idPhotoProduitProperty, Mode=TwoWay}" Width="50"/>
-                        <DataGridTextColumn Header="IDAcheteur" Binding="{Binding idAcheteurProduitProperty, Mode=TwoWay}" Width="50"/>
-                        <DataGridTextColumn Header="IDVendeur" Binding="{Binding idVendeurProduitProperty, Mode=TwoWay}" Width="50"/>
+                        <DataGridTextColumn Header="ID" Binding="{Binding idProduitProperty, Mode=OneWay}" Width="*" />
+                        <DataGridTextColumn Header="Estimation" Binding="{Binding estimationProduitProperty}" Width="*"/>
+                        <DataGridTextColumn Header="PrixVente" Binding="{Binding prixVenteProduitProperty, Mode=TwoWay}" Width="*" />
+                        <DataGridTextColumn Header="Nom" Binding="{Binding nomProduitProperty, Mode=TwoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Description" Binding="{Binding descriptionProduitProperty, Mode=TwoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Artiste" Binding="{Binding artisteProduitProperty, Mode=TwoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Style" Binding="{Binding styleProduitProperty, Mode=TwoWay}" Width="*"/>
+                        <DataGridTextColumn Header="ID lot" Binding="{Binding idLotProduitProperty, Mode=TwoWay}" Width="*"/>
+                        <DataGridTextColumn Header="ID Photo" Binding="{Binding idPhotoProduitProperty, Mode=TwoWay}" Width="*"/>
+                        <DataGridTextColumn Header="IDAcheteur" Binding="{Binding idAcheteurProduitProperty, Mode=TwoWay}" Width="*"/>
+                        <DataGridTextColumn Header="IDVendeur" Binding="{Binding idVendeurProduitProperty, Mode=TwoWay}" Width="*"/>
 
                         <!--<DataGridTextColumn Header="ID-Categorie" Binding="{Binding prenomPersonneProperty, Mode=TwoWay}" />
                         <DataGridTextColumn Header="ID-Lot" Binding="{Binding prenomPersonneProperty, Mode=TwoWay}" />
@@ -36,15 +48,18 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
-            <Button x:Name="supprimerButton" Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
-            <Button x:Name="Ajouter" Click="ajouterProduit" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Content="Ajouter" Width="100" Height="30" Padding="0" />
-            <Button x:Name="ordreAchat" Click="OrdreAchat" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Content="ordreAchat" Width="100" Height="30" Padding="0" />
-            <Button x:Name="Produitcategorie" Click="ProduitCategorie" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Content="Produitcategorie" Width="100" Height="30" Padding="0" />
-            <Button x:Name="estimation" Click="Estimation" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Content="Estimation" Width="100" Height="30" Padding="0" />
+            <Button x:Name="supprimerButton" Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200"  Background="DarkRed" />
+            
         </StackPanel>
+        <Button x:Name="Ajouter" Click="ajouterProduit" HorizontalAlignment="Left" VerticalAlignment="Center"
+                Content="Ajouter&#xa;Produit" Width="103" Height="75"  Margin=" 255  260 0 0"/>
+        <Button x:Name="ordreAchat" Click="OrdreAchat" HorizontalAlignment="Left" VerticalAlignment="Center"
+                Content="Ajouter&#xa;OrdreAchat" Width="103" Height="75"  Margin=" 255  90 0 0"/>
+        <Button x:Name="Produitcategorie" Click="ProduitCategorie" HorizontalAlignment="Left" VerticalAlignment="Center"
+                Content="Ajouter&#xa;Categorie" Width="103" Height="75"  Margin=" 255  0 0 90"/>
+        <Button x:Name="estimation" Click="Estimation" HorizontalAlignment="Left" VerticalAlignment="Center"
+                Content="Ajouter&#xa;Estimation" Width="103" Height="75"  Margin=" 255  0 0 260"/>
+        <Button x:Name="Categorie" Click="CategorieProduit" HorizontalAlignment="Left" VerticalAlignment="Center"
+                Content="  Voir&#xa;Categorie" Width="103" Height="75"  Margin=" 255  0 0 430"/>
     </Grid>
 </UserControl>

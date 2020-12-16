@@ -5,36 +5,72 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <StackPanel>
+             d:DesignHeight="300" d:DesignWidth="500">
+
+    <Grid >
+        
+        <StackPanel Margin="300 0 0 0 ">
+            
             <Label Content="Liste Acheteurs" HorizontalAlignment="Center"></Label>
-            <Grid Margin="10">
+            <Grid Margin="10" >
                 <DataGrid Name="listeAcheteur" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
                           SelectionChanged="listeAcheteur_SelectionChanged"
-                          BorderBrush="Black" Background="#FFA4A4A4"
-                          Height="600" ColumnWidth="100"
+                          Background="#FFA4A4A4" Foreground="Black"
+                          
+                          FontFamily="Verdana"
+                          
+                          Height="600" Width="1000"
+                          
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <DataGrid.ColumnHeaderStyle >
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="Crimson"/>
+                            <Setter Property="BorderBrush" Value="Black"/>      
+                            <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                            <Setter Property="Margin" Value="-1,-1,0,0" />
+                            <!--<Setter Property="FontWeight"  Value="Bold" />-->
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                            <Setter Property="Height" Value="50"></Setter>
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id acheteur" Binding="{Binding idAcheteurProperty }" />
-                        <DataGridTextColumn Header="solde acheteur" Binding="{Binding soldeAcheteurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="Solvabilité (true/false)" Binding="{Binding isSolvableAcheteurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="identité vérifier" Binding="{Binding identiteAcheteurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="moyen de paiment" Binding="{Binding moyenPaiementAcheteurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="nom de l'acheteur" Binding="{Binding nomAcheteurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="prénom de l'acheteur" Binding="{Binding prenomAcheteurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="mail " Binding="{Binding mailAcheteurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="numéro de téléphone" Binding="{Binding numeroTelAcheteurProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="motDePasse " Binding="{Binding motDePasseAcheteurProperty, Mode=twoWay}" />
+                        <!--<DataGridTextColumn  Header="id acheteur"  Binding="{Binding idAcheteurProperty }" />-->
+                        <DataGridTextColumn Header="solde " Binding="{Binding soldeAcheteurProperty,  Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Solvabilité" Binding="{Binding isSolvableAcheteurProperty, Mode=twoWay}" Width="*" />
+                        
+                            <!--<DataGridComboBoxColumn Header="identité vérifier"  SelectedItemBinding="{Binding identiteAcheteurProperty}" ItemsSource="{Binding Source={StaticResource OrderStatus}}" />
+                        -->
+                        <DataGridTemplateColumn Header="Module" Width="*">
+                            <DataGridTemplateColumn.CellTemplate >
+                                <DataTemplate>
+                                    <ComboBox DisplayMemberPath="{Binding identiteAcheteurProperty}"
+                                              
+                                        SelectedValue="{Binding identiteAcheteurProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                        <ComboBoxItem>Vérifier</ComboBoxItem>         
+                                        <ComboBoxItem>Pas Vérifié</ComboBoxItem>  
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>                    
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="moyen de paiement" Binding="{Binding moyenPaiementAcheteurProperty, Mode=twoWay}" Width="*" />
+                        <DataGridTextColumn Header="nom" Binding="{Binding nomAcheteurProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="prénom " Binding="{Binding prenomAcheteurProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="mail " Binding="{Binding mailAcheteurProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="téléphone" Binding="{Binding numeroTelAcheteurProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="motDePasse " Binding="{Binding motDePasseAcheteurProperty, Mode=twoWay}" Width="*" />
                     <!-- Add Column -->
                     </DataGrid.Columns>
                 </DataGrid>
+                
             </Grid>
-            <Button x:Name="supprimerButton" Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
-            <Button x:Name="Ajouter" Click="ajouterAcheteur" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Content="Ajouter" Width="30" Height="30" Padding="0" />
+            <Button x:Name="supprimerButton" Click="SupprButton" Content="Supprimer"  BorderBrush="#FF545454" Height="35" Width="200"  Background="DarkRed"/>
+            
         </StackPanel>
+        <Button x:Name="Ajouter" Click="ajouterAcheteur" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Content="Ajouter&#xa;Personne" Width="100" Height="75"  Margin=" 200  350 0 0"/>
     </Grid>
+    
 </UserControl>

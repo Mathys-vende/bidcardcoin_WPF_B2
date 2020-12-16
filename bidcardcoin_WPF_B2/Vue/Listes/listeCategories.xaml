@@ -6,28 +6,41 @@
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="1000">
-    <Grid>
-        <StackPanel>
+    <Grid >
+        <StackPanel Margin="300 0 0 0 ">
             <Label Content="Liste Catégories" HorizontalAlignment="Center" />
             <Grid Margin="10">
                 <DataGrid Name="listeCategorie" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
                           SelectionChanged="listeCategories_SelectionChanged"
                           BorderBrush="Black" Background="#FFA4A4A4"
-                          Height="600"  ColumnWidth="200"
+                          Height="600"  ColumnWidth="*"
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <DataGrid.ColumnHeaderStyle >
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="Crimson"/>
+                            <Setter Property="BorderBrush" Value="Black"/>      
+                            <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                            <Setter Property="Margin" Value="-1,-1,0,0" />
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                            <Setter Property="Height" Value="50"></Setter>
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="id" Binding="{Binding idCategorieProperty, Mode=OneWay}" Width="100" />
                         <DataGridTextColumn Header="nom" Binding="{Binding nomCategorieProperty, Mode=TwoWay}" Width="500"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
-            <Button x:Name="supprimerButton" Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454"
+            <Button x:Name="supprimerButton" Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454" Background="DarkRed"
                     Height="35" Width="200" />
 
         </StackPanel>
-        <Button x:Name="Ajouter" Click="ajouterCategorie" HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                Content="Ajouter" Width="30" Height="30" Padding="0" />
+        <Button x:Name="Ajouter" Click="ajouterCategorie" HorizontalAlignment="Left" 
+                Content="Ajouter&#xa;Categorie" Width="100" Height="75"  Margin=" 200  0 0 0"/>
+        
     </Grid>
+    
 </UserControl>

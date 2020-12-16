@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <StackPanel>
+    <Grid >
+        <StackPanel Margin="350 0 0 0 ">
             <Label Content="Liste Lieux" HorizontalAlignment="Center"></Label>
             <Grid Margin="10">
                 <DataGrid Name="listeLieu" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
@@ -17,21 +17,33 @@
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <DataGrid.ColumnHeaderStyle >
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="Crimson"/>
+                            <Setter Property="BorderBrush" Value="Black"/>      
+                            <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                            <Setter Property="Margin" Value="-1,-1,0,0" />
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                            <Setter Property="Height" Value="50"></Setter>
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id" Binding="{Binding idLieuProperty, Mode=OneWay}" Width="25"/>
-                        <DataGridTextColumn Header="ville" Binding="{Binding villeLieuProperty, Mode=TwoWay}" Width="70" />
-                        <DataGridTextColumn Header="adresse" Binding="{Binding adresseLieuProperty, Mode=TwoWay}" Width="200"/>
+                        <DataGridTextColumn Header="id" Binding="{Binding idLieuProperty, Mode=OneWay}" Width="75"/>
+                        <DataGridTextColumn Header="ville" Binding="{Binding villeLieuProperty, Mode=TwoWay}" Width="*" />
+                        <DataGridTextColumn Header="adresse" Binding="{Binding adresseLieuProperty, Mode=TwoWay}" Width="*"/>
                         <DataGridTextColumn Header="Code Postal"
-                                            Binding="{Binding codePostalLieuProperty, Mode=twoWay}" Width="80" />
+                                            Binding="{Binding codePostalLieuProperty, Mode=twoWay}" Width="*" />
                         <DataGridTextColumn Header="Departement"
-                                            Binding="{Binding departementLieuProperty, Mode=twoWay}" Width="185" />
+                                            Binding="{Binding departementLieuProperty, Mode=twoWay}" Width="*" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
             
-            <Button x:Name="supprimerButton" Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
-            <Button x:Name="Ajouter" Click="ajouterlieu" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Content="Ajouter" Width="30" Height="30" Padding="0" />
+            <Button x:Name="supprimerButton" Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" Background="DarkRed"/>
+            
         </StackPanel>
+        <Button x:Name="Ajouter" Click="ajouterlieu" HorizontalAlignment="Left" VerticalAlignment="Center"
+               Content="Ajouter&#xa;  Lot" Width="100" Height="75"  Margin=" 255  0 0 0"/>
     </Grid>
 </UserControl>
