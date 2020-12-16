@@ -23,7 +23,7 @@ namespace bidcardcoin_WPF_B2
 
             //email.Replace("@", ".");
 
-            if (PersonneORM.getAuth(email, mdp) == 1) 
+            if (PersonneORM.getAuth(email, mdp) >= 1) 
             { 
             //todo: condition d'authentification
                 adminBaseWindow admin = new adminBaseWindow();
