@@ -21,6 +21,8 @@ namespace bidcardcoin_WPF_B2
             string email = txtUsername.Text;
             string mdp = txtPassword.Password;
 
+            //email.Replace("@", ".");
+
             if (PersonneORM.getAuth(email, mdp) == 1) 
             { 
             //todo: condition d'authentification
@@ -30,7 +32,7 @@ namespace bidcardcoin_WPF_B2
             }
             else
             {
-                MessageBox.Show("Email et/ou mot de passe incorrect");
+                MessageBox.Show("Email et/ou mot de passe incorrect", email);
             }
     }
 
