@@ -22,7 +22,6 @@ namespace bidcardcoin_WPF_B2
             string mdp = txtPassword.Password;
 
             //email.Replace("@", ".");
-            
 
             if (PersonneORM.getAuth(email, mdp) == 1) 
             { 
