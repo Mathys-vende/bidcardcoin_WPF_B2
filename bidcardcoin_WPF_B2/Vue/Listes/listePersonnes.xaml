@@ -30,12 +30,12 @@
                         </Style>
                     </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id Personne" Binding="{Binding idPersonneProperty }" Width="75"/>
-                        <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty, Mode=twoWay}" Width="*"/>
-                        <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty, Mode=twoWay}" Width="*"/>
-                        <DataGridTextColumn Header="mail" Binding="{Binding mailPersonneProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="ID Personne" Binding="{Binding idPersonneProperty }" Width="75"/>
+                        <DataGridTextColumn Header="Nom" Binding="{Binding nomPersonneProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Prénom" Binding="{Binding prenomPersonneProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Mail" Binding="{Binding mailPersonneProperty, Mode=twoWay}" Width="*"/>
                         <DataGridTextColumn Header="Téléphone" Binding="{Binding numeroTelPersonneProperty, Mode=twoWay}" Width="*"/>
-                        <DataGridTextColumn Header="mot de passe" Binding="{Binding motDePassePersonneProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Mot de Passe" Binding="{Binding motDePassePersonneProperty, Mode=twoWay}" Width="*"/>
                         <DataGridTextColumn Header="Adresse" Binding="{Binding adressePersonneProperty, Mode=twoWay}" Width="*"/>
                         <DataGridTextColumn Header="code Postal" Binding="{Binding codePostalPersonneProperty, Mode=twoWay}" Width="*"/>
                         <DataGridTextColumn Header="Age" Binding="{Binding agePersonneProperty, Mode=twoWay}" Width="*"/>

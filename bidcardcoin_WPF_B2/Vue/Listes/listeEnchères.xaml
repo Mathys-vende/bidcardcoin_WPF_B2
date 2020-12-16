@@ -29,7 +29,7 @@
                         </Style>
                     </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id" Binding="{Binding idEnchereProperty, Mode=TwoWay}" Width="75" />
+                        <DataGridTextColumn Header="ID" Binding="{Binding idEnchereProperty, Mode=TwoWay}" Width="75" />
                         <DataGridTextColumn Header="Nom" Binding="{Binding nomEnchereProperty,Mode=TwoWay}" Width="*" />
                         <DataGridTextColumn Header="Heure" Binding="{Binding heureEnchereProperty, Mode=TwoWay}" Width="*"/>
                         <DataGridTemplateColumn Header="Date Vente" Width="*">
@@ -55,12 +55,12 @@
                                                    
                                                     
                             />-->
-                        <DataGridTextColumn Header="id Lieu"
+                        <DataGridTextColumn Header="ID Lieu"
                                             Binding="{Binding idLieuEnchereProperty, Mode=twoWay}" Width="*"/>
                                                     
                                                     
                         
-                        <DataGridTextColumn Header="id Admin"
+                        <DataGridTextColumn Header="ID Admin"
                                             Binding="{Binding idAdminEnchereProperty, Mode=twoWay}" Width="*"/>
 
                     </DataGrid.Columns>

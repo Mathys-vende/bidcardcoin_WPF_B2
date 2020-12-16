@@ -29,8 +29,8 @@
                         </Style>
                     </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id" Binding="{Binding idCategorieProperty, Mode=OneWay}" Width="100" />
-                        <DataGridTextColumn Header="nom" Binding="{Binding nomCategorieProperty, Mode=TwoWay}" Width="500"/>
+                        <DataGridTextColumn Header="ID" Binding="{Binding idCategorieProperty, Mode=OneWay}" Width="100" />
+                        <DataGridTextColumn Header="Nom" Binding="{Binding nomCategorieProperty, Mode=TwoWay}" Width="500"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
