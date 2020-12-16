@@ -7,7 +7,12 @@ namespace bidcardcoin_WPF_B2.DAO
     {
         public int idProduitDAO;
         public int idCategorieDAO;
-        
+        public string nomCategorieDAO;
+        public ProduitCategorieDAO(string nomCategorieDAO)
+        {
+            this.nomCategorieDAO = nomCategorieDAO;
+            
+        }
         public ProduitCategorieDAO(int idDAO, int idCategorieDAO)
         {
             this.idProduitDAO = idDAO;

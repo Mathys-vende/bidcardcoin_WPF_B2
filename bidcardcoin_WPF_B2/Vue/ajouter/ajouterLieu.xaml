@@ -5,40 +5,24 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="300">
     <Grid>
-        <Grid Name ="grigrid" Height="300" Margin="0,0,0.300,0" VerticalAlignment="Top">
+        <Grid Name ="grigrid" Height="600" Margin="0,0,0.300,0" VerticalAlignment="Top">
             <StackPanel>
                 <Label Content="Ajouter Lieu" HorizontalAlignment="Center"></Label>
                 <Label Content="Ville"></Label>
-                <TextBox Name="villeTextBox" Text="{Binding villeLieuProperty, Mode=TwoWay}"  Height="20" />
+                <TextBox Name="villeTextBox" Text="{Binding villeLieuProperty, Mode=TwoWay}"  Height="40" />
                 <Label Content="Adresse"></Label>
-                <TextBox Name="adresseTextBox" Text="{Binding adresseLieuProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
+                <TextBox Name="adresseTextBox" Text="{Binding adresseLieuProperty, Mode=TwoWay}"  Height="40" Margin="0,0,0.300,0"  />
                 <Label Content="Code Postal"></Label>
-                <TextBox Name ="codePostalTextBox" Text="{Binding codePostalLieuProperty, Mode=TwoWay}" />
+                <TextBox Name ="codePostalTextBox" Text="{Binding codePostalLieuProperty, Mode=TwoWay}" Height="40" />
                 <Label Content="Departement"></Label>
-                <TextBox Name ="departementTextBox" Text="{Binding departementLieuProperty, Mode=TwoWay}" />
-                <Button Name="LieuButton" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31" Click="LieuButton_Click" ></Button>
-                <Button x:Name="Return"  Click="returnListLieu" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Retourner liste lieu" Width="100" Height="30" Padding="0">
+                <TextBox Name ="departementTextBox" Text="{Binding departementLieuProperty, Mode=TwoWay}" Height="40" />
+                <Button Name="LieuButton" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31" Click="LieuButton_Click" Background="ForestGreen"></Button>
+                <Button x:Name="Return"  Click="returnListLieu" HorizontalAlignment="Left" VerticalAlignment="Center"  Content="Retourner liste lieu" Width="200" Height="30" Padding="0">
                 </Button>
             </StackPanel>
-            <DataGrid Name="listeLieu" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
-                      Visibility="Collapsed"
-                      BorderBrush="Black" Background="#FFA4A4A4"
-                      Height="600" ColumnWidth="100"
-                      ScrollViewer.CanContentScroll="True"
-                      ScrollViewer.VerticalScrollBarVisibility="Auto"
-                      ScrollViewer.HorizontalScrollBarVisibility="Auto">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="id" Binding="{Binding idLieuProperty, Mode=OneWay}" Width="25"/>
-                    <DataGridTextColumn Header="ville" Binding="{Binding villeLieuProperty, Mode=TwoWay}" Width="70" />
-                    <DataGridTextColumn Header="adresse" Binding="{Binding adresseLieuProperty, Mode=TwoWay}" Width="200"/>
-                    <DataGridTextColumn Header="Code Postal"
-                                        Binding="{Binding codePostalLieuProperty, Mode=twoWay}" Width="80" />
-                    <DataGridTextColumn Header="Departement"
-                                        Binding="{Binding departementLieuProperty, Mode=twoWay}" Width="185" />
-                </DataGrid.Columns>
-            </DataGrid>
+            
         </Grid>
         </Grid>
    

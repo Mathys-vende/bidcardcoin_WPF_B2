@@ -39,7 +39,7 @@ namespace bidcardcoin_WPF_B2.Vue
             lot = LotORM.listeLot();
             myDataObjectLot = new LotViewModel();
             //LIEN AVEC la VIEW
-            listeLot.ItemsSource = lot; // bind de la liste avec la source, permettant le binding.*/
+            /*listeLot.ItemsSource = lot; // bind de la liste avec la source, permettant le binding.#1#*/
             
         }
         
@@ -60,7 +60,7 @@ namespace bidcardcoin_WPF_B2.Vue
                 LotORM.insertLot(myDataObjectLot);
                 compteur = lot.Count();
 
-                listeLot.Items.Refresh();
+                /*listeLot.Items.Refresh();*/
                 myDataObjectLot = new LotViewModel();
 
             

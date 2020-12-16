@@ -9,11 +9,17 @@ namespace bidcardcoin_WPF_B2.CTRL
     {
         private int idProduit;
         private int idCategorie;
+        private string nomCategorie;
 
         private string concat = "Ajouter ";
 
         public ProduitCategorieViewModel()
         {
+            
+        }
+        public ProduitCategorieViewModel(string nomCategorie)
+        {
+            this.nomCategorie = nomCategorie;
         }
 
         public ProduitCategorieViewModel(int idProduit, int idCategorie)
@@ -44,6 +50,17 @@ namespace bidcardcoin_WPF_B2.CTRL
                 OnPropertyChanged("idCategorieProperty");
             }
         }
+
+        public string nomCategorieProperty
+        {
+            get { return nomCategorie; }
+            set
+            {
+                nomCategorie = value;
+                OnPropertyChanged("idCategorieProperty");
+            }
+        }
+        
 
         
 

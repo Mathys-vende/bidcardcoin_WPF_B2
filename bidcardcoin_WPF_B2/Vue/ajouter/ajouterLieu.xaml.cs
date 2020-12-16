@@ -30,7 +30,7 @@ namespace bidcardcoin_WPF_B2.Vue
         {
             c = LieuORM.listeLieu();
             myDataObjectLieu = new LieuViewModel();
-            listeLieu.ItemsSource = c;
+            /*listeLieu.ItemsSource = c;*/
         }
         
         private void LieuButton_Click(object sender, RoutedEventArgs e)
@@ -41,7 +41,7 @@ namespace bidcardcoin_WPF_B2.Vue
             LieuORM.insertLieu(myDataObjectLieu);
             compteur = c.Count();
 
-            listeLieu.Items.Refresh();
+            /*listeLieu.Items.Refresh();*/
             myDataObjectLieu = new LieuViewModel();
 
             villeTextBox.DataContext = myDataObjectLieu;

@@ -7,9 +7,9 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
 
-    <Grid>
-        <StackPanel>
-            <Label Content="Liste Vendeurs" HorizontalAlignment="Center" />
+    <Grid >
+        <StackPanel Margin="350 0 0 0 ">
+            <Label Content="Liste Personne" HorizontalAlignment="Center" />
             <Grid Margin="10">
                 <DataGrid Name="listePersonne" ItemsSource="{Binding }" AutoGenerateColumns="false" Grid.ColumnSpan="2"
                           SelectionChanged="listePersonne_SelectionChanged"
@@ -18,23 +18,35 @@
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <DataGrid.ColumnHeaderStyle >
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="Crimson"/>
+                            <Setter Property="BorderBrush" Value="Black"/>      
+                            <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                            <Setter Property="Margin" Value="-1,-1,0,0" />
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                            <Setter Property="Height" Value="50"></Setter>
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id Personne" Binding="{Binding idPersonneProperty }" />
-                        <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="mail" Binding="{Binding mailPersonneProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="numero de téléphone" Binding="{Binding numeroTelPersonneProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="mot de passe" Binding="{Binding motDePassePersonneProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="Adresse" Binding="{Binding adressePersonneProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="code Postal" Binding="{Binding codePostalPersonneProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="Age" Binding="{Binding agePersonneProperty, Mode=twoWay}" />
+                        <DataGridTextColumn Header="id Personne" Binding="{Binding idPersonneProperty }" Width="75"/>
+                        <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="mail" Binding="{Binding mailPersonneProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Téléphone" Binding="{Binding numeroTelPersonneProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="mot de passe" Binding="{Binding motDePassePersonneProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Adresse" Binding="{Binding adressePersonneProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="code Postal" Binding="{Binding codePostalPersonneProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Age" Binding="{Binding agePersonneProperty, Mode=twoWay}" Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
-            <Button x:Name="supprimerButton" Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454"
+            <Button x:Name="supprimerButton" Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454" Background="DarkRed"
                     Height="35" Width="200" />
-            <Button x:Name="Ajouter" Click="ajouterPersonne" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Content="Ajouter" Width="30" Height="30" Padding="0" />
+            
         </StackPanel>
+        <Button x:Name="Ajouter" Click="ajouterPersonne" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                Content="Ajouter&#xa;Personne" Width="100" Height="75"  Margin=" 255  0 0 0"/>
     </Grid>
 </UserControl>

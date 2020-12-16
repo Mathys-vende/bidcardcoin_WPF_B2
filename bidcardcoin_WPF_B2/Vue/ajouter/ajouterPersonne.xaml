@@ -4,34 +4,37 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue.ajouter"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="300">
     <Grid>
         <StackPanel>
             <Label Content="Ajouter Personne" HorizontalAlignment="Center"></Label>
             <Label Content="nom"></Label>
-            <TextBox Name="nomTextBox" Text="{Binding nomPersonneProperty, Mode=TwoWay}"  Height="20" />
+            <TextBox  Name="nomTextBox" Text="{Binding nomPersonneProperty, Mode=TwoWay}"  Height="40" />
             <Label Content="prenom"></Label>
-            <TextBox Name="prenomTextBox" Text="{Binding prenomPersonneProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
+            <TextBox Name="prenomTextBox" Text="{Binding prenomPersonneProperty, Mode=TwoWay}"  Height="40" Margin="0,0,0.300,0"  />
             <Label Content="mail"></Label>
-            <TextBox Name="mailTextBox" Text="{Binding mailPersonneProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
+            <TextBox Name="mailTextBox" Text="{Binding mailPersonneProperty, Mode=TwoWay}"  Height="40" Margin="0,0,0.300,0"  />
             <Label Content="numero Teléphone"></Label>
-            <TextBox Name="numeroTelTextBox" Text="{Binding numeroTelPersonneProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
+            <TextBox Name="numeroTelTextBox" Text="{Binding numeroTelPersonneProperty, Mode=TwoWay}"  Height="40" Margin="0,0,0.300,0"  />
             <Label Content="mot de passe"></Label>
-            <TextBox Name="motDePasseTextBox" Text="{Binding motDePassePersonneProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
+            
+            <TextBox Name="motDePasseTextBox" Text="{Binding motDePassePersonneProperty, Mode=TwoWay}"  Height="40" Margin="0,0,0.300,0"  />
+            
             <Label Content="adresse "></Label>
-            <TextBox Name="adresseTextBox" Text="{Binding adressePersonneProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
+            <TextBox Name="adresseTextBox" Text="{Binding adressePersonneProperty, Mode=TwoWay}"  Height="40" Margin="0,0,0.300,0"  />
             <Label Content="code Postal"></Label>
-            <TextBox Name="codePostalTextBox" Text="{Binding codePostalPersonneProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
+            <TextBox Name="codePostalTextBox" Text="{Binding codePostalPersonneProperty, Mode=TwoWay}"  Height="40" Margin="0,0,0.300,0"  />
             <Label Content="age "></Label>
-            <TextBox Name="ageTextBox" Text="{Binding agePersonneProperty, Mode=TwoWay}"  Height="20" Margin="0,0,0.300,0"  />
+            <TextBox Name="ageTextBox" Text="{Binding agePersonneProperty, Mode=TwoWay}"  Height="40" Margin="0,0,0.300,0"  />
             
            
         
         
-        <Button Name="PersonneButton" Click="PersonneButton_Click" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
+        <Button Name="PersonneButton" Click="PersonneButton_Click" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31" Background="ForestGreen"  >
         </Button>
-        <Button x:Name="Ajouter"  Click="returnListPersonne" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Retourner à liste" Width="30" Height="30" Padding="0">
+        <Button x:Name="Ajouter"  Click="returnListPersonne" HorizontalAlignment="Left" VerticalAlignment="Center"  Content="Retourner à liste" Width="200" Height="30" Padding="0">
         </Button>
         </StackPanel>
     </Grid>

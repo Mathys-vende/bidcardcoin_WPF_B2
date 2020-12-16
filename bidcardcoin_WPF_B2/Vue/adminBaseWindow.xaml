@@ -4,8 +4,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Icon="../../ressources/img/bid.png"
         mc:Ignorable="d"
-        Title="navbare" 
+        Title="BidCardCoin" 
         Height="{Binding SystemParameters.PrimaryScreenHeight}" 
         Width="{Binding SystemParameters.PrimaryScreenWidth}">
     
@@ -57,59 +59,59 @@
             </Grid.RenderTransform>
             <StackPanel>
                 <Image Height="140" Source="../ressources/img/bid.png" Stretch="Fill"/>
-                <ListView Foreground="#FF313131" FontFamily="Champagne &amp; Limousines" FontSize="18">
-                    <ListViewItem Height="45" Padding="0">
-                        <StackPanel Orientation="Horizontal" >
-                            <Button Name="listeProduits" Click="listeProduit" Content="Produits" Height="45" Width="240"></Button>
-
+                <ListView Foreground="#FF313131"  FontSize="18" Padding="10">
+                    <ListViewItem Height="45" Padding="0 ">
+                        <StackPanel Orientation="Horizontal" MouseDown="listeProduit" Margin="10 0">
+                            <materialDesign:PackIcon Kind="Recycle" Width="20" Height="20" Foreground="Gray" Margin="5" VerticalAlignment="Center"/>
+                            <TextBlock Text="Produits" Margin="10"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
-                        <StackPanel Orientation="Horizontal" >
-                            <Button Name="listeCategories" Click="listeCategorie" Content="Catégories" Height="45" Width="240"></Button>
-
+                        <StackPanel Orientation="Horizontal" MouseDown="listeCategorie" Margin="10 0">
+                            <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
+                            <TextBlock Text="Categorie" Margin="10"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
-                        <StackPanel Orientation="Horizontal" >
-                            <Button Name="listeEnchere" Click="listeEnchère" Content="Enchères" Height="45" Width="240"></Button>
-
+                        <StackPanel Orientation="Horizontal" MouseDown="listeEnchère" Margin="10 0">
+                            <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
+                            <TextBlock Text="Enchere" Margin="10"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
-                        <StackPanel Orientation="Horizontal" >
-                            <Button Name="listelieux" Click="listeLieu" Content="Lieu" Height="45" Width="240"></Button>
-
+                        <StackPanel Orientation="Horizontal" MouseDown="listeLieu" Margin="10 0">
+                            <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
+                            <TextBlock Text="Lieu" Margin="10"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
-                        <StackPanel Orientation="Horizontal" >
-                            <Button Name="listeLots" Click="listeLot" Content="Lot" Height="45" Width="240"></Button>
-
+                          <StackPanel Orientation="Horizontal" MouseDown="listeLot" Margin="10 0">
+                            <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
+                            <TextBlock Text="Lot" Margin="10"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
-                        <StackPanel Orientation="Horizontal" >
-                            <Button Name="listeAcheteurs" Click="listeAcheteur" Content="Acheteur" Height="45" Width="240"></Button>
-
+                        <StackPanel Orientation="Horizontal" MouseDown="listeAcheteur" Margin="10 0">
+                            <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
+                            <TextBlock Text="Acheteur" Margin="10"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0">
-                        <StackPanel Orientation="Horizontal" >
-                            <Button Name="listeAdmins" Click="listeAdmin" Content="Admins" Height="45" Width="240"></Button>
-
+                        <StackPanel Orientation="Horizontal" MouseDown="listeAdmin" Margin="10 0">
+                            <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
+                            <TextBlock Text="Admin" Margin="10"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0" >
-                        <StackPanel Orientation="Horizontal">
-                            <Button Name="listeVendeurs" Click="listeVendeur" Content="Vendeurs" Height="45" Width="240"></Button>
-                            
+                        <StackPanel Orientation="Horizontal" MouseDown="listeVendeur" Margin="10 0">
+                            <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
+                            <TextBlock Text="Vendeur" Margin="10"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0" >
-                        <StackPanel Orientation="Horizontal">
-                            <Button Name="listePersonnes" Click="listePersonne" Content="Personnes" Height="45" Width="240"></Button>
-                            
+                        <StackPanel Orientation="Horizontal" MouseDown="listePersonne" Margin="10 0">
+                            <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
+                            <TextBlock Text="Personne" Margin="10"></TextBlock>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

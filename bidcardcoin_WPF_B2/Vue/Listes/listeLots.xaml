@@ -7,28 +7,41 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <StackPanel>
+    <Grid >
+        <StackPanel Margin="350 0 0 0 ">
             <Label Content="Liste Lots" HorizontalAlignment="Center"></Label>
             <Grid Margin="10">
                 <DataGrid Name="listeLot" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
                           SelectionChanged="listeLot_SelectionChanged"
                           BorderBrush="Black" Background="#FFA4A4A4"
                           Height="600" ColumnWidth="100"
+                          HorizontalAlignment="Center"
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <DataGrid.ColumnHeaderStyle >
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="Crimson"/>
+                            <Setter Property="BorderBrush" Value="Black"/>      
+                            <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                            <Setter Property="Margin" Value="-1,-1,0,0" />
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                            <Setter Property="Height" Value="50"></Setter>
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id" Binding="{Binding idLotProperty, Mode=OneWay}" />
-                        <DataGridTextColumn Header="nom" Binding="{Binding nomLotProperty}" />
-                        <DataGridTextColumn Header="description" Binding="{Binding descriptionLotProperty, Mode=TwoWay}" />
-                        <DataGridTextColumn Header="id Enchere" Binding="{Binding idEnchereLotProperty,  Mode=OneWay }" />
+                        <DataGridTextColumn Header="id" Binding="{Binding idLotProperty, Mode=TwoWay}" Width="75" />
+                        <DataGridTextColumn Header="nom" Binding="{Binding nomLotProperty, Mode=TwoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="description" Binding="{Binding descriptionLotProperty, Mode=TwoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="id Enchere" Binding="{Binding idEnchereLotProperty,  Mode=TwoWay }"  Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
-            <Button x:Name="supprimerButton"  Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
-            <Button x:Name="Ajouter" Click="ajouterLot" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Content="Ajouter" Width="30" Height="30" Padding="0" />
+            <Button x:Name="supprimerButton"  Click="SupprButton" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" Background="DarkRed"/>
+            
         </StackPanel>
+        <Button x:Name="Ajouter" Click="ajouterLot" HorizontalAlignment="Left" VerticalAlignment="Center"
+                Content="Ajouter&#xa;  Lot" Width="100" Height="75"  Margin=" 255  0 0 0"/>
     </Grid>
 </UserControl>

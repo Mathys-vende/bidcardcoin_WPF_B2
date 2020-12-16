@@ -5,20 +5,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="300">
     <Grid>
-        <Grid Name ="grigrid" Height="300" Margin="0,0,0.300,0" VerticalAlignment="Top">
+        <Grid Name ="grigrid" Height="600" Margin="0,0,0.300,0" VerticalAlignment="Top">
             <StackPanel>
                 <Label Content="Ajouter Vendeur" HorizontalAlignment="Center"></Label>
-                <Label Content="nom"></Label>
+                <Label Content="nom" Height="40"></Label>
                 <ComboBox Name ="comboxBoxPersonne" ItemsSource="{Binding  }"
                           DisplayMemberPath="nomPersonneProperty"
                           SelectedValuePath="idPersonneProperty"
                           SelectedValue="{Binding idPersonneProperty}" 
                 />
-                <Button Name="AdminButton" Click="VendeurButton_Click" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31"  >
+                <Button Name="AdminButton" Click="VendeurButton_Click" Content="Ajouter" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31" Background="ForestGreen" >
                 </Button>
-                <Button x:Name="Ajouter"  Click="returnListVendeur" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Retourner à liste" Width="30" Height="30" Padding="0">
+                <Button x:Name="Ajouter"  Click="returnListVendeur" HorizontalAlignment="Left" VerticalAlignment="Center"  Content="Retourner à liste" Width="200" Height="30" Padding="0">
                 </Button>
             </StackPanel>
         </Grid>

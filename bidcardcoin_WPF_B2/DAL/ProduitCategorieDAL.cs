@@ -35,12 +35,12 @@ namespace bidcardcoin_WPF_B2.DAL
         }
         public static ProduitCategorieDAO getProduitCategorie(int id)
         {
-            string query = "SELECT * FROM produitcategorie WHERE id=" + id + ";";
+            string query = "SELECT categorie.nom FROM categorie JOIN produitcategorie ON categorie.id = produitcategorie.idCategorie JOIN produit on produitcategorie.idProduit = produit.id WHERE produit.id =" + id + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             cmd.ExecuteNonQuery();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            ProduitCategorieDAO cat = new ProduitCategorieDAO(reader.GetInt32(0), reader.GetInt32(1));
+            ProduitCategorieDAO cat = new ProduitCategorieDAO(reader.GetString(0));
             reader.Close();
             return cat;
         }

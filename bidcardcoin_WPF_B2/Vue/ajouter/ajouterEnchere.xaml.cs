@@ -63,7 +63,7 @@ namespace bidcardcoin_WPF_B2.Vue
         {
             c = EnchereORM.listeEnchere();
             myDataObjectEnchere = new EnchereViewModel();
-            listeEncheres.ItemsSource = c;
+            /*listeEncheres.ItemsSource = c;*/
         }
         
         
@@ -76,7 +76,7 @@ namespace bidcardcoin_WPF_B2.Vue
                 EnchereORM.insertEnchere(myDataObjectEnchere);
                 compteur = c.Count();
 
-                listeEncheres.Items.Refresh();
+                /*listeEncheres.Items.Refresh();*/
                 myDataObjectEnchere = new EnchereViewModel();
 
             

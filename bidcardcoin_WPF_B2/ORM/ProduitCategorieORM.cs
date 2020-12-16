@@ -9,7 +9,7 @@ namespace bidcardcoin_WPF_B2.ORM
         public static ProduitCategorieViewModel getProduitCategorie(int idProduitCategorie)
         {
             ProduitCategorieDAO pDAO = ProduitCategorieDAO.getProduitCategorie(idProduitCategorie);
-            ProduitCategorieViewModel p = new ProduitCategorieViewModel(pDAO.idProduitDAO, pDAO.idCategorieDAO);
+            ProduitCategorieViewModel p = new ProduitCategorieViewModel(pDAO.nomCategorieDAO);
             return p;
         }
 

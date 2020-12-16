@@ -2,9 +2,13 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Forms;
+using System.Windows.Media;
 using bidcardcoin_WPF_B2.CTRL;
 using bidcardcoin_WPF_B2.DAL;
 using bidcardcoin_WPF_B2.ORM;
+using BorderStyle = System.Web.UI.WebControls.BorderStyle;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace bidcardcoin_WPF_B2.Vue
 {
@@ -19,6 +23,8 @@ namespace bidcardcoin_WPF_B2.Vue
             InitializeComponent();
             
             DALConnection.OpenConnection();
+
+            
 
             loadAcheteur();
         }
@@ -51,6 +57,8 @@ namespace bidcardcoin_WPF_B2.Vue
                 
             }
         }
+
+        
         private void ajouterAcheteur(object sender, RoutedEventArgs e)
         {
             ajouterAcheteur ajouterAcheteurs = new ajouterAcheteur();

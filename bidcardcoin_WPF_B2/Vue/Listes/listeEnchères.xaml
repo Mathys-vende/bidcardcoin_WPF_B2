@@ -6,9 +6,9 @@
              xmlns:local="clr-namespace:bidcardcoin_WPF_B2.Vue"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <StackPanel>
-            <Label Content="Liste Enchère" HorizontalAlignment="Center"></Label>
+    <Grid >
+        <StackPanel Margin="350 0 0 0 ">
+            <Label Content="Liste Enchère" HorizontalAlignment="Center" />
             <Grid Margin="10">
                 <DataGrid Name="listeEncheres" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
                           SelectionChanged="listeEnchere_SelectionChanged"
@@ -17,37 +17,61 @@
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
-                   
+                    <DataGrid.ColumnHeaderStyle >
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="Crimson"/>
+                            <Setter Property="BorderBrush" Value="Black"/>      
+                            <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                            <Setter Property="Margin" Value="-1,-1,0,0" />
+                            <Setter Property="HorizontalAlignment" Value="Stretch" />
+                            <Setter Property="Height" Value="50"></Setter>
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id" Binding="{Binding idEnchereProperty, Mode=OneWay}" />
-                        <DataGridTextColumn Header="Nom" Binding="{Binding nomEnchereProperty}" />
-                        <DataGridTextColumn Header="Heure" Binding="{Binding heureEnchereProperty, Mode=TwoWay}" />
-                        <DataGridTemplateColumn Header="Date de vente" Width="120">
+                        <DataGridTextColumn Header="id" Binding="{Binding idEnchereProperty, Mode=TwoWay}" Width="75" />
+                        <DataGridTextColumn Header="Nom" Binding="{Binding nomEnchereProperty,Mode=TwoWay}" Width="*" />
+                        <DataGridTextColumn Header="Heure" Binding="{Binding heureEnchereProperty, Mode=TwoWay}" Width="*"/>
+                        <DataGridTemplateColumn Header="Date Vente" Width="*">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding dateVenteEnchereProperty}"/>
+                                    <TextBlock Text="{Binding dateVenteEnchereProperty}" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                             <DataGridTemplateColumn.CellEditingTemplate>
                                 <DataTemplate>
-                                    <DatePicker  SelectedDate="{Binding dateVenteEnchereProperty }"/>
+                                    <DatePicker SelectedDate="{Binding dateVenteEnchereProperty }" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellEditingTemplate>
                         </DataGridTemplateColumn>
                         <!--<DataGridTextColumn Header="Date Vente"
                                             Binding="{Binding dateVenteEnchereProperty, Mode=TwoWay}" />-->
-                        <DataGridTextColumn Header="id Lieu"
-                                            Binding="{Binding idLieuEnchereProperty, Mode=twoWay}" />
-                        <DataGridTextColumn Header="id Admin"
-                                            Binding="{Binding idAdminEnchereProperty, Mode=twoWay}" />
                         
+                        
+                            <!--<DataGridComboBoxColumn  Header="Adresse" x:Name = "ComboBoxColumnLieu"  ItemsSource="{Binding  }"
+                                                     SelectedItemBinding="{Binding idLieuEnchereProperty}"
+                                                     SelectedValueBinding="{Binding idLieuProperty}"
+                                                     DisplayMemberPath="adresseLieuProperty"
+                                                   
+                                                    
+                            />-->
+                        <DataGridTextColumn Header="id Lieu"
+                                            Binding="{Binding idLieuEnchereProperty, Mode=twoWay}" Width="*"/>
+                                                    
+                                                    
+                        
+                        <DataGridTextColumn Header="id Admin"
+                                            Binding="{Binding idAdminEnchereProperty, Mode=twoWay}" Width="*"/>
+
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
+
+            <Button x:Name="supprimerButton" Click="supprEnchere" Content="Supprimer" BorderBrush="#FF545454" Background="DarkRed"
+                    Height="35" Width="200" />
             
-            <Button x:Name="supprimerButton" Click="supprEnchere" Content="Supprimer" BorderBrush="#FF545454" Height="35" Width="200" />
-            <Button x:Name="Ajouter" Click="ajouterEnchere" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Content="Ajouter" Width="30" Height="30" Padding="0" />
         </StackPanel>
+        <Button x:Name="Ajouter" Click="ajouterEnchere" HorizontalAlignment="Left" VerticalAlignment="Center"
+                Content="Ajouter&#xa;Enchere" Width="100" Height="75"  Margin=" 255  0 0 0"/>
     </Grid>
 </UserControl>
