@@ -7,9 +7,7 @@ using System.Windows.Media;
 using bidcardcoin_WPF_B2.CTRL;
 using bidcardcoin_WPF_B2.DAL;
 using bidcardcoin_WPF_B2.ORM;
-
 //using BorderStyle = System.Web.UI.WebControls.BorderStyle;
-
 using UserControl = System.Windows.Controls.UserControl;
 
 namespace bidcardcoin_WPF_B2.Vue

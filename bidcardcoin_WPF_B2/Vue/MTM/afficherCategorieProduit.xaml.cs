@@ -13,7 +13,6 @@ namespace bidcardcoin_WPF_B2.Vue
     {
         private int selectedCategorieId;
         private int selectedProduitId;
-        
          private CategorieViewModel myDataObjectCategorie;
         public ObservableCollection<CategorieViewModel> Categorie;
         
