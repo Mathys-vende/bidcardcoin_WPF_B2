@@ -25,7 +25,11 @@ namespace bidcardcoin_WPF_B2.ORM
             }
             return l;
         }
-
+        public static int getAuth(string email, string mdp)
+        {
+            int x = AdminDAO.getAuth(email, mdp);
+            return x;
+        }
 
         public static void updateAdmin(AdminViewModel p)
         {

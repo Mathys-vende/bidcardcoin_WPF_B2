@@ -12,11 +12,6 @@ namespace bidcardcoin_WPF_B2.ORM
             PersonneViewModel p = new PersonneViewModel(pDAO.idPersonneDAO, pDAO.nomPersonneDAO, pDAO.prenomPersonneDAO, pDAO.mailPersonneDAO, pDAO.numeroTelPersonneDAO, pDAO.motDePassePersonneDAO, pDAO.adressePersonneDAO, pDAO.codePostalPersonneDAO, pDAO.agePersonneDAO);
             return p;
         }
-        public static int getAuth(string email, string mdp)
-        {
-           int x = PersonneDAO.getAuth(email, mdp);
-           return x;
-        }
 
         public static ObservableCollection<PersonneViewModel> listePersonne()
         {

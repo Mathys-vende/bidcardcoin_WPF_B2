@@ -34,6 +34,30 @@ namespace bidcardcoin_WPF_B2.DAL
             reader.Close();
             return l;
         }
+        public static int getAuth(string mail, string mdp)
+        {
+            int counter = 0;
+            string query = "SELECT * FROM admin WHERE mail='" + mail + "' AND motDePasse='" + mdp + "';";
+            MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
+            cmd.ExecuteNonQuery();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            //reader.Read();
+            //string mdp = reader.GetString(0);
+            if (reader.HasRows)
+            {
+                reader.Read();
+                if (!reader.IsDBNull(0))
+                {
+                    counter = reader.GetInt32(0);
+                }
+                else
+                {
+                    counter = 0;
+                }
+            }
+            reader.Close();
+            return counter;
+        }
         public static AdminDAO getAdmin(int id)
         {
             string query = "SELECT * FROM admin WHERE id=" + id + ";";

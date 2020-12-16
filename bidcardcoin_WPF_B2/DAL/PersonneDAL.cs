@@ -33,10 +33,10 @@ namespace bidcardcoin_WPF_B2.DAL
             reader.Close();
             return l;
         }
-        public static int getAuth(string mail, string mdp)
+/*        public static int getAuth(string mail, string mdp)
         {
             int counter = 0;
-            string query = "SELECT * FROM personne WHERE mail='" + mail + "' AND motDePasse='" + mdp + "';";
+            string query = "SELECT * FROM admin WHERE mail='" + mail + "' AND motDePasse='" + mdp + "';";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             cmd.ExecuteNonQuery();
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -56,7 +56,7 @@ namespace bidcardcoin_WPF_B2.DAL
             }
             reader.Close();
             return counter;
-        }
+        }*/
         public static PersonneDAO getPersonne(int id)
         {
             string query = "SELECT * FROM personne WHERE id=" + id + ";";

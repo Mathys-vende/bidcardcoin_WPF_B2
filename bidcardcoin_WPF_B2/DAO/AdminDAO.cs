@@ -27,6 +27,13 @@ namespace bidcardcoin_WPF_B2.DAO
             this.idLieuAdminDAO = idLieuAdminDAO;
         }
 
+        public static int getAuth(string email, string mdp)
+        {
+            int x = AdminDAL.getAuth(email, mdp);
+
+            return x;
+        }
+
         public static ObservableCollection<AdminDAO> listeAdmin()
         {
             ObservableCollection<AdminDAO> l = AdminDAL.selectAdmin();
