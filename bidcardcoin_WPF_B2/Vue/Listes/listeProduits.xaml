@@ -15,6 +15,7 @@
                           BorderBrush="Black" Background="#FFA4A4A4"
                           Height="550"  ColumnWidth="100"
                           HorizontalAlignment="Center"
+                          CanUserAddRows="False"
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
@@ -37,7 +38,7 @@
                         <DataGridTextColumn Header="Description" Binding="{Binding descriptionProduitProperty, Mode=TwoWay}" Width="*"/>
                         <DataGridTextColumn Header="Artiste" Binding="{Binding artisteProduitProperty, Mode=TwoWay}" Width="*"/>
                         <DataGridTextColumn Header="Style" Binding="{Binding styleProduitProperty, Mode=TwoWay}" Width="*"/>
-                        <DataGridTextColumn Header="ID lot" Binding="{Binding idLotProduitProperty, Mode=TwoWay}" Width="*"/>
+                        <DataGridTextColumn Header="ID Lot" Binding="{Binding idLotProduitProperty, Mode=TwoWay}" Width="*"/>
                         <DataGridTextColumn Header="ID Photo" Binding="{Binding idPhotoProduitProperty, Mode=TwoWay}" Width="*"/>
                         <DataGridTextColumn Header="ID Acheteur" Binding="{Binding idAcheteurProduitProperty, Mode=TwoWay}" Width="*"/>
                         <DataGridTextColumn Header="ID Vendeur" Binding="{Binding idVendeurProduitProperty, Mode=TwoWay}" Width="*"/>

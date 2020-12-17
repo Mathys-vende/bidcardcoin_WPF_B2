@@ -2,6 +2,7 @@ using bidcardcoin_WPF_B2.CTRL;
 using bidcardcoin_WPF_B2.ORM;
 
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
@@ -17,6 +18,11 @@ namespace bidcardcoin_WPF_B2.Vue
         private int selectedProduitId;
         ProduitViewModel myDataObjectProduit;
         ObservableCollection<ProduitViewModel> lp;
+        
+        LotViewModel myDataObjectLot;
+        ObservableCollection<LotViewModel> Lot;
+        
+         
         int compteur = 0;
         public listeProduits()
         {
@@ -25,6 +31,8 @@ namespace bidcardcoin_WPF_B2.Vue
             DALConnection.OpenConnection();
 
             loadProduits();
+
+            /*loadLot();*/
 
         }
 
@@ -35,6 +43,15 @@ namespace bidcardcoin_WPF_B2.Vue
             //LIEN AVEC la VIEW
             listeProduit.ItemsSource = lp; // bind de la liste avec la source, permettant le binding.
         }
+        
+        /*private void loadLot()
+        {
+            Lot = LotORM.listeLot();
+            myDataObjectLot = new LotViewModel();
+            //LIEN AVEC la VIEW
+            listeProduit.ItemsSource = Lot; // bind de la liste avec la source, permettant le binding.
+        }*/
+        
         
         private void listeProduit_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

@@ -14,6 +14,7 @@
                           SelectionChanged="listeLieu_SelectionChanged"
                           BorderBrush="Black" Background="#FFA4A4A4"
                           Height="600" ColumnWidth="100"
+                          CanUserAddRows="False"
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">

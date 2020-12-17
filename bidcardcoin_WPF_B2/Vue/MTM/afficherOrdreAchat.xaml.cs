@@ -85,6 +85,5 @@ namespace bidcardcoin_WPF_B2.Vue.MTM
 
             }
         }
-
     }
 }

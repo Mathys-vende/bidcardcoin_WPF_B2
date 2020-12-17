@@ -33,7 +33,7 @@ namespace bidcardcoin_WPF_B2.Vue
             
             DALConnection.OpenConnection();
             
-            loadCategorie();
+            /*loadCategorie();*/
 
             loadProduitCategorie();
 
@@ -50,9 +50,6 @@ namespace bidcardcoin_WPF_B2.Vue
             listeCategorie.DataContext = myDataObjectProduitCategorie;
             listeCategorie.ItemsSource = ProduitCategorie;
             listeCategorie.Items.Refresh();
-            
-
-
 
         }
         private void listeAcheteur_SelectionChanged(object sender, SelectionChangedEventArgs e)

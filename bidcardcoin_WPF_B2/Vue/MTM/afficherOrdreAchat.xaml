@@ -27,6 +27,7 @@
                           Grid.ColumnSpan="2"
                           BorderBrush="Black" Background="#FFA4A4A4"
                           Height="300" Width="1000"
+                          CanUserAddRows="False"
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">

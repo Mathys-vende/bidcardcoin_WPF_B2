@@ -7,13 +7,15 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="1000">
     <Grid >
-        <StackPanel Margin="300 0 0 0 ">
+        <StackPanel Margin="350 0 0 0 ">
             <Label Content="Liste Catégories" HorizontalAlignment="Center" />
             <Grid Margin="10">
                 <DataGrid Name="listeCategorie" ItemsSource="{Binding}" AutoGenerateColumns="false" Grid.ColumnSpan="2"
                           SelectionChanged="listeCategories_SelectionChanged"
                           BorderBrush="Black" Background="#FFA4A4A4"
                           Height="600"  ColumnWidth="*"
+                          CanUserAddRows="False"
+                          
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
@@ -29,8 +31,8 @@
                         </Style>
                     </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID" Binding="{Binding idCategorieProperty, Mode=OneWay}" Width="100" />
-                        <DataGridTextColumn Header="Nom" Binding="{Binding nomCategorieProperty, Mode=TwoWay}" Width="500"/>
+                        <DataGridTextColumn Header="ID" Binding="{Binding idCategorieProperty, Mode=OneWay}" Width="*" />
+                        <DataGridTextColumn Header="Nom" Binding="{Binding nomCategorieProperty, Mode=TwoWay}" Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
@@ -39,7 +41,7 @@
 
         </StackPanel>
         <Button x:Name="Ajouter" Click="ajouterCategorie" HorizontalAlignment="Left" 
-                Content="Ajouter&#xa;Categorie" Width="100" Height="75"  Margin=" 200  0 0 0"/>
+                Content="Ajouter&#xa;Categorie" Width="100" Height="75"  Margin=" 255  0 0 0"/>
         
     </Grid>
     

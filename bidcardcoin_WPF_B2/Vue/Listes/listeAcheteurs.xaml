@@ -20,7 +20,7 @@
                           FontFamily="Verdana"
                           
                           Height="600" Width="1000"
-                          
+                          CanUserAddRows="False"
                           ScrollViewer.CanContentScroll="True"
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
