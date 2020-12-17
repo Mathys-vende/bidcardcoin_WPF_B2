@@ -7,19 +7,11 @@ namespace bidcardcoin_WPF_B2.CTRL
     public class OrdreachatViewModel : INotifyPropertyChanged
 
     {
-    private int idProduit;
-    private int idAcheteur;
-    private int idEnchere;
+    private ProduitViewModel idOAProduit;
+    private AcheteurViewModel idOAAcheteur;
+    private EnchereViewModel idOAEnchere;
     private float montantMax;
     private string adresseDepot;
-
-    
-    public int IDProduit;
-    public string NomProduit;
-    public int IDEnchere;
-    public string NomEnchere;
-    public int MontantMax;
-    public string AdresseDepot;
     
     private string concat = "Ajouter ";
 
@@ -29,59 +21,47 @@ namespace bidcardcoin_WPF_B2.CTRL
         
     }
 
-    public OrdreachatViewModel(int idProduit, int idAcheteur,int idEnchere, float montantMax,string adresseDepot )
+    public OrdreachatViewModel(ProduitViewModel idOAProduit, AcheteurViewModel idOAAcheteur,EnchereViewModel idOAEnchere, float montantMax,string adresseDepot )
     {
-        this.idProduit = idProduit;
-        this.idAcheteur = idAcheteur;
-        this.idEnchere = idEnchere;
+        this.idOAProduit = idOAProduit;
+        this.idOAAcheteur = idOAAcheteur;
+        this.idOAEnchere = idOAEnchere;
         this.montantMax = montantMax;
         this.adresseDepot = adresseDepot;
     }
-
-    public OrdreachatViewModel(int IdProduit, string NomProduit, int IDEnchere, string NomEnchere, int MontantMax, string AdresseDepot)
+    public ProduitViewModel idProduitOAProperty
     {
-        this.IDProduit = IdProduit;
-        this.NomProduit = NomProduit;
-        this.IDEnchere = IDEnchere;
-        this.NomEnchere = NomEnchere;
-        this.MontantMax = MontantMax;
-        this.AdresseDepot = AdresseDepot;
-
-    }
-
-    public int idProduitProperty
-    {
-        get { return idProduit; }
+        get { return idOAProduit; }
         set
         {
-            idProduit = value;
+            idOAProduit = value;
             OnPropertyChanged("idProduitProperty");
         }
 
     }
 
-    public int idAcheteurProperty
+    public AcheteurViewModel idAcheteurOAProperty
     {
-        get { return idAcheteur; }
+        get { return idOAAcheteur; }
         set
         {
-            idAcheteur = value;
+            idOAAcheteur = value;
 
             OnPropertyChanged("idCategorieProperty");
         }
     }
 
-    public int idEnchereProperty
+    public EnchereViewModel idEnchereOAProperty
     {
-        get { return idEnchere; }
+        get { return idOAEnchere; }
         set
         {
-            idEnchere = value;
+            idOAEnchere = value;
 
             OnPropertyChanged("idCategorieProperty");
         }
     }
-    public float montantMaxProperty
+    public float montantMaxOAProperty
     {
         get { return montantMax; }
         set
@@ -91,7 +71,7 @@ namespace bidcardcoin_WPF_B2.CTRL
             OnPropertyChanged("idCategorieProperty");
         }
     }
-    public String adresseDepotProperty
+    public String adresseDepotOAProperty
     {
         get { return adresseDepot; }
         set
@@ -102,67 +82,6 @@ namespace bidcardcoin_WPF_B2.CTRL
         }
     }
     
-    
-    public int IDProduitProperty
-    {
-        get { return IDProduit; }
-        set
-        {
-            IDProduit = value;
-            OnPropertyChanged("IDProduitProperty");
-        }
-
-    }
-    public String NomProduitProperty
-    {
-        get { return NomProduit; }
-        set
-        {
-            NomProduit = value;
-            OnPropertyChanged("NomProduitProperty");
-        }
-
-    }
-    public int IDEnchereProperty
-    {
-        get { return IDEnchere; }
-        set
-        {
-            IDEnchere = value;
-            OnPropertyChanged("IDEnchereProperty");
-        }
-
-    }
-    public String NomEnchereProperty
-    {
-        get { return NomEnchere; }
-        set
-        {
-            NomEnchere = value;
-            OnPropertyChanged("NomEnchereProperty");
-        }
-
-    }
-    public int MontantMaxProperty
-    {
-        get { return MontantMax; }
-        set
-        {
-            MontantMax = value;
-            OnPropertyChanged("MontantMaxProperty");
-        }
-
-    }
-    public string AdresseDepotProperty
-    {
-        get { return AdresseDepot; }
-        set
-        {
-            AdresseDepot = value;
-            OnPropertyChanged("AdresseDepotProperty");
-        }
-
-    }
     
 
 
