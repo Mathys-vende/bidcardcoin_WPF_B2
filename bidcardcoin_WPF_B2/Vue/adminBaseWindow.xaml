@@ -116,7 +116,7 @@
                     </ListViewItem>
                     <ListViewItem Height="45" Padding="0" >
                     <StackPanel Orientation="Horizontal" MouseDown="AffiordreAchat" Margin="10 0">
-                        <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="BookmarkOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
                         <TextBlock Text="Ordre Achat" Margin="10"></TextBlock>
                     </StackPanel>
                     </ListViewItem>

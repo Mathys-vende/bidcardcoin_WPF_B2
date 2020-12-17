@@ -60,10 +60,16 @@ namespace bidcardcoin_WPF_B2.DAL
         }
         public static void updateProduitCategorie(ProduitCategorieDAO p)
         {
-            string query = "UPDATE produitcategorie set idProduit=\"" + p.idProduitDAO + "\" idCategorie=\"" + p.idCategorieDAO + "\" where id=" + p.idProduitDAO + ";";
+/*            string query = "UPDATE produitcategorie set idProduit=\"" + p.idProduitDAO + "\" idCategorie=\"" + p.idCategorieDAO + "\" where id=" + p.idProduitDAO + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
-            cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();*/
+
+            /*int id = getMaxIdproduitcategorie() + 1;*/
+            string query = "INSERT INTO produitcategorie VALUES (\"" + p.idProduitDAO + "\",\"" + p.idCategorieDAO + "\");";
+            MySqlCommand cmd2 = new MySqlCommand(query, DALConnection.OpenConnection());
+            MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
+            cmd2.ExecuteNonQuery();
         }
         public static void insertProduitCategorie(ProduitCategorieDAO p)
         {
