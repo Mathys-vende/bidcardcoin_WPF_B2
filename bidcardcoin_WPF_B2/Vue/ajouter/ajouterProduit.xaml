@@ -23,7 +23,7 @@
                 <Label Content="Style"></Label>
                 <TextBox Name="StyleTextBox" Text="{Binding styleProduitProperty, Mode=TwoWay}"  Height="40" />
                 <Label Content="ID lot"></Label>
-                
+
                 <ComboBox Name ="comboxBoxLot" ItemsSource="{Binding  }"
                           Height="40"
                           DisplayMemberPath="nomLotProperty"
@@ -34,7 +34,7 @@
                 <ComboBox Name="IDPhotoTextBox" Text="{Binding idPhotoProduitProperty, Mode=TwoWay}" Height="40">
                     <ComboBoxItem>1</ComboBoxItem>
                 </ComboBox>
-                
+
                 <Label Content="IDAcheteur"></Label>
                 <ComboBox Name ="IDAcheteurTextBox" ItemsSource="{Binding  }"
                           Height="40"
@@ -54,7 +54,7 @@
                 <Button x:Name="Ajouter"  Click="returnListProduit" HorizontalAlignment="Left" VerticalAlignment="Center"  Content="Retourner à liste" Width="200" Height="30" Padding="0">
                 </Button>
             </StackPanel>
-            
+
         </Grid>
     </Grid>
 </UserControl>
