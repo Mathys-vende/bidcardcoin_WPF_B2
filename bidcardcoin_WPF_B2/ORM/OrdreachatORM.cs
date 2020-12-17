@@ -13,7 +13,16 @@ namespace bidcardcoin_WPF_B2.ORM
             ObservableCollection<OrdreachatViewModel> liste = new ObservableCollection<OrdreachatViewModel>();
             foreach (OrdreachatDAO element in lDAO)
             {
-                OrdreachatViewModel l = new OrdreachatViewModel(element.IDProduitDAO, element.nomProduitDAO, element.IDEnchereDAO, element.nomEnchereDAO, element.MontantMaxDAO, element.AdresseDepotDAO);
+                    int idOAProduit = element.idProduitOADAO;
+                    ProduitViewModel p = ProduitORM.getProduit(idOAProduit);
+                    int idOAAcheteur = element.idAcheteurOADAO;
+                    AcheteurViewModel a = AcheteurORM.getAcheteur(idOAAcheteur);
+                    int idOAEnchere = element.idAcheteurOADAO;
+                    EnchereViewModel e = EnchereORM.getEnchere(idOAEnchere);
+                    
+                    
+                    
+                OrdreachatViewModel l = new OrdreachatViewModel(p, a,e, element.montantMaxOADAO, element.adresseDepotOADAO);
                 liste.Add(l);
             }
             return liste;
@@ -24,9 +33,16 @@ namespace bidcardcoin_WPF_B2.ORM
             ObservableCollection<OrdreachatDAO> lDAO = OrdreachatDAO.listeOrdreachat();
             ObservableCollection<OrdreachatViewModel> l = new ObservableCollection<OrdreachatViewModel>();
             foreach (OrdreachatDAO element in lDAO)
-            {
 
-                OrdreachatViewModel p = new OrdreachatViewModel(element.idProduitDAO, element.idAcheteurDAO, element.idEnchereDAO, element.montantMaxDAO, element.adresseDepotDAO);
+            {
+                int idOAProduit = element.idProduitOADAO;
+                ProduitViewModel prod = ProduitORM.getProduit(idOAProduit);
+                int idOAAcheteur = element.idAcheteurOADAO;
+                AcheteurViewModel a = AcheteurORM.getAcheteur(idOAAcheteur);
+                int idOAEnchere = element.idAcheteurOADAO;
+                EnchereViewModel e = EnchereORM.getEnchere(idOAEnchere);
+
+                OrdreachatViewModel p = new OrdreachatViewModel(prod, a,e, element.montantMaxOADAO, element.adresseDepotOADAO);
                 l.Add(p);
             }
 
@@ -36,7 +52,7 @@ namespace bidcardcoin_WPF_B2.ORM
 
         public static void updateOrdreachat(OrdreachatViewModel p)
         {
-            OrdreachatDAO.updateOrdreachat(new OrdreachatDAO(p.idProduitProperty, p.idAcheteurProperty,p.idEnchereProperty, p.montantMaxProperty, p.adresseDepotProperty ));
+            OrdreachatDAO.updateOrdreachat(new OrdreachatDAO(p.idProduitOAProperty.idProduitProperty, p.idAcheteurOAProperty.idAcheteurProperty,p.idEnchereOAProperty.idEnchereProperty, p.montantMaxOAProperty, p.adresseDepotOAProperty ));
         }
 
         public static void supprimerOrdreachat(int idAcheteur, int idEnchere, int idProduit)
@@ -46,7 +62,7 @@ namespace bidcardcoin_WPF_B2.ORM
 
         public static void insertOrdreachat(OrdreachatViewModel p)
         {
-            OrdreachatDAO.insertOrdreachat(new OrdreachatDAO(p.idProduitProperty, p.idAcheteurProperty,p.idEnchereProperty, p.montantMaxProperty, p.adresseDepotProperty));
+            OrdreachatDAO.insertOrdreachat(new OrdreachatDAO(p.idProduitOAProperty.idProduitProperty, p.idAcheteurOAProperty.idAcheteurProperty,p.idEnchereOAProperty.idEnchereProperty, p.montantMaxOAProperty, p.adresseDepotOAProperty));
         }
 
     }

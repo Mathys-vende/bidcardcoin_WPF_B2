@@ -13,7 +13,7 @@ namespace bidcardcoin_WPF_B2.ORM
     {
         public static ProduitViewModel getProduit(int idProduit)
         {
-            //todo finir l'ORM pour produit gg
+            
             ProduitDAO pDAO = ProduitDAO.getProduit(idProduit);
             ProduitViewModel p = new ProduitViewModel(pDAO.idProduitDAO, pDAO.estimationProduitDAO, pDAO.prixVenteProduitDAO, pDAO.nomProduitDAO, pDAO.descriptionProduitDAO,
             pDAO.artisteProduitDAO, pDAO.styleProduitDAO, pDAO.idLotProduitDAO, pDAO.idPhotoProduitDAO, pDAO.idAcheteurProduitDAO, pDAO.idVendeurProduitDAO);

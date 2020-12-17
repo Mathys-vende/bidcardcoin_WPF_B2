@@ -44,13 +44,13 @@
                         </Style>
                     </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="nom Produit" Binding="{Binding NomProduitProperty, Mode=OneWay}"
+                        <DataGridTextColumn Header="nom Produit" Binding="{Binding idProduitOAProperty.nomProduitProperty, Mode=OneWay}"
                                             Width="*" />
-                        <DataGridTextColumn Header="Nom Enchere" Binding="{Binding NomEnchereProperty, Mode=OneWay}"
+                        <DataGridTextColumn Header="Nom Enchere" Binding="{Binding idEnchereOAProperty.nomEnchereProperty, Mode=OneWay}"
                                             Width="*" />
-                        <DataGridTextColumn Header="Montant max" Binding="{Binding MontantMaxProperty, Mode=OneWay}"
+                        <DataGridTextColumn Header="Montant max" Binding="{Binding montantMaxOAProperty, Mode=OneWay}"
                                             Width="*" />
-                        <DataGridTextColumn Header="Adresse Depot" Binding="{Binding AdresseDepotProperty, Mode=OneWay}"
+                        <DataGridTextColumn Header="Adresse Depot" Binding="{Binding adresseDepotOAProperty, Mode=OneWay}"
                                             Width="*" />
                     </DataGrid.Columns>
                 </DataGrid>
