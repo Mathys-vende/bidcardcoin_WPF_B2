@@ -1,16 +1,48 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bidcardcoin_WPF_B2", "bidcardcoin_WPF_B2\bidcardcoin_WPF_B2.csproj", "{F3C9E97C-D075-4CEE-B9FA-C5C918E04D89}"
+EndProject
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "MaterialDesignDemo", "..\..\..\Downloads\DemoApp\netcoreapp3.1\MaterialDesignDemo.exe", "{DB862CFD-3ED4-4565-91F6-B8C29839512D}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = C:\Users\lord4\Downloads\DemoApp\netcoreapp3.1\MaterialDesignDemo.exe
+		RemoteMachine = DESKTOP-NM17II7
+		StartingDirectory = C:\Users\lord4\Downloads\DemoApp\netcoreapp3.1
+		Environment = Default
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		UseLegacyDebugEngines = No
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F3C9E97C-D075-4CEE-B9FA-C5C918E04D89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F3C9E97C-D075-4CEE-B9FA-C5C918E04D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3C9E97C-D075-4CEE-B9FA-C5C918E04D89}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F3C9E97C-D075-4CEE-B9FA-C5C918E04D89}.Debug|x64.Build.0 = Debug|Any CPU
 		{F3C9E97C-D075-4CEE-B9FA-C5C918E04D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3C9E97C-D075-4CEE-B9FA-C5C918E04D89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3C9E97C-D075-4CEE-B9FA-C5C918E04D89}.Release|x64.ActiveCfg = Release|Any CPU
+		{F3C9E97C-D075-4CEE-B9FA-C5C918E04D89}.Release|x64.Build.0 = Release|Any CPU
+		{DB862CFD-3ED4-4565-91F6-B8C29839512D}.Debug|Any CPU.ActiveCfg = Release|x64
+		{DB862CFD-3ED4-4565-91F6-B8C29839512D}.Debug|x64.ActiveCfg = Release|x64
+		{DB862CFD-3ED4-4565-91F6-B8C29839512D}.Release|Any CPU.ActiveCfg = Release|x64
+		{DB862CFD-3ED4-4565-91F6-B8C29839512D}.Release|x64.ActiveCfg = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC3C599E-C306-4C9B-A48B-5B86AF43F0AE}
 	EndGlobalSection
 EndGlobal

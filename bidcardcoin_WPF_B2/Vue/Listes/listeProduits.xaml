@@ -39,8 +39,8 @@
                         <DataGridTextColumn Header="Style" Binding="{Binding styleProduitProperty, Mode=TwoWay}" Width="*"/>
                         <DataGridTextColumn Header="ID lot" Binding="{Binding idLotProduitProperty, Mode=TwoWay}" Width="*"/>
                         <DataGridTextColumn Header="ID Photo" Binding="{Binding idPhotoProduitProperty, Mode=TwoWay}" Width="*"/>
-                        <DataGridTextColumn Header="IDAcheteur" Binding="{Binding idAcheteurProduitProperty, Mode=TwoWay}" Width="*"/>
-                        <DataGridTextColumn Header="IDVendeur" Binding="{Binding idVendeurProduitProperty, Mode=TwoWay}" Width="*"/>
+                        <DataGridTextColumn Header="ID Acheteur" Binding="{Binding idAcheteurProduitProperty, Mode=TwoWay}" Width="*"/>
+                        <DataGridTextColumn Header="ID Vendeur" Binding="{Binding idVendeurProduitProperty, Mode=TwoWay}" Width="*"/>
 
                         <!--<DataGridTextColumn Header="ID-Categorie" Binding="{Binding prenomPersonneProperty, Mode=TwoWay}" />
                         <DataGridTextColumn Header="ID-Lot" Binding="{Binding prenomPersonneProperty, Mode=TwoWay}" />

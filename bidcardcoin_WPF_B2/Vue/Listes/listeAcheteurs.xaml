@@ -38,29 +38,52 @@
                     </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
                         <!--<DataGridTextColumn  Header="id acheteur"  Binding="{Binding idAcheteurProperty }" />-->
-                        <DataGridTextColumn Header="solde " Binding="{Binding soldeAcheteurProperty,  Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Solde" Binding="{Binding soldeAcheteurProperty,  Mode=twoWay}" Width="*"/>
                         <DataGridTextColumn Header="Solvabilité" Binding="{Binding isSolvableAcheteurProperty, Mode=twoWay}" Width="*" />
                         
-                            <!--<DataGridComboBoxColumn Header="identité vérifier"  SelectedItemBinding="{Binding identiteAcheteurProperty}" ItemsSource="{Binding Source={StaticResource OrderStatus}}" />
-                        -->
-                        <DataGridTemplateColumn Header="Module" Width="*">
+                            <!--<DataGridComboBoxColumn Header="identité vérifier"  SelectedItemBinding="{Binding identiteAcheteurProperty}" ItemsSource="{Binding Source={StaticResource OrderStatus}}" />-->
+                        
+                        <!--<DataGridTemplateColumn Header="Identité" Width="*">
                             <DataGridTemplateColumn.CellTemplate >
                                 <DataTemplate>
                                     <ComboBox DisplayMemberPath="{Binding identiteAcheteurProperty}"
                                               
                                         SelectedValue="{Binding identiteAcheteurProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                                        <ComboBoxItem>Vérifier</ComboBoxItem>         
-                                        <ComboBoxItem>Pas Vérifié</ComboBoxItem>  
+                                        <ComboBoxItem>Vérifiée</ComboBoxItem>
+                                        <ComboBoxItem>Non Vérifiée</ComboBoxItem> 
                                     </ComboBox>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>                    
+                        </DataGridTemplateColumn>-->
+
+                        <DataGridTemplateColumn Header="Identité">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <ComboBox DisplayMemberPath="{Binding identiteAcheteurProperty}"
+                                              
+                                        SelectedValue="{Binding identiteAcheteurProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                        <ComboBoxItem>Vérifiée</ComboBoxItem>
+                                        <ComboBoxItem>Non Vérifiée</ComboBoxItem>
+
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <!--<ComboBox>verif</ComboBox>
+                                                <Rectangle Fill="{Binding ColourBrush}" Height="30" Width="30"/>-->
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="moyen de paiement" Binding="{Binding moyenPaiementAcheteurProperty, Mode=twoWay}" Width="*" />
-                        <DataGridTextColumn Header="nom" Binding="{Binding nomAcheteurProperty, Mode=twoWay}" Width="*"/>
-                        <DataGridTextColumn Header="prénom " Binding="{Binding prenomAcheteurProperty, Mode=twoWay}" Width="*"/>
-                        <DataGridTextColumn Header="mail " Binding="{Binding mailAcheteurProperty, Mode=twoWay}" Width="*"/>
-                        <DataGridTextColumn Header="téléphone" Binding="{Binding numeroTelAcheteurProperty, Mode=twoWay}" Width="*"/>
-                        <DataGridTextColumn Header="motDePasse " Binding="{Binding motDePasseAcheteurProperty, Mode=twoWay}" Width="*" />
+
+
+
+                        <DataGridTextColumn Header="Moyen de Paiement" Binding="{Binding moyenPaiementAcheteurProperty, Mode=twoWay}" Width="*" />
+                        <DataGridTextColumn Header="Nom" Binding="{Binding nomAcheteurProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Prénom" Binding="{Binding prenomAcheteurProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Mail " Binding="{Binding mailAcheteurProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Téléphone" Binding="{Binding numeroTelAcheteurProperty, Mode=twoWay}" Width="*"/>
+                        <DataGridTextColumn Header="Mot de Passe " Binding="{Binding motDePasseAcheteurProperty, Mode=twoWay}" Width="*" />
                     <!-- Add Column -->
                     </DataGrid.Columns>
                 </DataGrid>

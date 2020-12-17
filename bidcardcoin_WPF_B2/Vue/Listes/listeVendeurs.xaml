@@ -30,14 +30,14 @@
                         </Style>
                     </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="idVendeur" Binding="{Binding idVendeurProperty }" Width="*"/>
-                        <DataGridTextColumn Header="nom" Binding="{Binding nomVendeurProperty, Mode=twoWay}"  Width="*"/>
-                        <DataGridTextColumn Header="prénom" Binding="{Binding prenomVendeurProperty, Mode=twoWay}"  Width="*"/>
-                        <DataGridTextColumn Header="mail" Binding="{Binding mailVendeurProperty, Mode=twoWay}"  Width="*"/>
-                        <DataGridTextColumn Header="numero de téléphone" Binding="{Binding numeroTelVendeurProperty, Mode=twoWay}"  Width="*"/>
-                        <DataGridTextColumn Header="mot de passe" Binding="{Binding motDePasseVendeurProperty, Mode=twoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="ID Vendeur" Binding="{Binding idVendeurProperty }" Width="*"/>
+                        <DataGridTextColumn Header="Nom" Binding="{Binding nomVendeurProperty, Mode=twoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="Prénom" Binding="{Binding prenomVendeurProperty, Mode=twoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="Mail" Binding="{Binding mailVendeurProperty, Mode=twoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="Numero de Téléphone" Binding="{Binding numeroTelVendeurProperty, Mode=twoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="Mot de Passe" Binding="{Binding motDePasseVendeurProperty, Mode=twoWay}"  Width="*"/>
                         <DataGridTextColumn Header="Adresse" Binding="{Binding adresseVendeurProperty, Mode=twoWay}"  Width="*"/>
-                        <DataGridTextColumn Header="code Postal" Binding="{Binding codePostalVendeurProperty, Mode=twoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="Code Postal" Binding="{Binding codePostalVendeurProperty, Mode=twoWay}"  Width="*"/>
                         <DataGridTextColumn Header="Age" Binding="{Binding ageVendeurProperty, Mode=twoWay}"  Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>

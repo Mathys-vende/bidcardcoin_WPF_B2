@@ -29,9 +29,9 @@
                         </Style>
                     </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id" Binding="{Binding idLieuProperty, Mode=OneWay}" Width="75"/>
-                        <DataGridTextColumn Header="ville" Binding="{Binding villeLieuProperty, Mode=TwoWay}" Width="*" />
-                        <DataGridTextColumn Header="adresse" Binding="{Binding adresseLieuProperty, Mode=TwoWay}" Width="*"/>
+                        <DataGridTextColumn Header="ID" Binding="{Binding idLieuProperty, Mode=OneWay}" Width="75"/>
+                        <DataGridTextColumn Header="Ville" Binding="{Binding villeLieuProperty, Mode=TwoWay}" Width="*" />
+                        <DataGridTextColumn Header="Adresse" Binding="{Binding adresseLieuProperty, Mode=TwoWay}" Width="*"/>
                         <DataGridTextColumn Header="Code Postal"
                                             Binding="{Binding codePostalLieuProperty, Mode=twoWay}" Width="*" />
                         <DataGridTextColumn Header="Departement"

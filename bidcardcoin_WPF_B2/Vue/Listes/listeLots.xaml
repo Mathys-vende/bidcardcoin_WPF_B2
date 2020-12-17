@@ -31,10 +31,10 @@
                         </Style>
                     </DataGrid.ColumnHeaderStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id" Binding="{Binding idLotProperty, Mode=TwoWay}" Width="75" />
-                        <DataGridTextColumn Header="nom" Binding="{Binding nomLotProperty, Mode=TwoWay}"  Width="*"/>
-                        <DataGridTextColumn Header="description" Binding="{Binding descriptionLotProperty, Mode=TwoWay}"  Width="*"/>
-                        <DataGridTextColumn Header="id Enchere" Binding="{Binding idEnchereLotProperty,  Mode=TwoWay }"  Width="*"/>
+                        <DataGridTextColumn Header="ID" Binding="{Binding idLotProperty, Mode=TwoWay}" Width="75" />
+                        <DataGridTextColumn Header="Nom" Binding="{Binding nomLotProperty, Mode=TwoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="Description" Binding="{Binding descriptionLotProperty, Mode=TwoWay}"  Width="*"/>
+                        <DataGridTextColumn Header="ID Enchere" Binding="{Binding idEnchereLotProperty,  Mode=TwoWay }"  Width="*"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
