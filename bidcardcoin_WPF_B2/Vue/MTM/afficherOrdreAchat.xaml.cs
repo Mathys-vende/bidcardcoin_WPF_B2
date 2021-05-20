@@ -47,8 +47,8 @@ namespace bidcardcoin_WPF_B2.Vue.MTM
         {
             if ((listeOrdreAchat.SelectedIndex < Ordreachat.Count) && (listeOrdreAchat.SelectedIndex >= 0))
             {
-                selectedEnchereId = (Ordreachat.ElementAt<OrdreachatViewModel>(listeOrdreAchat.SelectedIndex).idEnchereOAProperty.idEnchereProperty);
-                selectedProduitId = (Ordreachat.ElementAt<OrdreachatViewModel>(listeOrdreAchat.SelectedIndex).idProduitOAProperty.idProduitProperty);
+                selectedEnchereId = (Ordreachat.ElementAt<OrdreachatViewModel>(listeOrdreAchat.SelectedIndex)).IDEnchereProperty;
+                selectedProduitId = (Ordreachat.ElementAt<OrdreachatViewModel>(listeOrdreAchat.SelectedIndex)).IDProduitProperty;
             }
             
         }
