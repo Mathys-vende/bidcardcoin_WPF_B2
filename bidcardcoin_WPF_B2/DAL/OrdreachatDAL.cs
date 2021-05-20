@@ -36,7 +36,7 @@ namespace bidcardcoin_WPF_B2.DAL
         public static ObservableCollection<OrdreachatDAO> getOrdreachat(int id)
         {
             ObservableCollection<OrdreachatDAO> l = new ObservableCollection<OrdreachatDAO>();
-            string query = "SELECT * FROM ordreachat WHERE idAcheteur =" + id + ";";
+            string query = "SELECT  produit.id , produit.nom , enchere.id , enchere.nom,  ordreachat.montantMax , ordreachat.adresseDepot FROM ordreachat JOIN produit ON produit.id = ordreachat.idProduit JOIN enchere ON enchere.id = ordreachat.idEnchere JOIN acheteur ON acheteur.id = ordreachat.idAcheteur WHERE acheteur.id =" + id + ";";
             MySqlCommand cmd = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataReader reader = null;
             try
@@ -47,8 +47,8 @@ namespace bidcardcoin_WPF_B2.DAL
                
                 while (reader.Read())
                 {
-                    OrdreachatDAO cat = new OrdreachatDAO(reader.GetInt32(0),  reader.GetInt32(1),
-                        reader.GetInt32(2), reader.GetFloat(3), reader.GetString(4)); 
+                    OrdreachatDAO cat = new OrdreachatDAO(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2),
+                        reader.GetString(3), reader.GetInt32(4), reader.GetString(5)); 
                     l.Add(cat);
                     
                 }
@@ -70,7 +70,7 @@ namespace bidcardcoin_WPF_B2.DAL
         public static void insertOrdreachat(OrdreachatDAO p)
         {
             /*int id = getMaxIdOrdreachat() + 1;*/
-            string query = "INSERT INTO Ordreachat VALUES (\"" + p.idProduitOADAO + "\",\"" + p.idAcheteurOADAO + "\",\"" + p.idEnchereOADAO + "\",\"" + p.montantMaxOADAO + "\",\"" + p.adresseDepotOADAO + "\");";
+            string query = "INSERT INTO Ordreachat VALUES (\"" + p.idProduitDAO + "\",\"" + p.idAcheteurDAO + "\",\"" + p.idEnchereDAO + "\",\"" + p.montantMaxDAO + "\",\"" + p.adresseDepotDAO + "\");";
             MySqlCommand cmd2 = new MySqlCommand(query, DALConnection.OpenConnection());
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();
